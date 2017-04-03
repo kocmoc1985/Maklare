@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular QuickStart</title>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="angular/styles.css">
+
+        <!-- Polyfill(s) for older browsers -->
+        <script src="app/angularExtras/shim.min.js"></script>
+        <script src="app/angularExtras/zone.js"></script>
+        <script src="app/angular/system.js"></script>
+        
+        <!--script src="angular/system-production.js"></script-->
+
+        <script src="app/angular/systemjs.config.js"></script>
+        <script>
+            SystemJS.import('app/angular/main.js').catch(function (err) {
+                console.error(err);
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div id="wrapper" style="width: 90%; min-height: 20vh;background-color: lightgray">
+
+            <my-app>Loading AppComponent content here ...</my-app>
+
+            <br><br><br>
+
+            <my-app-b>Loading AppComponent content here ...</my-app-b>
+
+        </div>  
+    </body>
+
+</html>
