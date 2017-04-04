@@ -6,6 +6,6 @@ import {Component} from '@angular/core';
 })
 
 export class AppBComponent {
-    titleA = 'Hello Angularttttt';
+    titleA = 'Hello Angularete';
     titleB = 'getAngular()';
 }
