@@ -1,0 +1,14 @@
+[
+    {
+        "type": "villa",
+        "price": "150000",
+        "area": "25",
+        "rooms": "3",
+        "hyra": "15000",
+        "country": "Sverige",
+        "lan": "Skåne",
+        "town": "Trelleborg",
+        "street": "Sveagatan 25",
+        "zip": "23145"
+    }
+]

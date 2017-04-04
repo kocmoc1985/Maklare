@@ -1,20 +1,9 @@
 module.exports = function JSONLoader(models) {
     this.models = models;
-    this.studentModel = this.models[0];
-    this.educationModel = this.models[1];
-    this.teacherModel = this.models[2];
-    this.bookingModel = this.models[3];
-    this.classModel = this.models[4];
 
-    this.studentsJson = require('./students.json');
-    this.educationsJson = require('./educations.json');
-    this.teachersJson = require('./teachers.json');
-    this.bookingsJson = require('./bookings.json');
-    this.classroomsJson = require('./classrooms.json');
-    this.loginsJson = require('./logins.json');
-    this.accessJson = require('./access.json');
-
-    this.jsons = [this.studentsJson, this.educationsJson, this.teachersJson, this.bookingsJson, this.classroomsJson, this.loginsJson, this.accessJson];
+    this.fastigheter = require('./fastigheter.json');
+    
+    this.jsons = [this.fastigheter];
 
 
     this.fillData = function () {
@@ -23,14 +12,6 @@ module.exports = function JSONLoader(models) {
             //
             createFillSchemas(function (err, resp) {
                 console.log(resp + " / " + err);
-                //
-                bindKeys(function () {
-
-                    bindCustom(function () {
-
-                    });
-
-                });
 
             });
         });
