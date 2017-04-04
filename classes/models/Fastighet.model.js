@@ -7,11 +7,18 @@ module.exports = function (mongoose) {
         area: {type: Number, required: true}, //{type:Boolean,default: false}
         rooms: {type: Number, required: true},
         hyra: {type: Number, required: false},
-        country: {type: String},
-        lan: {type: String},
-        town: {type: String},
-        street: {type: String},
-        zip: {type: String}
+        //
+        country: {type: String, required: true},
+        lan: {type: String, required: true},
+        town: {type: String, required: true},
+        street: {type: String, required: true},
+        zip: {type: String, required: true},
+        //
+        shortInfo: {type: String},
+        longInfo: {type: String},
+        images: [{type: String}],
+        //
+        broker: {type: mongoose.Schema.Types.ObjectId, ref: 'brokers'}
     },
             {collection: 'fastighet'} // sets the name of Collection in Database
     );
@@ -30,11 +37,18 @@ module.exports = function (mongoose) {
                 area: act.area,
                 rooms: act.rooms,
                 hyra: act.hyra,
-                country:act.country,
-                lan:act.lan,
-                town:act.town,
-                street:act.street,
-                zip:act.zip
+                //
+                country: act.country,
+                lan: act.lan,
+                town: act.town,
+                street: act.street,
+                zip: act.zip,
+                //
+                shortInfo: act.shortInfo,
+                longInfo: act.longInfo,
+                images: act.images,
+                //
+                broker: act.broker
             });
             //
             classroom.save(function (err, cat) {

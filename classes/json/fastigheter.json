@@ -9,6 +9,13 @@
         "lan": "Skåne",
         "town": "Trelleborg",
         "street": "Sveagatan 25",
-        "zip": "23145"
+        "zip": "23145",
+        "shortInfo": "This makes you happy",
+        "longInfo": "This is your dream",
+        "images": [
+            "main.jpg",
+            "second.jpg",
+            "plan.jpg"
+        ]
     }
 ]
