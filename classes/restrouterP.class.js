@@ -1,11 +1,12 @@
 'use strict';
 module.exports = class RestrouterP {
 
-    constructor(expressApp, _class, routerName, populate, populate2) {
+    constructor(expressApp, _class, routerName,checkRights, populate, populate2) {
 
         this.app = expressApp;
         this.populate = populate;
         this.populate2 = populate2;
+        this.CHECK_RIGHTS = checkRights;
         this._class = _class;
         this.accessModel = global.accessModel;
         // get the class name
@@ -391,6 +392,11 @@ module.exports = class RestrouterP {
     }
 
     rights(req, res, cb) {
+        if(this.CHECK_RIGHTS === false){
+            cb(true);
+            return;
+        }
+        //
         var that = this;
         //
         var method = req.method;

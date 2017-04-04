@@ -69,16 +69,13 @@ module.exports = class Server {
             //
 //            var popSeveral = [{path: '_education'}, {path: '_classroom'}];
             //Set up basic routes
-            new Restrouter(this.app, fastighetModel, "fastighet");
-            new Restrouter(this.app, brokersModel, "brokers");
-            
+            new Restrouter(this.app, fastighetModel, "fastighet", false, 'broker');
+            new Restrouter(this.app, brokersModel, "brokers", false);
+
 //            new Restrouter(this.app, studentModel, "student", '_education', '_teachers'); // populate deep
 //            new Restrouter(this.app, educationModel, "edu", '_teachers'); // populate one
 //            new Restrouter(this.app, teacherModel, "teach", '_educations');// populate one
 //            new Restrouter(this.app, bookingModel, "book", popSeveral);// populate several / two
-//            new Restrouter(this.app, classModel, "class");
-//            new Restrouter(this.app, loginModel, "shemalogin");
-//            new Restrouter(this.app, accessModel, "access");
             //
             //
             mongoose.connect('mongodb://' + mset.host + '/' + mset.database);
