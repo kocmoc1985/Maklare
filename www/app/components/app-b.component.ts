@@ -2,10 +2,7 @@
  
     @Component({
       selector: 'my-app-b',
-      template: `
-        <h1>{{titleA}}</h1>
-        <h2>{{titleB}}</h2>
-        `
+      templateUrl: 'app/components/template/appb.html'
     })
     
     export class AppBComponent {
