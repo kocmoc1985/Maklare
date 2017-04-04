@@ -17,7 +17,7 @@ var AppBComponent = (function () {
     AppBComponent = __decorate([
         core_1.Component({
             selector: 'my-app-b',
-            template: "\n        <h1>{{titleA}}</h1>\n        <h2>{{titleB}}</h2>\n        "
+            templateUrl: 'app/components/template/appb.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppBComponent);
