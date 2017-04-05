@@ -41,7 +41,6 @@ module.exports = class Server {
         global.sha1 = sha1;
         global.passwordSalt = "kocmoc";
 
-        var LoginhandlerRouter = require('./session/loginhandler.class');
         var Sessionhandler = require('./session/sessionhandler.class');
         var Mymiddleware = require('./moduls/MyMiddleware.class');
         var Restrouter = require('./restrouterP.class');
@@ -60,31 +59,23 @@ module.exports = class Server {
             //Implements some basic functionality, OBS! Must be placed here
             new Mymiddleware(this.app);
             //
-            var studentModel = require('./models/Student.model')(mongoose);
-            var educationModel = require('./models/Education.model')(mongoose);
-            var teacherModel = require('./models/Teacher.model')(mongoose);
-            var bookingModel = require('./models/Booking.model')(mongoose);
-            var classModel = require('./models/Classroom.model')(mongoose);
-            var loginModel = require('./session/models/login.model')(mongoose);
-            var accessModel = require('./models/Access.model')(mongoose);
-            global.accessModel = accessModel;
+            var fastighetModel = require('./models/Fastighet.model')(mongoose);
+            var brokersModel = require('./models/Brokers.model')(mongoose);
             //
-            var models = [studentModel, educationModel, teacherModel, bookingModel, classModel, loginModel, accessModel];
+            var models = [fastighetModel, brokersModel];
             //
             var JSONLoader = require('./json/jsonLoader.class')(models);
             //
             //
-            var pop2booking = [{path: '_education'}, {path: '_classroom'}];
+//            var popSeveral = [{path: '_education'}, {path: '_classroom'}];
             //Set up basic routes
-            new Restrouter(this.app, studentModel, "student", '_education', '_teachers'); // populate deep
-            new Restrouter(this.app, educationModel, "edu", '_teachers'); // populate one
-            new Restrouter(this.app, teacherModel, "teach", '_educations');// populate one
-            new Restrouter(this.app, bookingModel, "book", pop2booking);// populate several / two
-            new Restrouter(this.app, classModel, "class");
-            new Restrouter(this.app, loginModel, "shemalogin");
-            new Restrouter(this.app, accessModel, "access");
-            //
-            new LoginhandlerRouter(this.app, loginModel);
+            new Restrouter(this.app, fastighetModel, "fastighet", false, 'broker');
+            new Restrouter(this.app, brokersModel, "brokers", false);
+
+//            new Restrouter(this.app, studentModel, "student", '_education', '_teachers'); // populate deep
+//            new Restrouter(this.app, educationModel, "edu", '_teachers'); // populate one
+//            new Restrouter(this.app, teacherModel, "teach", '_educations');// populate one
+//            new Restrouter(this.app, bookingModel, "book", popSeveral);// populate several / two
             //
             //
             mongoose.connect('mongodb://' + mset.host + '/' + mset.database);
@@ -92,7 +83,7 @@ module.exports = class Server {
             //
             db.once('open', function () {
                 console.log("Connected to MongoDB");
-//                JSONLoader.fillData();
+                JSONLoader.fillData();
             });
         }//mset.connect
 

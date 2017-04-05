@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Test</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script onerror="linkNotFound(this)" src="js/external/jquery-1.9.1.js"></script>
@@ -15,21 +15,17 @@ and open the template in the editor.
 
         <script onerror="linkNotFound(this)" src="js/moduls/ViewPortWH.js"></script>
 
-        <script onerror="linkNotFound(this)" src="js/moduls/LocalStorer.class.js"></script>
         <script onerror="linkNotFound(this)" src="js/moduls/ScrollTopController.js"></script>
         <script onerror="linkNotFound(this)" src="js/moduls/MyCrudTable.class.js"></script>
         
-        <script onerror="linkNotFound(this)" src="js/moduls/JsonServerWriterRest.class.js"></script>
-
+        
         <script src="js/modals/MyModals.class.js"></script>
         <script src="js/modals/special/MyModalsCrud.class.js"></script>
         <script src="js/moduls/REST.class.js"></script>
-        <script src="js/test/main.js"></script>
         <script src="js/test/testrest.js"></script>
-
-        <script src="js/test/test_file_finder.js"></script>
-        <script src="js/test/testJsonReadWrite.js"></script>
         <script src="js/test/test_crud_table.js"></script>
+        
+        <script src="js/globals.js"></script>
 
         <!--link onerror="linkNotFound(this)" rel="stylesheet" href="css/slate-theme.min.css"-->
 
@@ -41,20 +37,12 @@ and open the template in the editor.
         <input id="get-options-btn" type="button" value="GET-OPTIONS">
         <input id="put-btn" type="button" value="PUT">
         <input id="delete-btn" type="button" value="DELETE"><br><br>
-        <input id="login-btn" type="button" value="LOGIN">
-        <input id="login-admin-btn" type="button" value="LOGIN-ADMIN">
-        <input id="logout-btn" type="button" value="LOGOUT"><br><br>
 
-        <input id="check-session-btn" type="button" value="CHECK SESSION">
-        <input id="check-session-status-btn" type="button" value="CHECK LOGIN"><br><br>
+        <input id="check-session-btn" type="button" value="CHECK SESSION"><br><br>
 
-        <input id="showCrudTable" type="button" value="CRUD TABLE"><br><br>
+        <input id="showCrudTableBrokers" type="button" value="CRUD TABLE BROKERS">
+        <input id="showCrudTableFastigheter" type="button" value="CRUD TABLE FASTIGHET"><br><br>
 
-        <input id="writeJsonToFile" type="button" value="WRITE JSON">
-        <input id="readJsonFromFile" type="button" value="READ JSON">
-        <input id="deleteJsonFile" type="button" value="DELETE JSON"><br><br>
-        
-        <input id="testFindFile" type="button" value="FIND FILE">
 
         <pre id="output" style="min-width:800px; min-height: 300px;margin-top: 20px;border: 1px solid black;"></pre>
     </body>

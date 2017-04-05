@@ -1,0 +1,40 @@
+[
+    {
+        "type": "villa",
+        "price": "150000",
+        "area": "25",
+        "rooms": "3",
+        "hyra": "0",
+        "country": "Sverige",
+        "lan": "Skåne",
+        "town": "Trelleborg",
+        "street": "Sveagatan 25",
+        "zip": "23145",
+        "shortInfo": "This makes you happy",
+        "longInfo": "This is your dream",
+        "images": [
+            "main.jpg",
+            "second.jpg",
+            "plan.jpg"
+        ]
+    },
+    {
+        "type": "bostadsrätt",
+        "price": "130000",
+        "area": "25",
+        "rooms": "1",
+        "hyra": "7800",
+        "country": "Sverige",
+        "lan": "Götaland",
+        "town": "Göteborg",
+        "street": "Storagatan 89",
+        "zip": "25489",
+        "shortInfo": "Your dream appartment",
+        "longInfo": "Just come and get me",
+        "images": [
+            "main.jpg",
+            "second.jpg",
+            "plan.jpg"
+        ]
+    }
+]

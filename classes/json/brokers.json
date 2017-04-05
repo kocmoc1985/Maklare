@@ -1,0 +1,23 @@
+[
+    {
+        "name": "John Doe",
+        "tel": "0709-551759",
+        "epost": "jdoe@brokers.com",
+        "shortInfo": "Happy Broker",
+        "image": "jdoe.jpg"
+    },
+    {
+        "name": "George Morge",
+        "tel": "0709-551758",
+        "epost": "gmor@brokers.com",
+        "shortInfo": "Very Happy Broker",
+        "image": "gmor.jpg"
+    },
+    {
+        "name": "Donald Trump",
+        "tel": "0709-551755",
+        "epost": "dtrump@brokers.com",
+        "shortInfo": "Real Broker",
+        "image": "dtrump.jpg"
+    }
+]
