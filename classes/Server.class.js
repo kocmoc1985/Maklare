@@ -8,6 +8,10 @@ module.exports = class Server {
         // add express to this
         this.app = m.express();
 
+        this.app.use(m.express.static('www'));
+        this.app.use(m.express.static('./'));
+        
+
         // run the setup method
         this.setup();
         this.main();
