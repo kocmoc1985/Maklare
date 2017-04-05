@@ -13,9 +13,12 @@ var platform_browser_1 = require('@angular/platform-browser');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./components/app.component');
-var app_b_component_1 = require('./components/app-b.component');
 var header_component_1 = require('./components/header.component');
 var startpage_component_1 = require('./components/startpage.component');
+var sell_component_1 = require('./components/sell.component');
+var buy_component_1 = require('./components/buy.component');
+var about_component_1 = require('./components/about.component');
+var app_routing_module_1 = require('./components/app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,16 +31,14 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                app_b_component_1.AppBComponent,
                 header_component_1.HeaderComponent,
-                startpage_component_1.StartpageComponent
+                startpage_component_1.StartpageComponent,
+                buy_component_1.BuyComponent,
+                sell_component_1.SellComponent,
+                about_component_1.AboutComponent,
+                app_routing_module_1.AppRoutingModule
             ],
-            bootstrap: [
-                app_component_1.AppComponent,
-                app_b_component_1.AppBComponent,
-                header_component_1.HeaderComponent,
-                startpage_component_1.StartpageComponent
-            ]
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
