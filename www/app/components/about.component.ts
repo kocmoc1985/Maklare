@@ -4,7 +4,8 @@ import {DataService} from '../components/services/data.service';
 
 @Component({
     selector: 'about',
-    templateUrl: 'app/components/template/about.html'
+    templateUrl: 'app/components/template/about.html',
+    styleUrls: ['app/components/css/about.css']
 })
 
 export class AboutComponent implements OnInit {
@@ -15,7 +16,7 @@ export class AboutComponent implements OnInit {
     ngOnInit(): void {
         this.DataService.getBrokers().then(
             (data) => {
-                console.log("Data", data);
+                console.log("Broker data:", data);
                 this.brokers = data;
             }
         );

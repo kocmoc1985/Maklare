@@ -3,21 +3,42 @@
         "name": "John Doe",
         "tel": "0709-551759",
         "epost": "jdoe@brokers.com",
-        "shortInfo": "Happy Broker",
-        "image": "jdoe.jpg"
+        "shortInfo": "Jag har jobbat som fastighetsmäklare i sydvästra Skåne i över 20 år. Nu har jag koncentrat mig till Lundabygden och dess omnejd. Som person är jag mycket energisk och ger aldrig upp, det finns alltid möjligheter. Fritiden ägnar jag åt mina barn och idrott. Gillar att hålla igång! Välkommen och kontakta mig.",
+        "image": "jdoe.jpeg"
     },
     {
         "name": "George Morge",
         "tel": "0709-551758",
         "epost": "gmor@brokers.com",
-        "shortInfo": "Very Happy Broker",
-        "image": "gmor.jpg"
+        "shortInfo": "Risebergaskolan, Videdalsskolan och Latinskolan är skolorna där jag tillbringade ungdomens dagar. Mitt liv i Malmö tog en vändning i början av 90-talet då hockeyfrisyren byttes ut. Nöjda kunder ger mig en stor kick och målsättningen är att även överträffa dina förväntningar. Välkommen och kontakta mig.",
+        "image": "gmor.jpeg"
     },
     {
         "name": "Donald Trump",
         "tel": "0709-551755",
         "epost": "dtrump@brokers.com",
-        "shortInfo": "Real Broker",
-        "image": "dtrump.jpg"
+        "shortInfo": "Det kan jag göra bättre… …var första tanken som slog mig då jag kom i kontakt med mäklaryrket i samband med min egen lägenhetsaffär i mitten av 90-talet. Jag arbetade då som båtvärdinna på en färja och var van vid att ge service i högt tempo till alla resenärer. Varje fastighet är unik och det är också varje människa! Jag har ett stort intresse för byggteknik och jag bor med min familj på en hästgård. Välkommen och kontakta mig.",
+        "image": "dtrump.jpeg"
+    },
+    {
+        "name": "Karl Knutsson",
+        "tel": "0709-551759",
+        "epost": "knutsson@brokers.com",
+        "shortInfo": "Jag har jobbat som fastighetsmäklare i sydvästra Skåne i över 20 år. Nu har jag koncentrat mig till Lundabygden och dess omnejd. Som person är jag mycket energisk och ger aldrig upp, det finns alltid möjligheter. Fritiden ägnar jag åt mina barn och idrott. Gillar att hålla igång! Välkommen och kontakta mig.",
+        "image": "knut.jpeg"
+    },
+    {
+        "name": "Art Vandelay",
+        "tel": "0709-551758",
+        "epost": "vandelay@brokers.com",
+        "shortInfo": "Risebergaskolan, Videdalsskolan och Latinskolan är skolorna där jag tillbringade ungdomens dagar. Mitt liv i Malmö tog en vändning i början av 90-talet då hockeyfrisyren byttes ut mot en mer arbetsgivarvänlig variant och taxibilen fick lämna företräde för mitt arbete som fastighetsmäklare. Nöjda kunder ger mig en stor kick och målsättningen är att även överträffa dina förväntningar. Välkommen och kontakta mig.",
+        "image": "vandelay.jpeg"
+    },
+    {
+        "name": "Bob Sacamento",
+        "tel": "0709-551755",
+        "epost": "dtrump@brokers.com",
+        "shortInfo": "Det kan jag göra bättre… …var första tanken som slog mig då jag kom i kontakt med mäklaryrket i samband med min egen lägenhetsaffär i mitten av 90-talet. Jag arbetade då som båtvärdinna på en färja och var van vid att ge service i högt tempo till alla resenärer. Varje fastighet är unik och det är också varje människa! Jag har ett stort intresse för byggteknik och jag bor med min familj på en hästgård. Välkommen och kontakta mig.",
+        "image": "sacamento.jpeg"
     }
 ]

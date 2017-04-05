@@ -17,14 +17,15 @@ var AboutComponent = (function () {
     AboutComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.DataService.getBrokers().then(function (data) {
-            console.log("Data", data);
+            console.log("Broker data:", data);
             _this.brokers = data;
         });
     };
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',
-            templateUrl: 'app/components/template/about.html'
+            templateUrl: 'app/components/template/about.html',
+            styleUrls: ['app/components/css/about.css']
         }), 
         __metadata('design:paramtypes', [data_service_1.DataService])
     ], AboutComponent);

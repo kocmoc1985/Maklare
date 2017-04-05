@@ -1,3 +1,16 @@
-<ul *ngFor="let broker of brokers">
-    <li>{{broker.name}}</li>
-</ul>
+<div class="container">
+    <div class="vertical-spacer-80"></div>
+    <div class="row">
+        <div class="col-4" *ngFor="let broker of brokers">
+            <div class="card card-margin-bottom">
+                <img class="card-img-top img-fluid" src="/images/brokers/{{broker.image}}" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">{{broker.name}}</h4>
+                    <p class="card-text">{{broker.shortInfo}}</p>
+                    <p class="card-text"><small>{{broker.tel}}</small></p>
+                    <a href="mailto:{{broker.epost}}"><small>{{broker.epost}}</small></a>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

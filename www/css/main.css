@@ -5,3 +5,19 @@ h1  {
 h2, h3, h4, p {
     font-family: 'Roboto', sans-serif;
 }
+
+.vertical-spacer-50 {
+    height: 50px;
+}
+
+.vertical-spacer-60 {
+    height: 60px;
+}
+
+.vertical-spacer-80 {
+    height: 80px;
+}
+
+.vertical-spacer-100 {
+    height: 100px;
+}
