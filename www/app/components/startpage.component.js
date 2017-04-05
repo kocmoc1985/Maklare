@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var StartpageComponent = (function () {
+    function StartpageComponent() {
     }
-    AppComponent = __decorate([
+    StartpageComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n        <app-header></app-header>\n        <router-outlet></router-outlet>\n    "
+            selector: 'app-startpage',
+            templateUrl: 'app/components/template/startpage.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], StartpageComponent);
+    return StartpageComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.StartpageComponent = StartpageComponent;
+//# sourceMappingURL=startpage.component.js.map

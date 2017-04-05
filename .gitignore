@@ -1,4 +1,6 @@
 /node_modules
 /www/css/all.css
 /www/node_modules
+/www/app/**.js
+/www/app/**.js.map
 nbproject
