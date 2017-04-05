@@ -40,13 +40,15 @@ var DataService = (function () {
             });
         });
     };
-    DataService.prototype.getBrokers = function () {
-        return new Promise(function (resolve, reject) {
-            BROKERS_REST.find(_find({ _fields: '', _sort: 'name', _skip: 0 }), function (data, textStatus, jqXHR) {
-                resolve(data);
-            });
-        });
-    };
+    // getBrokers() {
+    //     return new Promise(
+    //         (resolve, reject) => {
+    //             BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0}), (data: any, textStatus: any, jqXHR: any) => {
+    //                 resolve(data);
+    //             });
+    //         }
+    //     );
+    // }
     DataService.prototype._find = function (obj) {
         return "find/" + JSON.stringify(obj);
     };

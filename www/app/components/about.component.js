@@ -11,13 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var data_service_1 = require('../components/services/data.service');
 var AboutComponent = (function () {
-    function AboutComponent(DataService) {
-        this.DataService = DataService;
+    function AboutComponent(dataService) {
+        this.dataService = dataService;
     }
     AboutComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.DataService.getBrokers().then(function (data) {
-            console.log("Broker data:", data);
+        //Getting all brokers. separate method or not?
+        //Properties for calling get says, get all and sort after name
+        var properties = { _fields: '', _sort: 'name' };
+        //...and get it from the brokers REST entity
+        var rest = this.dataService.BROKERS_REST_NEW;
+        //Promise function call with the variables
+        this.dataService.get(rest, properties).then(function (data) {
             _this.brokers = data;
         });
     };
