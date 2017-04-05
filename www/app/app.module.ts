@@ -4,7 +4,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-
 import {HeaderComponent} from './components/header.component';
 import {ListSearchComponent} from './components/list-app.component'; // U13
 

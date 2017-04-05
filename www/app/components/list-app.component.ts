@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {DataService} from '../components/services/data.service';
 
 declare var FASTIGHETS_REST: any;
 declare function _find(param: any): any;
@@ -6,32 +7,40 @@ declare function _find(param: any): any;
 
 @Component({
     selector: 'list-app',
-    templateUrl: 'app/components/template/list-search.html'
+    templateUrl: 'app/components/template/list-search.html',
+    styleUrls: ['app/components/css/list-search.css'],
+    providers: [DataService]
 })
 
 
 export class ListSearchComponent implements OnInit {
-   
+    constructor(private dataService: DataService) {}
+
     fastigheter: any[];
 
     ngOnInit(): void {
-        var that = this;
-        /*FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), function (data:any, textStatus:any, jqXHR:any) {
-            that.fastigheter = data;
-            console.log("fastigheter", that.fastigheter);
-        });*/
     }
-    
-    getObjects(){
+
+    getObjects() {
         console.log("getObjects");
-        FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data:any, textStatus:any, jqXHR:any) => {
+        FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data: any, textStatus: any, jqXHR: any) => {
             console.log(data)
             this.fastigheter = data;
         });
-        
     }
 
-   
+    getObjectsB() {
+
+        this.dataService.getFastigheter().then(
+            (data) => {
+                console.log("Data", data);
+                this.fastigheter = data;
+            }
+        );
+
+    }
+
+
 }
 
 
