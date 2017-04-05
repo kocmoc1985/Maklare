@@ -4,7 +4,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
 
 import {AppComponent} from './components/app.component';
-import {AppBComponent} from './components/app-b.component';
 import {HeaderComponent} from './components/header.component';
 import {StartpageComponent} from './components/startpage.component';
 
@@ -16,15 +15,9 @@ import {StartpageComponent} from './components/startpage.component';
     ],
     declarations: [
         AppComponent,
-        AppBComponent,
         HeaderComponent,
         StartpageComponent
     ],
-    bootstrap: [
-        AppComponent,
-        AppBComponent,
-        HeaderComponent,
-        StartpageComponent
-    ]
+    bootstrap: [ AppComponent ]
 })
 export class AppModule {}
