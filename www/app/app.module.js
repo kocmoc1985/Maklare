@@ -14,6 +14,7 @@ var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./components/app.component');
 var app_b_component_1 = require('./components/app-b.component');
+var header_component_1 = require('./components/header.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,11 +27,13 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                app_b_component_1.AppBComponent
+                app_b_component_1.AppBComponent,
+                header_component_1.HeaderComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent,
-                app_b_component_1.AppBComponent
+                app_b_component_1.AppBComponent,
+                header_component_1.HeaderComponent
             ]
         }), 
         __metadata('design:paramtypes', [])
