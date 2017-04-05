@@ -5,8 +5,7 @@ import {RestEntity} from "./rest.class";
 @Injectable()
 export class RestService {
 
-    constructor(private http: Http) {
-    }
+    constructor(private http: Http) {}
 
     newRestEntity(entityName: string) {
         let restEntity = new RestEntity(entityName);

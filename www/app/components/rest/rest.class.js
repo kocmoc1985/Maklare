@@ -6,12 +6,13 @@ require('rxjs/add/observable/throw');
 var RestEntity = (function () {
     function RestEntity(entityName) {
         // Mocking with json
-        this.baseUrl = './json/' + entityName + '.json';
+        //    this.baseUrl = './json/' + entityName + '.json';
         // Real backend/REST api
-        // this.baseUrl = '/rest/' + entityName + '/';
+        this.baseUrl = '/rest/' + entityName;
     }
     RestEntity.prototype.httpRequest = function (type, idOrQuery, requestBody) {
         var url = this.baseUrl + '/' + idOrQuery;
+        console.log("REST_URL:", url);
         // remove trailing slahses
         while (url.substr(-1) == '/') {
             url = url.substring(0, url.length - 1);

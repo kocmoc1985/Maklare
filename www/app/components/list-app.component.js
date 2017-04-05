@@ -10,25 +10,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var data_service_1 = require('../components/services/data.service');
+//declare var FASTIGHETS_REST: any;
+//declare function _find(param: any): any;
 var ListSearchComponent = (function () {
     function ListSearchComponent(dataService) {
         this.dataService = dataService;
     }
-    ListSearchComponent.prototype.ngOnInit = function () {
-    };
-    ListSearchComponent.prototype.getObjects = function () {
+    ListSearchComponent.prototype.ngOnInit = function () { };
+    ListSearchComponent.prototype.getFastigheter = function () {
         var _this = this;
-        console.log("getObjects");
-        FASTIGHETS_REST.find(_find({ _fields: '', _sort: 'name', _skip: 0, _limit: 3 }), function (data, textStatus, jqXHR) {
-            console.log(data);
-            _this.fastigheter = data;
+        // Properties examples:
+        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
+        // {area:25}
+        var properties = { area: 25 };
+        var rest = this.dataService.FASTIGHET_REST_NEW;
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(function (data) {
+            _this.objects = data;
         });
     };
-    ListSearchComponent.prototype.getObjectsB = function () {
+    ListSearchComponent.prototype.getBrokers = function () {
         var _this = this;
-        this.dataService.getFastigheterOld().then(function (data) {
-            console.log("Data", data);
-            _this.fastigheter = data;
+        // Properties examples:
+        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
+        // {name:"John Doe"}
+        var properties = { _fields: '', _sort: 'name', _skip: 0, _limit: 3 };
+        var rest = this.dataService.BROKERS_REST_NEW;
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(function (data) {
+            _this.objects = data;
         });
     };
     ListSearchComponent = __decorate([

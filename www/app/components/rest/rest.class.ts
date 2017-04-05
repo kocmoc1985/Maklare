@@ -11,14 +11,15 @@ export class RestEntity {
 
   constructor(entityName: string){
     // Mocking with json
-    this.baseUrl = './json/' + entityName + '.json';
+//    this.baseUrl = './json/' + entityName + '.json';
 
     // Real backend/REST api
-    // this.baseUrl = '/rest/' + entityName + '/';
+     this.baseUrl = '/rest/' + entityName;
   }
 
   httpRequest(type:string, idOrQuery:string, requestBody:any){
     let url:string = this.baseUrl +'/' + idOrQuery;
+    console.log("REST_URL:",url);
     // remove trailing slahses
     while(url.substr(-1) == '/'){url = url.substring(0,url.length-1);}
     // make request
