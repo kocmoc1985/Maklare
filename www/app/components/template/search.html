@@ -1,0 +1,12 @@
+<div class="offset-sm-3 col-sm-6">
+	<div class="card">
+		<div class="card-block">
+			<div class="input-group">
+				<input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Sök efter område, stad eller adress" type="text" />
+				<span class="input-group-btn">
+					<button (click)="search(searchBox.value)" class="btn btn-secondary" type="button">Sök</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>

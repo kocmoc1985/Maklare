@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+
 import {DataService} from '../components/services/data.service';
 
 //declare var FASTIGHETS_REST: any;

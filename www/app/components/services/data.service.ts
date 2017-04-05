@@ -4,6 +4,9 @@ import {RestService} from '../rest/rest.service';
 
 //This one for use with "OLD" REST
 declare var FASTIGHETS_REST: any;
+declare var BROKERS_REST: any;
+
+declare function _find(param: any): any;
 
 @Injectable()
 export class DataService {
@@ -44,9 +47,21 @@ export class DataService {
         );
     }
 
-    _find(obj: any) {
-        return "find/" + JSON.stringify(obj);
+    getBrokers() {
+
+        return new Promise(
+            (resolve, reject) => {
+
+                BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data: any, textStatus: any, jqXHR: any) => {
+                    resolve(data);
+                });
+            }
+        );
     }
+    
+    _find(obj: any) {
+      return "find/" + JSON.stringify(obj);
+}
 
 
 }
