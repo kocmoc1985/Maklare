@@ -15,8 +15,7 @@ var HeaderComponent = (function () {
     HeaderComponent = __decorate([
         core_1.Component({
             selector: 'app-header',
-            templateUrl: 'app/components/template/header.html',
-            styles: ["\n        h1 {\n            font-family: 'Pinyon Script', cursive;\n        },\n        h2 {\n            font-family: 'Roboto', sans-serif;\n        }\n        "]
+            templateUrl: 'app/components/template/header.html'
         }), 
         __metadata('design:paramtypes', [])
     ], HeaderComponent);
