@@ -3,10 +3,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {HttpModule} from '@angular/http';
 
-// Root component with it's header and footer
+
+
 import {AppComponent} from './components/app.component';
-import {HeaderComponent} from './components/header.component';
 import {FooterComponent} from './components/footer.component';
 
 // Pages
@@ -17,10 +18,11 @@ import {AboutComponent} from './components/about.component';
 
 // Components
 import {ListSearchComponent} from './components/list-app.component';
+import {HeaderComponent} from './components/header.component';
 import {SearchComponent} from './components/search.component';
 
 // Services
-import {DataService} from './components/services/data.service'
+import {RestService} from './components/rest/rest.service';
 
 // for separate routing file
 // import { AppRoutingModule } from './components/app-routing.module';
@@ -29,11 +31,13 @@ import {DataService} from './components/services/data.service'
     imports: [
         BrowserModule,
         FormsModule,
+        HttpModule,
+        NgbModule,
         RouterModule.forRoot([
-            { path: '', component: StartpageComponent },
-            { path: 'buy', component: BuyComponent },
-            { path: 'sell',  component: SellComponent },
-            { path: 'about', component: AboutComponent }
+            {path: '', component: StartpageComponent},
+            {path: 'buy', component: BuyComponent},
+            {path: 'sell', component: SellComponent},
+            {path: 'about', component: AboutComponent}
         ])
     ],
     declarations: [
@@ -51,6 +55,10 @@ import {DataService} from './components/services/data.service'
     ],
     bootstrap: [
         AppComponent
+    ],
+    
+    providers:[
+        RestService
     ]
 })
 export class AppModule {}

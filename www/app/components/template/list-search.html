@@ -1,9 +1,10 @@
 <div class="row" style="margin:20px">
-    
-    <input type="button" (click)="getObjectsB()" style="margin-left: 20px" value="TEST">
-    
-    <div class="col-sm-4" *ngFor="let object of fastigheter" >
+
+    <input type="button" (click)="getBrokers()" style="margin-left: 20px" value="TEST">
+
+    <div class="col-sm-4" *ngFor="let object of objects" >
          <p>{{object.zip}}</p>
+         <p>{{object.name}}</p>
     </div>
-    
+
 </div>

@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 
 import {DataService} from '../components/services/data.service';
 
-declare var FASTIGHETS_REST: any;
-declare function _find(param: any): any;
-
+//declare var FASTIGHETS_REST: any;
+//declare function _find(param: any): any;
 
 @Component({
     selector: 'list-app',
@@ -13,34 +12,43 @@ declare function _find(param: any): any;
     providers: [DataService]
 })
 
-
 export class ListSearchComponent implements OnInit {
     constructor(private dataService: DataService) {}
 
-    fastigheter: any[];
+    objects: any[];
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
-    getObjects() {
-        console.log("getObjects");
-        FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data: any, textStatus: any, jqXHR: any) => {
-            console.log(data)
-            this.fastigheter = data;
-        });
-    }
-
-    getObjectsB() {
-
-        this.dataService.getFastigheter().then(
+    getFastigheter() {
+        // Properties examples:
+        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
+        // {area:25}
+        let properties = {area:25};
+        let rest = this.dataService.FASTIGHET_REST_NEW;
+        
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(
             (data) => {
-                console.log("Data", data);
-                this.fastigheter = data;
+                this.objects = data;
             }
         );
-
     }
-
+    
+    
+    getBrokers() {
+        // Properties examples:
+        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
+        // {name:"John Doe"}
+        let properties = {_fields: '', _sort: 'name', _skip: 0, _limit: 3};
+        let rest = this.dataService.BROKERS_REST_NEW;
+        
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(
+            (data) => {
+                this.objects = data;
+            }
+        );
+    }
 
 }
 
