@@ -10,15 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var header_component_1 = require('./components/header.component');
 var list_app_component_1 = require('./components/list-app.component'); // U13
+var app_component_1 = require('./components/app.component');
 var startpage_component_1 = require('./components/startpage.component');
 var sell_component_1 = require('./components/sell.component');
 var buy_component_1 = require('./components/buy.component');
 var about_component_1 = require('./components/about.component');
+// for separate routing file
+// import { AppRoutingModule } from './components/app-routing.module';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,10 +29,15 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                ng_bootstrap_1.NgbModule.forRoot(),
-                router_1.RouterModule
+                router_1.RouterModule.forRoot([
+                    { path: '', component: startpage_component_1.StartpageComponent },
+                    { path: 'buy', component: buy_component_1.BuyComponent },
+                    { path: 'sell', component: sell_component_1.SellComponent },
+                    { path: 'about', component: about_component_1.AboutComponent }
+                ])
             ],
             declarations: [
+                app_component_1.AppComponent,
                 list_app_component_1.ListSearchComponent,
                 header_component_1.HeaderComponent,
                 startpage_component_1.StartpageComponent,
@@ -39,7 +46,7 @@ var AppModule = (function () {
                 about_component_1.AboutComponent
             ],
             bootstrap: [
-                list_app_component_1.ListSearchComponent
+                app_component_1.AppComponent
             ]
         }), 
         __metadata('design:paramtypes', [])
