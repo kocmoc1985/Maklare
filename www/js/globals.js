@@ -19,3 +19,7 @@ function EXAMPLE_ONLY() {
     BROKERS_REST.find(_find({name: 'John Doe'}), function (data, textStatus, jqXHR) {
     });
 }
+
+function _find(obj) {
+    return "find/" + JSON.stringify(obj);
+}
