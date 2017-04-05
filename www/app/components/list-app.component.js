@@ -9,15 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('../components/services/data.service');
 var ListSearchComponent = (function () {
-    function ListSearchComponent() {
+    function ListSearchComponent(dataService) {
+        this.dataService = dataService;
     }
     ListSearchComponent.prototype.ngOnInit = function () {
-        var that = this;
-        /*FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), function (data:any, textStatus:any, jqXHR:any) {
-            that.fastigheter = data;
-            console.log("fastigheter", that.fastigheter);
-        });*/
     };
     ListSearchComponent.prototype.getObjects = function () {
         var _this = this;
@@ -27,12 +24,21 @@ var ListSearchComponent = (function () {
             _this.fastigheter = data;
         });
     };
+    ListSearchComponent.prototype.getObjectsB = function () {
+        var _this = this;
+        this.dataService.getFastigheterOld().then(function (data) {
+            console.log("Data", data);
+            _this.fastigheter = data;
+        });
+    };
     ListSearchComponent = __decorate([
         core_1.Component({
             selector: 'list-app',
-            templateUrl: 'app/components/template/list-search.html'
+            templateUrl: 'app/components/template/list-search.html',
+            styleUrls: ['app/components/css/list-search.css'],
+            providers: [data_service_1.DataService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], ListSearchComponent);
     return ListSearchComponent;
 }());

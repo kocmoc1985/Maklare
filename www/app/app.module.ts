@@ -3,9 +3,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {HttpModule} from '@angular/http';
 
 import {HeaderComponent} from './components/header.component';
 import {ListSearchComponent} from './components/list-app.component'; // U13
+import {RestService} from './components/rest/rest.service';
 
 import {AppComponent} from './components/app.component';
 import {StartpageComponent} from './components/startpage.component';
@@ -20,11 +22,13 @@ import {AboutComponent} from './components/about.component';
     imports: [
         BrowserModule,
         FormsModule,
+        HttpModule,
+        NgbModule,
         RouterModule.forRoot([
-            { path: '', component: StartpageComponent },
-            { path: 'buy', component: BuyComponent },
-            { path: 'sell',  component: SellComponent },
-            { path: 'about', component: AboutComponent } 
+            {path: '', component: StartpageComponent},
+            {path: 'buy', component: BuyComponent},
+            {path: 'sell', component: SellComponent},
+            {path: 'about', component: AboutComponent}
         ])
     ],
     declarations: [
@@ -40,6 +44,10 @@ import {AboutComponent} from './components/about.component';
     ],
     bootstrap: [
         AppComponent
+    ],
+    
+    providers:[
+        RestService
     ]
 })
 export class AppModule {}

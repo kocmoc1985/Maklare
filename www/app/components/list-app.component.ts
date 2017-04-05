@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../components/services/data.service';
+import {RestService} from '../components/rest/rest.service';
 
 declare var FASTIGHETS_REST: any;
 declare function _find(param: any): any;
@@ -31,7 +32,7 @@ export class ListSearchComponent implements OnInit {
 
     getObjectsB() {
 
-        this.dataService.getFastigheter().then(
+        this.dataService.getFastigheterOld().then(
             (data) => {
                 console.log("Data", data);
                 this.fastigheter = data;

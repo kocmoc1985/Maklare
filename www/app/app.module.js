@@ -10,10 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
+var http_1 = require('@angular/http');
 var header_component_1 = require('./components/header.component');
 var list_app_component_1 = require('./components/list-app.component'); // U13
+var rest_service_1 = require('./components/rest/rest.service');
 var app_component_1 = require('./components/app.component');
 var startpage_component_1 = require('./components/startpage.component');
 var sell_component_1 = require('./components/sell.component');
@@ -29,6 +32,8 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
+                ng_bootstrap_1.NgbModule,
                 router_1.RouterModule.forRoot([
                     { path: '', component: startpage_component_1.StartpageComponent },
                     { path: 'buy', component: buy_component_1.BuyComponent },
@@ -47,6 +52,9 @@ var AppModule = (function () {
             ],
             bootstrap: [
                 app_component_1.AppComponent
+            ],
+            providers: [
+                rest_service_1.RestService
             ]
         }), 
         __metadata('design:paramtypes', [])
