@@ -8,6 +8,7 @@ import {RouterModule} from '@angular/router';
 import {HeaderComponent} from './components/header.component';
 import {ListSearchComponent} from './components/list-app.component'; // U13
 
+import {AppComponent} from './components/app.component';
 import {StartpageComponent} from './components/startpage.component';
 import {SellComponent} from './components/sell.component';
 import {BuyComponent} from './components/buy.component';
@@ -28,6 +29,7 @@ import {AboutComponent} from './components/about.component';
         ])
     ],
     declarations: [
+        AppComponent,
         ListSearchComponent,
         HeaderComponent,
         StartpageComponent,
@@ -38,7 +40,7 @@ import {AboutComponent} from './components/about.component';
         // AppRoutingModule
     ],
     bootstrap: [
-        ListSearchComponent
+        AppComponent
     ]
 })
 export class AppModule {}

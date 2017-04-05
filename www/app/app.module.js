@@ -12,14 +12,15 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
-var app_component_1 = require('./components/app.component');
 var header_component_1 = require('./components/header.component');
+var list_app_component_1 = require('./components/list-app.component'); // U13
+var app_component_1 = require('./components/app.component');
 var startpage_component_1 = require('./components/startpage.component');
 var sell_component_1 = require('./components/sell.component');
 var buy_component_1 = require('./components/buy.component');
 var about_component_1 = require('./components/about.component');
 // for separate routing file
-// import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './components/app-routing.module';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,13 +38,16 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
+                list_app_component_1.ListSearchComponent,
                 header_component_1.HeaderComponent,
                 startpage_component_1.StartpageComponent,
                 buy_component_1.BuyComponent,
                 sell_component_1.SellComponent,
-                about_component_1.AboutComponent,
+                about_component_1.AboutComponent
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [
+                app_component_1.AppComponent
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
