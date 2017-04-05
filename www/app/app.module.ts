@@ -13,6 +13,7 @@ import {StartpageComponent} from './components/startpage.component';
 import {SellComponent} from './components/sell.component';
 import {BuyComponent} from './components/buy.component';
 import {AboutComponent} from './components/about.component';
+import {SearchComponent} from './components/search.component';
 
 // for separate routing file
 // import { AppRoutingModule } from './components/app-routing.module';
@@ -25,7 +26,7 @@ import {AboutComponent} from './components/about.component';
             { path: '', component: StartpageComponent },
             { path: 'buy', component: BuyComponent },
             { path: 'sell',  component: SellComponent },
-            { path: 'about', component: AboutComponent } 
+            { path: 'about', component: AboutComponent }
         ])
     ],
     declarations: [
@@ -35,7 +36,8 @@ import {AboutComponent} from './components/about.component';
         StartpageComponent,
         BuyComponent,
         SellComponent,
-        AboutComponent
+        AboutComponent,
+        SearchComponent
         // for separate routing file
         // AppRoutingModule
     ],
