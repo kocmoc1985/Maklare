@@ -4,15 +4,19 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 
-
-import {HeaderComponent} from './components/header.component';
-import {ListSearchComponent} from './components/list-app.component'; // U13
-
+// Root component with it's header and footer
 import {AppComponent} from './components/app.component';
+import {HeaderComponent} from './components/header.component';
+import {FooterComponent} from './components/footer.component';
+
+// Pages
 import {StartpageComponent} from './components/startpage.component';
-import {SellComponent} from './components/sell.component';
 import {BuyComponent} from './components/buy.component';
+import {SellComponent} from './components/sell.component';
 import {AboutComponent} from './components/about.component';
+
+// Components
+import {ListSearchComponent} from './components/list-app.component';
 import {SearchComponent} from './components/search.component';
 
 // for separate routing file
@@ -33,6 +37,7 @@ import {SearchComponent} from './components/search.component';
         AppComponent,
         ListSearchComponent,
         HeaderComponent,
+        FooterComponent,
         StartpageComponent,
         BuyComponent,
         SellComponent,
