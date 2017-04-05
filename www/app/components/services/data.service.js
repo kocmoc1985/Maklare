@@ -42,7 +42,7 @@ var DataService = (function () {
     };
     DataService.prototype.getBrokers = function () {
         return new Promise(function (resolve, reject) {
-            BROKERS_REST.find(_find({ _fields: '', _sort: 'name', _skip: 0, _limit: 3 }), function (data, textStatus, jqXHR) {
+            BROKERS_REST.find(_find({ _fields: '', _sort: 'name', _skip: 0 }), function (data, textStatus, jqXHR) {
                 resolve(data);
             });
         });

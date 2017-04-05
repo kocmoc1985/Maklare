@@ -52,7 +52,7 @@ export class DataService {
         return new Promise(
             (resolve, reject) => {
 
-                BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data: any, textStatus: any, jqXHR: any) => {
+                BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0}), (data: any, textStatus: any, jqXHR: any) => {
                     resolve(data);
                 });
             }
