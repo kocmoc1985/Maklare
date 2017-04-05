@@ -60,23 +60,22 @@ module.exports = class Server {
             new Mymiddleware(this.app);
             //
             var fastighetModel = require('./models/Fastighet.model')(mongoose);
-
+            var brokersModel = require('./models/Brokers.model')(mongoose);
             //
-            var models = [fastighetModel];
+            var models = [fastighetModel, brokersModel];
             //
             var JSONLoader = require('./json/jsonLoader.class')(models);
             //
             //
-//            var pop2booking = [{path: '_education'}, {path: '_classroom'}];
+//            var popSeveral = [{path: '_education'}, {path: '_classroom'}];
             //Set up basic routes
-            new Restrouter(this.app, fastighetModel, "fastighet");
+            new Restrouter(this.app, fastighetModel, "fastighet", false, 'broker');
+            new Restrouter(this.app, brokersModel, "brokers", false);
+
 //            new Restrouter(this.app, studentModel, "student", '_education', '_teachers'); // populate deep
 //            new Restrouter(this.app, educationModel, "edu", '_teachers'); // populate one
 //            new Restrouter(this.app, teacherModel, "teach", '_educations');// populate one
-//            new Restrouter(this.app, bookingModel, "book", pop2booking);// populate several / two
-//            new Restrouter(this.app, classModel, "class");
-//            new Restrouter(this.app, loginModel, "shemalogin");
-//            new Restrouter(this.app, accessModel, "access");
+//            new Restrouter(this.app, bookingModel, "book", popSeveral);// populate several / two
             //
             //
             mongoose.connect('mongodb://' + mset.host + '/' + mset.database);

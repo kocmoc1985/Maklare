@@ -1,9 +1,13 @@
 module.exports = function JSONLoader(models) {
     this.models = models;
 
+    this.fastighetsModel = models[0];
+    this.brokersModel = models[1];
+
     this.fastigheter = require('./fastigheter.json');
-    
-    this.jsons = [this.fastigheter];
+    this.brokers = require('./brokers.json');
+
+    this.jsons = [this.fastigheter, this.brokers];
 
 
     this.fillData = function () {
@@ -12,6 +16,10 @@ module.exports = function JSONLoader(models) {
             //
             createFillSchemas(function (err, resp) {
                 console.log(resp + " / " + err);
+
+                bindKeys(function (resp) {
+                    console.log(resp);
+                });
 
             });
         });
@@ -55,77 +63,20 @@ module.exports = function JSONLoader(models) {
 
     function bindKeys(cb) {
         var me = this;
-        //bind education to students
-        this.educationModel.find({}, function (err, educations) {
-            me.studentModel.find({}, function (err, studs) {
-                studs.forEach(function (stud) {
-                    var randomEdu = getRandom(educations);
-                    stud._education = randomEdu._id;
-                    stud.save(function (err, doc) {
-                        console.log("A:_id set for: " + stud.name + " : " + randomEdu._id);
-
+        //bind brokers to fastigheter
+        this.brokersModel.find({}, function (err, brokers) {
+            me.fastighetsModel.find({}, function (err, fastigheter) {
+                fastigheter.forEach(function (fastighet) {
+                    var randomBroker = getRandom(brokers);
+                    fastighet.broker = randomBroker._id;
+                    fastighet.save(function (err, doc) {
+                        console.log("A:_id set for: " + fastighet.zip + " : " + randomBroker._id);
                     });
 
                 });
             });
-            cb();
+            cb("Bind keys done");
         });
-
-
-
-
-
-        //bind teachers to educations
-//        for(var i = 0; i < 2; i++){
-//            this.teacherModel.find({}, function (err, teachers) {
-//              me.educationModel.find({}, function (err, educations) {
-//                  educations.forEach(function (edu) {
-//                      var randomTeacher = getRandom(teachers);
-//                      edu._teachers.push(randomTeacher._id);
-//                      edu.save();
-//                      console.log("B:_id set for: " + edu.name + " : " + randomTeacher._id);
-//                  });
-//              });
-//            });
-//        }
-
-
-        //bind educations to teachers 
-//        this.educationModel.find({}, function (err, educations) {
-//            me.teacherModel.find({}, function (err, teachers) {
-//                teachers.forEach(function (teacher) {
-//                    var randomEdu = getRandom(educations);
-//                    teacher._educations.push(randomEdu._id);
-//                    teacher.save();
-//                    console.log("C:_id set for: " + teacher.name + " : " + randomEdu._id);
-//                });
-//            });
-//        });
-
-        //bind educations to booking 
-//        this.educationModel.find({}, function (err, educations) {
-//            me.bookingModel.find({}, function (err, bookings) {
-//                bookings.forEach(function (booking) {
-//                    var randomEdu = getRandom(educations);
-//                    booking._education = randomEdu._id;
-//                    booking.save();
-//                    console.log("D:_id set for, booking: " + booking.name + " : " + randomEdu._id);
-//                });
-//            });
-//        });
-
-        //bind classrooms to booking 
-//        this.classModel.find({}, function (err, classrooms) {
-//            me.bookingModel.find({}, function (err, bookings) {
-//                bookings.forEach(function (booking) {
-//                    var randomClass = getRandom(classrooms);
-//                    booking._classroom = randomClass._id;
-//                    booking.save();
-//                    console.log("E:_id set for, booking: " + booking.name + " : " + randomClass._id);
-//                });
-//            });
-//        });
-
     }
 
     function getRandom(arr) {
