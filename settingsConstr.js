@@ -27,7 +27,7 @@ module.exports = function () {
             }
         },
         MONGOOSE: {
-            connect: 'false',
+            connect: 'true',
             host: 'localhost',
             database: 'maklare',
             user: '',

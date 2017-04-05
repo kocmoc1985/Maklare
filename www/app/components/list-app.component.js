@@ -11,11 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ListSearchComponent = (function () {
     function ListSearchComponent() {
-        this.invoke = new core_1.EventEmitter();
     }
-    ListSearchComponent.prototype.ngAfterContentInit = function () {
-        this.invoke.emit(this.fastigheter);
-    };
     ListSearchComponent.prototype.ngOnInit = function () {
         var that = this;
         /*FASTIGHETS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), function (data:any, textStatus:any, jqXHR:any) {
@@ -31,16 +27,11 @@ var ListSearchComponent = (function () {
             _this.fastigheter = data;
         });
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], ListSearchComponent.prototype, "invoke", void 0);
     ListSearchComponent = __decorate([
         core_1.Component({
             selector: 'list-app',
             templateUrl: 'app/components/template/list-search.html'
-        }),
-        core_1.Directive({ selector: '[invoke]' }), 
+        }), 
         __metadata('design:paramtypes', [])
     ], ListSearchComponent);
     return ListSearchComponent;

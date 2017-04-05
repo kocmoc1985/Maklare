@@ -1,4 +1,4 @@
-import {Component, OnInit, Directive, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 declare var FASTIGHETS_REST: any;
 declare function _find(param: any): any;
@@ -9,13 +9,9 @@ declare function _find(param: any): any;
     templateUrl: 'app/components/template/list-search.html'
 })
 
-@Directive({selector: '[invoke]'})
-export class ListSearchComponent implements OnInit {
-    @Output() invoke: EventEmitter<any> = new EventEmitter<any>();
-    ngAfterContentInit() {
-        this.invoke.emit(this.fastigheter);
-    }
 
+export class ListSearchComponent implements OnInit {
+   
     fastigheter: any[];
 
     ngOnInit(): void {

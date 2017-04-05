@@ -12,28 +12,33 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
-var app_component_1 = require('./components/app.component'); // test
-var app_b_component_1 = require('./components/app-b.component'); // test
+var router_1 = require('@angular/router');
+var header_component_1 = require('./components/header.component');
 var list_app_component_1 = require('./components/list-app.component'); // U13
+var startpage_component_1 = require('./components/startpage.component');
+var sell_component_1 = require('./components/sell.component');
+var buy_component_1 = require('./components/buy.component');
+var about_component_1 = require('./components/about.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        // U13
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                ng_bootstrap_1.NgbModule.forRoot()
+                ng_bootstrap_1.NgbModule.forRoot(),
+                router_1.RouterModule
             ],
             declarations: [
-                app_component_1.AppComponent,
-                app_b_component_1.AppBComponent,
-                list_app_component_1.ListSearchComponent
+                list_app_component_1.ListSearchComponent,
+                header_component_1.HeaderComponent,
+                startpage_component_1.StartpageComponent,
+                buy_component_1.BuyComponent,
+                sell_component_1.SellComponent,
+                about_component_1.AboutComponent
             ],
             bootstrap: [
-                app_component_1.AppComponent,
-                app_b_component_1.AppBComponent,
                 list_app_component_1.ListSearchComponent
             ]
         }), 
