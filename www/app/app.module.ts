@@ -12,14 +12,20 @@ import {SellComponent} from './components/sell.component';
 import {BuyComponent} from './components/buy.component';
 import {AboutComponent} from './components/about.component';
 
-import { AppRoutingModule } from './components/app-routing.module';
+// for separate routing file
+// import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        NgbModule.forRoot()
+        RouterModule.forRoot([
+            { path: '', component: StartpageComponent },
+            { path: 'buy', component: BuyComponent },
+            { path: 'sell',  component: SellComponent },
+            { path: 'about', component: AboutComponent } 
+        ])
     ],
     declarations: [
         AppComponent,
@@ -28,7 +34,8 @@ import { AppRoutingModule } from './components/app-routing.module';
         BuyComponent,
         SellComponent,
         AboutComponent,
-        AppRoutingModule
+        // for separate routing file
+        // AppRoutingModule
     ],
     bootstrap: [ AppComponent ]
 })
