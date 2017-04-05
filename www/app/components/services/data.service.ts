@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 
 declare var FASTIGHETS_REST: any;
+declare var BROKERS_REST: any;
+
 declare function _find(param: any): any;
 
 @Injectable()
@@ -23,6 +25,14 @@ export class DataService {
 
     getBrokers() {
 
+        return new Promise(
+            (resolve, reject) => {
+
+                BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0, _limit: 3}), (data: any, textStatus: any, jqXHR: any) => {
+                    resolve(data);
+                });
+            }
+        );
     }
 
 }

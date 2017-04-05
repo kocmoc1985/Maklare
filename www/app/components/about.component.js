@@ -9,15 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('../components/services/data.service');
 var AboutComponent = (function () {
-    function AboutComponent() {
+    function AboutComponent(DataService) {
+        this.DataService = DataService;
     }
+    AboutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.DataService.getBrokers().then(function (data) {
+            console.log("Data", data);
+            _this.brokers = data;
+        });
+    };
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',
             templateUrl: 'app/components/template/about.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], AboutComponent);
     return AboutComponent;
 }());

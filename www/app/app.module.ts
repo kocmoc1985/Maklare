@@ -19,6 +19,9 @@ import {AboutComponent} from './components/about.component';
 import {ListSearchComponent} from './components/list-app.component';
 import {SearchComponent} from './components/search.component';
 
+// Services
+import {DataService} from './components/services/data.service'
+
 // for separate routing file
 // import { AppRoutingModule } from './components/app-routing.module';
 
