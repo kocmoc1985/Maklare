@@ -18,7 +18,7 @@ import {StartpageComponent} from './components/startpage.component';
         AppComponent,
         AppBComponent,
         HeaderComponent,
-        StartpageComponen
+        StartpageComponent
     ],
     bootstrap: [
         AppComponent,

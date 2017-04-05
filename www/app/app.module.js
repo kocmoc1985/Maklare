@@ -30,7 +30,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 app_b_component_1.AppBComponent,
                 header_component_1.HeaderComponent,
-                StartpageComponen
+                startpage_component_1.StartpageComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent,
