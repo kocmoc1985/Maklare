@@ -1,0 +1,9 @@
+.jumbotron {
+    background: url("images/lite-1.jpg") no-repeat center center fixed;
+    padding: 124px 0;
+    background-size: cover;
+}
+
+.article{
+    padding-bottom: 32px;
+}

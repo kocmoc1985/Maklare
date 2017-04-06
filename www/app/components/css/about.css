@@ -1,3 +1,9 @@
+.jumbotron {
+    background: url("images/lite-3.jpg") no-repeat center center fixed;
+    padding: 124px 0;
+    background-size: cover;
+}
+
 .card-margin-bottom {
     margin-bottom: 40px;
 }
