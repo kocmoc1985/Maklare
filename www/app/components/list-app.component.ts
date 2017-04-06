@@ -15,7 +15,8 @@ import {DataService} from '../components/services/data.service';
 export class ListSearchComponent implements OnInit {
     constructor(private dataService: DataService) {}
 
-    objects: any[];
+    private objects: any[];
+    private images: any[];
 
     ngOnInit(): void {}
 
@@ -23,9 +24,9 @@ export class ListSearchComponent implements OnInit {
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
         // {area:25}
-        let properties = {area:25};
+        let properties = {_fields: '', _sort: 'name', _skip: 0, _limit: 3};
         let rest = this.dataService.FASTIGHET_REST_NEW;
-        
+
         //Calling a Promise function
         this.dataService.get(rest, properties).then(
             (data) => {
@@ -33,19 +34,21 @@ export class ListSearchComponent implements OnInit {
             }
         );
     }
-    
-    
+
+
     getBrokers() {
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
         // {name:"John Doe"}
         let properties = {_fields: '', _sort: 'name', _skip: 0, _limit: 3};
         let rest = this.dataService.BROKERS_REST_NEW;
-        
+
         //Calling a Promise function
         this.dataService.get(rest, properties).then(
             (data) => {
+                
                 this.objects = data;
+//                this.images = this.objects.images; // How to get images?
             }
         );
     }

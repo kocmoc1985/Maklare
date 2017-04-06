@@ -22,7 +22,7 @@ var ListSearchComponent = (function () {
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
         // {area:25}
-        var properties = { area: 25 };
+        var properties = { _fields: '', _sort: 'name', _skip: 0, _limit: 3 };
         var rest = this.dataService.FASTIGHET_REST_NEW;
         //Calling a Promise function
         this.dataService.get(rest, properties).then(function (data) {
@@ -39,6 +39,7 @@ var ListSearchComponent = (function () {
         //Calling a Promise function
         this.dataService.get(rest, properties).then(function (data) {
             _this.objects = data;
+            //                this.images = this.objects.images; // How to get images?
         });
     };
     ListSearchComponent = __decorate([

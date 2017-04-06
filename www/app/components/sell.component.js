@@ -15,8 +15,7 @@ var SellComponent = (function () {
     SellComponent = __decorate([
         core_1.Component({
             selector: 'sell',
-            templateUrl: 'app/components/template/sell.html',
-            styleUrls: ['app/components/css/sell.css']
+            templateUrl: 'app/components/template/sell.html'
         }), 
         __metadata('design:paramtypes', [])
     ], SellComponent);
