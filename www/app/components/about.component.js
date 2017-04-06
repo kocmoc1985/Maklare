@@ -17,9 +17,9 @@ var AboutComponent = (function () {
     AboutComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Getting all brokers. separate method or not?
-        //Properties for calling get says, get all and sort after name
+        //Properties for calling 'get' says, get all and sort after name
         var properties = { _fields: '', _sort: 'name' };
-        //...and get it from the brokers REST entity
+        //...and get it from here, the brokers REST entity
         var rest = this.dataService.BROKERS_REST_NEW;
         //Promise function call with the variables
         this.dataService.get(rest, properties).then(function (data) {

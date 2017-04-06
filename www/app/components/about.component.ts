@@ -18,9 +18,9 @@ export class AboutComponent implements OnInit {
     ngOnInit(): void {
 
         //Getting all brokers. separate method or not?
-        //Properties for calling get says, get all and sort after name
+        //Properties for calling 'get' says, get all and sort after name
         let properties = {_fields: '', _sort: 'name'};
-        //...and get it from the brokers REST entity
+        //...and get it from here, the brokers REST entity
         let rest = this.dataService.BROKERS_REST_NEW;
         //Promise function call with the variables
         this.dataService.get(rest, properties).then(

@@ -1,5 +1,8 @@
 h1  {
     font-family: 'Pinyon Script', cursive;
+    color: #fcb332;
+    font-size: 3rem;
+    padding-top: 0.5rem;
     }
 
 h2, h3, h4, p {
@@ -20,4 +23,12 @@ h2, h3, h4, p {
 
 .vertical-spacer-100 {
     height: 100px;
+}
+
+.bg-light-grey{
+    background-color: #cccccc;
+}
+
+a {
+    color: #384260;
 }
