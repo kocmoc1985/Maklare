@@ -1,16 +1,18 @@
 [
     {
+        "objectnr":"v1",
         "type": "villa",
         "price": "150000",
-        "area": "25",
-        "rooms": "3",
+        "area": "120",
+        "rooms": "5",
         "hyra": "0",
         "country": "Sverige",
         "lan": "Skåne",
+        "district": "Högalid",
         "town": "Trelleborg",
         "street": "Sveagatan 25",
         "zip": "23145",
-        "shortInfo": "This makes you happy",
+        "shortInfo": "Charmigt hus från 1900-talet med isolerad gäststuga och garage. Huset erbjuder två rymliga sovrum med möjlighet att göra ytterligare ett sovrum, inbjudande vardagsrum med kamin, kök med utgång till terrass under tak.",
         "longInfo": "This is your dream",
         "images": [
             "main.jpg",
@@ -19,6 +21,7 @@
         ]
     },
     {
+        "objectnr":"b1",
         "type": "bostadsrätt",
         "price": "130000",
         "area": "25",
@@ -26,10 +29,11 @@
         "hyra": "7800",
         "country": "Sverige",
         "lan": "Götaland",
+        "district":"Dalaplan",
         "town": "Göteborg",
         "street": "Storagatan 89",
         "zip": "25489",
-        "shortInfo": "Your dream appartment",
+        "shortInfo": "Välkommen till en välplanerad 3:a i bottenvåning med både balkong och egen uteplats. Lgh har renoveringsbehov. Praktiskt arbetskök med rymlig matplats, stort vardagsrum och två bra sovrum. ",
         "longInfo": "Just come and get me",
         "images": [
             "main.jpg",
