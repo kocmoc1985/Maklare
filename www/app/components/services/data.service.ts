@@ -17,7 +17,7 @@ export class DataService {
         this.FASTIGHET_REST_NEW = this.restService.newRestEntity("fastighet");
         this.BROKERS_REST_NEW = this.restService.newRestEntity("brokers");
     }
-    
+
     /**
      * USE THIS!
      * Find usage example in "list-app.components" -> getFastigheter(...) && getBrokers(...)
@@ -31,19 +31,23 @@ export class DataService {
             }
         );
     }
-    
-    getFastighetById(id:String){
+
+    getFastighetById(id: String) {
         //#ROUTING_DETAILED
         return new Promise(
             (resolve, reject) => {
                 this.FASTIGHET_REST_NEW.find(this._find({_id: id})).then((data: any) => {
-                    console.log("Found:", data);
-                    resolve(data);
+                    if (data) {
+                        resolve(data);
+                    } else {
+                        console.log("Data rejected: getFastighetById(...)");
+                        reject("Promise rejected");
+                    }
                 });
             }
         );
     }
-  
+    
 
     /**
      * This one uses "OLD" REST not basing on Angular
@@ -70,10 +74,10 @@ export class DataService {
     //         }
     //     );
     // }
-    
+
     _find(obj: any) {
-      return "find/" + JSON.stringify(obj);
-}
+        return "find/" + JSON.stringify(obj);
+    }
 
 
 }

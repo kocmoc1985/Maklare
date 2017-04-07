@@ -33,8 +33,13 @@ var DataService = (function () {
         //#ROUTING_DETAILED
         return new Promise(function (resolve, reject) {
             _this.FASTIGHET_REST_NEW.find(_this._find({ _id: id })).then(function (data) {
-                console.log("Found:", data);
-                resolve(data);
+                if (data) {
+                    resolve(data);
+                }
+                else {
+                    console.log("Data rejected: getFastighetById(...)");
+                    reject("Promise rejected");
+                }
             });
         });
     };
