@@ -1,15 +1,19 @@
 .list-entry{
     margin: 10px 0px 10px 0px;
     height: 15vh;
-    border: 2px solid lightgray;
     font-size: 1.6vmin;
+    color:#666666;
 }
 
-.list-entry:hover{
-    border: 2px solid black; 
-    .short-info{
-        
-    }
+
+.list-entry:hover .list-entry-info-section {
+    border: 2px solid black;
+    border-left: none;
+}
+
+.list-entry:hover .list-entry-img-section {
+    border: 2px solid black;
+    border-right: none;
 }
 
 .list-entry .col-3, .col-2{
@@ -24,10 +28,19 @@
 
 .list-entry .list-entry-info-section{
     height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 2px solid lightgray;
+    border-left: none;
 }
 
 .list-entry .list-entry-prim-info{
     height: 25%;
+}
+
+.list-entry .list-entry-prim-info p{
+    font-weight: bold;
+    color:#014C8C;
 }
 
 .list-entry .list-entry-sec-info{
@@ -39,13 +52,9 @@
     height: 50%;
 }
 
-.list-entry .list-entry-info-section{
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 .list-entry .list-entry-img-section{
-    border-right: 2px solid lightgray;
+    border: 2px solid lightgray;
+    border-right: none;
 }
 
 .list-entry .short-info{
@@ -58,7 +67,15 @@
 
 @media (max-width: 768px){
     .list-entry p{
+        font-size: 1.7vmax;
+        /*color:orange;*/
+    }
+}
+
+@media (max-width: 480px){
+    .list-entry p{
         font-size: 2vmax;
+        /*color:red;*/
     }
 }
 
