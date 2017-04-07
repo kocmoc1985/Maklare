@@ -20,6 +20,10 @@ export class ListSearchComponent implements OnInit {
 
     ngOnInit(): void {}
 
+    showDetailedView(object: any){
+        console.log("Show detailed view: " + object._id);
+    }
+
     getFastigheter() {
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}

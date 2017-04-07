@@ -17,6 +17,9 @@ var ListSearchComponent = (function () {
         this.dataService = dataService;
     }
     ListSearchComponent.prototype.ngOnInit = function () { };
+    ListSearchComponent.prototype.showDetailedView = function (object) {
+        console.log("Show detailed view: " + object._id);
+    };
     ListSearchComponent.prototype.getFastigheter = function () {
         var _this = this;
         // Properties examples:
