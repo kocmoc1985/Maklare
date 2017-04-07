@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./components/app.component');
 var footer_component_1 = require('./components/footer.component');
@@ -25,10 +24,11 @@ var about_component_1 = require('./components/about.component');
 var list_app_component_1 = require('./components/list-app.component');
 var header_component_1 = require('./components/header.component');
 var search_component_1 = require('./components/search.component');
+var object_detailed_component_1 = require('./components/object-detailed.component');
 // Services
 var rest_service_1 = require('./components/rest/rest.service');
 // for separate routing file
-// import { AppRoutingModule } from './components/app-routing.module';
+var app_routing_module_1 = require('./components/app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,12 +39,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 ng_bootstrap_1.NgbModule,
-                router_1.RouterModule.forRoot([
-                    { path: '', component: startpage_component_1.StartpageComponent },
-                    { path: 'buy', component: buy_component_1.BuyComponent },
-                    { path: 'sell', component: sell_component_1.SellComponent },
-                    { path: 'about', component: about_component_1.AboutComponent }
-                ])
+                app_routing_module_1.AppRoutingModule //#ROUTING
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -55,7 +50,8 @@ var AppModule = (function () {
                 buy_component_1.BuyComponent,
                 sell_component_1.SellComponent,
                 about_component_1.AboutComponent,
-                search_component_1.SearchComponent
+                search_component_1.SearchComponent,
+                object_detailed_component_1.ObjectDetailedComponent //#ROUTING_DETAILED
             ],
             bootstrap: [
                 app_component_1.AppComponent

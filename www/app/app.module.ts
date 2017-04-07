@@ -6,7 +6,6 @@ import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 
 
-
 import {AppComponent} from './components/app.component';
 import {FooterComponent} from './components/footer.component';
 
@@ -20,12 +19,13 @@ import {AboutComponent} from './components/about.component';
 import {ListSearchComponent} from './components/list-app.component';
 import {HeaderComponent} from './components/header.component';
 import {SearchComponent} from './components/search.component';
+import {ObjectDetailedComponent} from './components/object-detailed.component';
 
 // Services
 import {RestService} from './components/rest/rest.service';
 
 // for separate routing file
-// import { AppRoutingModule } from './components/app-routing.module';
+import {AppRoutingModule} from './components/app-routing.module';
 
 @NgModule({
     imports: [
@@ -33,12 +33,7 @@ import {RestService} from './components/rest/rest.service';
         FormsModule,
         HttpModule,
         NgbModule,
-        RouterModule.forRoot([
-            {path: '', component: StartpageComponent},
-            {path: 'buy', component: BuyComponent},
-            {path: 'sell', component: SellComponent},
-            {path: 'about', component: AboutComponent}
-        ])
+        AppRoutingModule //#ROUTING
     ],
     declarations: [
         AppComponent,
@@ -49,15 +44,16 @@ import {RestService} from './components/rest/rest.service';
         BuyComponent,
         SellComponent,
         AboutComponent,
-        SearchComponent
+        SearchComponent,
+        ObjectDetailedComponent //#ROUTING_DETAILED
         // for separate routing file
         // AppRoutingModule
     ],
     bootstrap: [
         AppComponent
     ],
-    
-    providers:[
+
+    providers: [
         RestService
     ]
 })

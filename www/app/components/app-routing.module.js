@@ -14,11 +14,14 @@ var startpage_component_1 = require('./startpage.component');
 var sell_component_1 = require('./sell.component');
 var buy_component_1 = require('./buy.component');
 var about_component_1 = require('./about.component');
+var object_detailed_component_1 = require('./object-detailed.component');
+//#ROUTING
 var routes = [
     { path: '', component: startpage_component_1.StartpageComponent },
     { path: 'buy', component: buy_component_1.BuyComponent },
     { path: 'sell', component: sell_component_1.SellComponent },
-    { path: 'about', component: about_component_1.AboutComponent }
+    { path: 'about', component: about_component_1.AboutComponent },
+    { path: 'detail/:id', component: object_detailed_component_1.ObjectDetailedComponent } //#ROUTING_DETAILED
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

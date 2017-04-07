@@ -28,6 +28,16 @@ var DataService = (function () {
             });
         });
     };
+    DataService.prototype.getFastighetById = function (id) {
+        var _this = this;
+        //#ROUTING_DETAILED
+        return new Promise(function (resolve, reject) {
+            _this.FASTIGHET_REST_NEW.find(_this._find({ _id: id })).then(function (data) {
+                console.log("Found:", data);
+                resolve(data);
+            });
+        });
+    };
     /**
      * This one uses "OLD" REST not basing on Angular
      * @deprecated

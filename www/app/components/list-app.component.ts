@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 import {DataService} from '../components/services/data.service';
 
@@ -13,15 +14,21 @@ import {DataService} from '../components/services/data.service';
 })
 
 export class ListSearchComponent implements OnInit {
-    constructor(private dataService: DataService) {}
+    constructor(
+        private dataService: DataService,
+        private router: Router
+    ) {}
 
     private objects: any[];
-    private images: any[];
+    private selectedObject: any;
 
     ngOnInit(): void {}
 
-    showDetailedView(object: any){
+    showDetailedView(object: any) {
+        //#ROUTING_DETAILED
+        this.selectedObject = object;
         console.log("Show detailed view: " + object._id);
+        this.router.navigate(['/detail', object._id]);
     }
 
     getFastigheter() {
@@ -50,9 +57,9 @@ export class ListSearchComponent implements OnInit {
         //Calling a Promise function
         this.dataService.get(rest, properties).then(
             (data) => {
-                
+
                 this.objects = data;
-//                this.images = this.objects.images; // How to get images?
+                //                this.images = this.objects.images; // How to get images?
             }
         );
     }

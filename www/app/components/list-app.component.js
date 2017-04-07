@@ -9,16 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var data_service_1 = require('../components/services/data.service');
 //declare var FASTIGHETS_REST: any;
 //declare function _find(param: any): any;
 var ListSearchComponent = (function () {
-    function ListSearchComponent(dataService) {
+    function ListSearchComponent(dataService, router) {
         this.dataService = dataService;
+        this.router = router;
     }
     ListSearchComponent.prototype.ngOnInit = function () { };
     ListSearchComponent.prototype.showDetailedView = function (object) {
+        //#ROUTING_DETAILED
+        this.selectedObject = object;
         console.log("Show detailed view: " + object._id);
+        this.router.navigate(['/detail', object._id]);
     };
     ListSearchComponent.prototype.getFastigheter = function () {
         var _this = this;
@@ -52,7 +57,7 @@ var ListSearchComponent = (function () {
             styleUrls: ['app/components/css/list-search.css'],
             providers: [data_service_1.DataService]
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
+        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router])
     ], ListSearchComponent);
     return ListSearchComponent;
 }());
