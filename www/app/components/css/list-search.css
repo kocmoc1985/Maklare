@@ -1,11 +1,11 @@
 .list-entry{
     margin: 10px 0px 10px 0px;
-    height: 140px;
+    height: 15vh;
     border: 2px solid lightgray;
 }
 
 .list-entry:hover{
-   border: 2px solid black; 
+    border: 2px solid black; 
 }
 
 .list-entry .col-3, .col-2{
@@ -22,33 +22,39 @@
     height: 100%;
 }
 
-.list-entry-prim-info{
+.list-entry .list-entry-prim-info{
     height: 25%;
 }
 
-.list-entry-sec-info{
+.list-entry .list-entry-sec-info{
     height: 25%;
 }
 
-.list-entry-short-info{
+.list-entry .list-entry-short-info{
     overflow: hidden;
     height: 50%;
 }
 
-.list-entry-info-section{
+.list-entry .list-entry-info-section{
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.list-entry-img-section{
+.list-entry .list-entry-img-section{
     border-right: 2px solid lightgray;
 }
 
-.short-info{
+.list-entry .short-info{
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
     max-height: 3.6em;
     line-height: 1.8em;
+}
+
+@media (max-width: 992px){
+    .list-entry p{
+        font-size: 2vmax !important;
+    }
 }
 
