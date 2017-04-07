@@ -2,10 +2,14 @@
     margin: 10px 0px 10px 0px;
     height: 15vh;
     border: 2px solid lightgray;
+    font-size: 1.6vmin;
 }
 
 .list-entry:hover{
     border: 2px solid black; 
+    .short-info{
+        
+    }
 }
 
 .list-entry .col-3, .col-2{
@@ -52,9 +56,9 @@
     line-height: 1.8em;
 }
 
-@media (max-width: 992px){
+@media (max-width: 768px){
     .list-entry p{
-        font-size: 2vmax !important;
+        font-size: 2vmax;
     }
 }
 

@@ -4,8 +4,7 @@
 
     <div class="row list-entry"  *ngFor="let object of objects">
 
-         <div class="col-2 offset-md-2 list-entry-img-section">
-            <!--p>{{object.zip}}</p-->
+         <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
             <img src="images/estate/{{object.objectnr}}/{{object.objectnr}}_main.jpg">
         </div>
 
@@ -42,7 +41,7 @@
 
         <!-->MOBILE VIEW<-->
 
-        <div class="col-10 hidden-md-up list-entry-info-section">
+        <div class="col-9 hidden-md-up list-entry-info-section">
             <div class="row list-entry-prim-info">
                 <div class="col-6">
                     <p>{{object.price}} kr</p>
@@ -57,11 +56,17 @@
                     <p>{{object.hyra}} kr/mån</p>
                 </div>
                 <div class="col-6">
-                    <p>{{object.district}}</p>
+                    <p>{{object.area}} m&#178;</p>
                 </div>                  
             </div>
 
-            <div class="row list-entry-short-info">
+            <div class="row list-entry-sec-info">
+                <div class="col-12">
+                    <p>{{object.district}}</p>
+                </div>    
+            </div>
+            
+            <div class="row list-entry-sec-info">
                 <div class="col-12">
                     <p>{{object.town}}, {{object.street}}</p>
                 </div>    
