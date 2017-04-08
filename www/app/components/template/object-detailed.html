@@ -22,6 +22,35 @@
         </div>
     </div>
 
+    <div class="row row-three">
+        <div class="col-12">
+            <p>{{object.longInfo}}</p>
+        </div>
+    </div>
+
+    <div class="row row-four">
+        <div class="col-6" *ngIf="broker">
+            <div class="card card-margin-bottom">
+                <img class="card-img-top img-fluid" src="/images/brokers/{{broker.image}}" alt="Card image cap">
+                <div class="card-block">
+                    <h4 class="card-title">{{broker.name}}</h4>
+                    <p class="card-text">{{broker.shortInfo}}</p>
+                    <p class="card-text"><small>{{broker.tel}}</small></p>
+                    <a href="mailto:{{broker.epost}}"><small>{{broker.epost}}</small></a>  
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+             <h2>MAP</h2>
+        </div>
+        
+    </div>
+    
+    <div class="row row-five">
+        <h2><br><br>VISNING<br><br></h2>
+    </div>
+
 
 </div>
 
