@@ -13,10 +13,12 @@
         "street": "Sveagatan 25",
         "zip": "23145",
         "shortInfo": "Charmigt hus från 1900-talet med isolerad gäststuga och garage. Huset erbjuder två rymliga sovrum med möjlighet att göra ytterligare ett sovrum, inbjudande vardagsrum med kamin, kök med utgång till terrass under tak.",
-        "longInfo": "This is your dream",
+        "longInfo": "",
         "images": [
             "main.jpg",
-            "second.jpg",
+            "1.jpg",
+            "2.jpg",
+            "3.jpg",
             "plan.jpg"
         ]
     },
@@ -34,10 +36,11 @@
         "street": "Storagatan 89",
         "zip": "25489",
         "shortInfo": "Välkommen till en välplanerad 3:a i bottenvåning med både balkong och egen uteplats. Lgh har renoveringsbehov. Praktiskt arbetskök med rymlig matplats, stort vardagsrum och två bra sovrum. ",
-        "longInfo": "Just come and get me",
+        "longInfo": "",
         "images": [
             "main.jpg",
-            "second.jpg",
+            "1.jpg",
+            "2.jpg",
             "plan.jpg"
         ]
     }

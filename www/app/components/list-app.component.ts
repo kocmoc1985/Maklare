@@ -21,17 +21,18 @@ export class ListSearchComponent implements OnInit {
 
     private objects: any[];
     private selectedObject: any;
+    private clicked: boolean;
 
     ngOnInit(): void {}
 
     showDetailedView(object: any) {
         //#ROUTING_DETAILED
         this.selectedObject = object;
-        console.log("Show detailed view: " + object._id);
         this.router.navigate(['/detail', object._id]);
     }
 
     getFastigheter() {
+        this.clicked = true;
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
         // {area:25}

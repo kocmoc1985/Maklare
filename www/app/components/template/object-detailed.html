@@ -1,5 +1,27 @@
 <!-->#ROUTING_DETAILED<-->
-<div *ngIf="object">
+<!--div *ngIf="object">
     <h3>Selected object: {{object.street}}</h3>
+</div-->
+
+
+<div class="container-fluid object-detailed" *ngIf="object">
+
+    <div class="row row-one">
+        <div class="col-6">
+            <img src="images/estate/{{object.objectnr}}/main.jpg">
+        </div>
+
+        <div class="col-6">
+            <p>{{object.shortInfo}}</p>
+        </div>
+    </div>
+
+    <div class="row row-two" *ngFor="let image of objectImages">
+         <div class="offset-1 col-10">
+            <img *ngIf="image !== 'main.jpg'" src="images/estate/{{object.objectnr}}/{{image}}">
+        </div>
+    </div>
+
+
 </div>
 

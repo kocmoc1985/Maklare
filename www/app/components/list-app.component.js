@@ -22,11 +22,11 @@ var ListSearchComponent = (function () {
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED
         this.selectedObject = object;
-        console.log("Show detailed view: " + object._id);
         this.router.navigate(['/detail', object._id]);
     };
     ListSearchComponent.prototype.getFastigheter = function () {
         var _this = this;
+        this.clicked = true;
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
         // {area:25}

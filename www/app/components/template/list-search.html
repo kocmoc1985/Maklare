@@ -1,11 +1,11 @@
-<input type="button" (click)="getFastigheter()" style="margin-left: 20px" value="SHOW">
+<input type="button" (click)="getFastigheter()" [class.button-clicked]="clicked===true" style="margin-left: 20px" value="SHOW">
 
 <div class="container-fluid">
 
-    <div class="row list-entry"  *ngFor="let object of objects" (click)="showDetailedView(object)">
+    <div class="row list-entry"  *ngFor="let object of objects" (click)="showDetailedView(object)"><!-->#ROUTING_DETAILED<-->
 
          <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
-            <img src="images/estate/{{object.objectnr}}/{{object.objectnr}}_main.jpg">
+            <img src="images/estate/{{object.objectnr}}/main.jpg">
         </div>
 
         <div class="col-10 col-sm-10 col-md-6 hidden-sm-down list-entry-info-section">
