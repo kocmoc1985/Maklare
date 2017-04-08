@@ -7,19 +7,19 @@ import {HttpModule} from '@angular/http';
 
 
 import {AppComponent} from './components/app.component';
-import {FooterComponent} from './components/footer.component';
+import {FooterComponent} from './components/main/footer.component';
 
 // Pages
-import {StartpageComponent} from './components/startpage.component';
-import {BuyComponent} from './components/buy.component';
-import {SellComponent} from './components/sell.component';
-import {AboutComponent} from './components/about.component';
+import {StartpageComponent} from './components/main/startpage.component';
+import {BuyComponent} from './components/main/buy.component';
+import {SellComponent} from './components/main/sell.component';
+import {AboutComponent} from './components/main/about.component';
 
 // Components
-import {ListSearchComponent} from './components/list-app.component';
-import {HeaderComponent} from './components/header.component';
-import {SearchComponent} from './components/search.component';
-import {ObjectDetailedComponent} from './components/object-detailed.component';
+import {ListSearchComponent} from './components/main/list-app.component';
+import {HeaderComponent} from './components/main/header.component';
+import {SearchComponent} from './components/main/search.component';
+import {ObjectDetailedComponent} from './components/main/object-detailed.component';
 
 // Services
 import {RestService} from './components/rest/rest.service';

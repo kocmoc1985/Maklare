@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var data_service_1 = require('../components/services/data.service');
+var data_service_1 = require('../services/data.service');
 //declare var FASTIGHETS_REST: any;
 //declare function _find(param: any): any;
 var ListSearchComponent = (function () {

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 
-import {DataService} from '../components/services/data.service';
+import {DataService} from '../services/data.service';
 
 import 'rxjs/add/operator/switchMap';
 

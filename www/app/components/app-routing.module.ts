@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {StartpageComponent} from './startpage.component';
-import {SellComponent} from './sell.component';
-import {BuyComponent} from './buy.component';
-import {AboutComponent} from './about.component';
-import {ObjectDetailedComponent} from './object-detailed.component';
+import {StartpageComponent} from './main/startpage.component';
+import {SellComponent} from './main/sell.component';
+import {BuyComponent} from './main/buy.component';
+import {AboutComponent} from './main/about.component';
+import {ObjectDetailedComponent} from './main/object-detailed.component';
 
 //#ROUTING
 const routes: Routes = [

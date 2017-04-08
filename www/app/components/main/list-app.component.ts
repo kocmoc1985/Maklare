@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {DataService} from '../components/services/data.service';
+import {DataService} from '../services/data.service';
 
 //declare var FASTIGHETS_REST: any;
 //declare function _find(param: any): any;

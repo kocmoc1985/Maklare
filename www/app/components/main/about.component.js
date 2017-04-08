@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var data_service_1 = require('../components/services/data.service');
+var data_service_1 = require('../services/data.service');
 var AboutComponent = (function () {
     function AboutComponent(dataService) {
         this.dataService = dataService;

@@ -14,17 +14,17 @@ var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap'); // #ngbootstrap
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./components/app.component');
-var footer_component_1 = require('./components/footer.component');
+var footer_component_1 = require('./components/main/footer.component');
 // Pages
-var startpage_component_1 = require('./components/startpage.component');
-var buy_component_1 = require('./components/buy.component');
-var sell_component_1 = require('./components/sell.component');
-var about_component_1 = require('./components/about.component');
+var startpage_component_1 = require('./components/main/startpage.component');
+var buy_component_1 = require('./components/main/buy.component');
+var sell_component_1 = require('./components/main/sell.component');
+var about_component_1 = require('./components/main/about.component');
 // Components
-var list_app_component_1 = require('./components/list-app.component');
-var header_component_1 = require('./components/header.component');
-var search_component_1 = require('./components/search.component');
-var object_detailed_component_1 = require('./components/object-detailed.component');
+var list_app_component_1 = require('./components/main/list-app.component');
+var header_component_1 = require('./components/main/header.component');
+var search_component_1 = require('./components/main/search.component');
+var object_detailed_component_1 = require('./components/main/object-detailed.component');
 // Services
 var rest_service_1 = require('./components/rest/rest.service');
 // for separate routing file
