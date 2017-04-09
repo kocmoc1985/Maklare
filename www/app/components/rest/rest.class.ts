@@ -19,7 +19,7 @@ export class RestEntity {
 
     httpRequest(type: string, idOrQuery: string, requestBody: any) {
         let url: string = this.baseUrl + '/' + idOrQuery;
-        console.log("REST_URL:", url);
+        // console.log("REST_URL:", url);
         // remove trailing slahses
         while (url.substr(-1) == '/') {url = url.substring(0, url.length - 1);}
         // make request

@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class BuyComponent {
+	searchResult: any[];
+
+	onSearch(objects: any[]) {
+		this.searchResult = objects;
+	}
 }

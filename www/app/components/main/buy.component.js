@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var BuyComponent = (function () {
     function BuyComponent() {
     }
+    BuyComponent.prototype.onSearch = function (objects) {
+        this.searchResult = objects;
+    };
     BuyComponent = __decorate([
         core_1.Component({
             selector: 'buy',
