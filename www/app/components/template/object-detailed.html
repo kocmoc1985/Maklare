@@ -7,12 +7,19 @@
 <div class="container-fluid object-detailed" *ngIf="object">
 
     <div class="row row-one">
-        <div class="col-6">
+        <div class="col-8 main-img">
             <img src="images/estate/{{object.objectnr}}/main.jpg">
         </div>
 
-        <div class="col-6">
-            <p>{{object.shortInfo}}</p>
+        <div class="col-4">
+            <div class="panel basic-info">
+                <h2 class="object-title">{{object.street}}</h2>
+                <p>{{object.shortInfo}}</p>
+                <p>Pris: {{object.price}}</p>
+                <p>Månadsavgift: {{object.hyra}} kr/mån</p>
+                <p>Antal rum: {{object.rooms}}</p>
+                <p>Boarea: {{object.area}} m&#178;</p>
+            </div>
         </div>
     </div>
 
