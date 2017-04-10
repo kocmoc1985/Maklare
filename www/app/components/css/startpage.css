@@ -1,6 +1,13 @@
-.startpage-pic{
-
-	padding-right: 0;
-	padding-left: 0;
-
+.startpic{
+    background: url("images/startpage.jpg") no-repeat center fixed;
+    min-height: 70vh;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
 }
+.button{
+    color: white;
+    text-align: center;
+   
+}
+ 
