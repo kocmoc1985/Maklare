@@ -7,3 +7,14 @@
 .article{
     padding-bottom: 32px;
 }
+
+
+small{
+	color: white !important; 
+}
+h4{
+	color: white;
+}
+.btn-default{
+	background-color: white;
+}

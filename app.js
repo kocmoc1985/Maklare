@@ -14,6 +14,7 @@ g = {}; // all global variables (ex. settings)
   "gulp",
   "gulp-less",
   "gulp-clean-css",
+  "nodemailer",
   "./settingsConstr",
   "./classLoader"
 ].forEach(function(x){
@@ -37,5 +38,7 @@ m.classLoader();
 
 // start express server
  new g.classes.Server();
+
+ 
 
 

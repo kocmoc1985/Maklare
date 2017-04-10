@@ -89,7 +89,11 @@ module.exports = class Server {
                 console.log("Connected to MongoDB");
                 JSONLoader.fillData();
             });
-        }//mset.connect
+        }//mset.connection
+
+        // Requiere and instantiate the mail sender for contact info
+        let ContactInfoMailSender = require(m.path.join(__dirname,'contact-info-mail-sender.class.js'));
+        new ContactInfoMailSender(this.app);
 
 
         // If no other route rule fulfilled then return www/index.html

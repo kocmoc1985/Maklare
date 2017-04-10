@@ -6,26 +6,33 @@
         </div>
     </div>
     <div class="row vertical-spacer-50"></div>
-    <div class="row">
+    <div class="row" *ngIf="!sent">
         <div class="col-1"></div>
         <div class="col-4">
-            <h4>Lämna telefonnummer</h4>
-            <form>
+            <h4>Telefonnummer</h4>
+            
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefonnummer">
-                    <small id="emailHelp" class="form-text text-muted">Våra mäklare kontaktar dig.</small>
+                    <input type="text" class="form-control" id="exampleInputTelefonnummer" name="exampleInputTelefonnummer" aria-describedby="phoneHelp" placeholder="Telefonnummer" [(ngModel)]="phoneNumber">
+                    <small id="phoneHelp" class="form-text text-muted">Våra mäklare kontaktar dig via telefon.</small>
                 </div>
-            </form>
+                <button class="btn btn-default"(click)="registerPhone()">Skicka</button>
+            
         </div>
         <div class="col-2"></div>
         <div class="col-4">
-            <h4>Lämna mailadress</h4>
-            <form>
+            <h4>Mailadress</h4>
+            
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Telefonnummer">
-                    <small id="emailHelp" class="form-text text-muted">Våra mäklare kontaktar dig.</small>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mailadress" [(ngModel)]="email">
+                    <small id="emailHelp" class="form-text text-muted">Våra mäklare kontaktar dig via mail.</small>
                 </div>
-            </form>
+                <button class="btn btn-default" (click)="registerMail()">Skicka</button>
+            
+        </div>
+    </div>
+    <div class="row" *ngIf="sent">
+        <div class="col-12">
+            <p>Tack för att du kontaktar oss! Vi återkommer så snart som möjligt.</p>
         </div>
     </div>
   </div>
