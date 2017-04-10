@@ -3,14 +3,16 @@
     background-color: lightgray;
 }
 
+.row-one {
+    background-size: cover;
+    background-position:center center;
+}
+
 .object-detailed .row-one .col-8{
     padding-right: 0px;
     padding-left: 0px;
 }
 
-.object-detailed .row-one .main-img{
-    /*position: fixed;*/
-}
 
 .object-detailed .basic-info{
     padding: 20px;
