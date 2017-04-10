@@ -23,6 +23,9 @@ var ListSearchComponent = (function () {
         this.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
     };
+    /**
+     * @deprecated
+     */
     ListSearchComponent.prototype.getBrokers = function () {
         var _this = this;
         // Properties examples:
@@ -31,9 +34,9 @@ var ListSearchComponent = (function () {
         var properties = { _fields: '', _sort: 'name', _skip: 0, _limit: 3 };
         var rest = this.dataService.BROKERS_REST_NEW;
         //Calling a Promise function
+        //#PROMISE
         this.dataService.get(rest, properties).then(function (data) {
             _this.objects = data;
-            //                this.images = this.objects.images; // How to get images?
         });
     };
     __decorate([

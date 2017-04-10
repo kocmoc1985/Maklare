@@ -14,7 +14,7 @@ var SearchComponent = (function () {
     function SearchComponent(dataService) {
         this.dataService = dataService;
         this.searchCounter = 0;
-        this.onSearch = new core_1.EventEmitter();
+        this.onSearch = new core_1.EventEmitter(); //#EVENT_EMITTER
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.search('');
@@ -33,9 +33,9 @@ var SearchComponent = (function () {
                 { lan: { $regex: term, $options: "i" } }
             ],
             _fields: '',
-            _sort: 'name',
+            _sort: '-dateAdded',
             _skip: 0,
-            _limit: 10
+            _limit: 100
         };
         this.sendSearchRequest(properties);
     };
@@ -48,7 +48,7 @@ var SearchComponent = (function () {
             // Ignore all results other than the newest/altered search-term
             if (currentSearchCounter == _this.searchCounter) {
                 _this.objects = data;
-                _this.onSearch.emit(data);
+                _this.onSearch.emit(data); //#EVENT_EMITTER
             }
         });
     };

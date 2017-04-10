@@ -2,6 +2,7 @@ module.exports = function (mongoose) {
 
     // Mongoose Schema, One-to-Few relation
     var shema = mongoose.Schema({
+        dateAdded:{type: Date, default: Date.now},
         objectnr:{type:String,required:true},
         type: {type: String, enum: ['villa', "hyresrätt", "bostadsrätt"]}, //{type:Number,required: true,min: 1, max: 10}
         price: {type: Number, required: true},
@@ -34,6 +35,7 @@ module.exports = function (mongoose) {
         json.forEach(function (act) {
             //
             var classroom = new me({
+                dateAdded:act.dateAdded,
                 objectnr:act.objectnr,
                 type: act.type,
                 price: act.price,
