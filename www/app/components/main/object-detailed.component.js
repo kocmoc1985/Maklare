@@ -18,19 +18,10 @@ var ObjectDetailedComponent = (function () {
         this.dataService = dataService;
         this.route = route;
         this.location = location;
+        this.loadedImages = {};
     }
-    ObjectDetailedComponent.prototype.urlExists = function (url) {
-        console.log("function called");
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        //        return http.status != 404;
-        if (http.status != 404) {
-            this.urlExist = true;
-        }
-        else {
-            this.urlExist = false;
-        }
+    ObjectDetailedComponent.prototype.registerLoadedImage = function (img) {
+        this.loadedImages[img] = true;
     };
     ObjectDetailedComponent.prototype.goBack = function () {
         this.location.back();
@@ -39,8 +30,6 @@ var ObjectDetailedComponent = (function () {
         this.object = data[0];
         this.broker = data[0].broker;
         this.objectImages = data[0].images;
-        //        console.log("object", this.object);
-        //        console.log("Imgages:", this.objectImages);
     };
     ObjectDetailedComponent.prototype.ngOnInit = function () {
         var _this = this;

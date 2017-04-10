@@ -8,13 +8,14 @@
     padding-bottom: 32px;
 }
 
-
 small{
 	color: white !important; 
 }
-h4{
-	color: white;
-}
+
 .btn-default{
 	background-color: white;
+}
+
+.jumbotron h4 {
+	text-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
 }

@@ -1,0 +1,14 @@
+.header a{
+    color:inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 576px) {
+    h2 {
+        margin: 0;
+    }
+}
+
+.header a:hover{
+    text-decoration: none;
+}

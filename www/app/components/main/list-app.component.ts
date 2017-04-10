@@ -14,14 +14,15 @@ import {DataService} from '../services/data.service';
 })
 
 export class ListSearchComponent {
+    //#DATA_EXCHANGE
+    @Input('estates') objects: any[];
+    
     constructor(
         private dataService: DataService,
         private router: Router
     ) {}
 
-	@Input('estates') objects: any[];
     private selectedObject: any;
-    private clicked: boolean;
 
     showDetailedView(object: any) {
         //#ROUTING_DETAILED
@@ -29,6 +30,10 @@ export class ListSearchComponent {
         this.router.navigate(['/detail', object._id]);
     }
 
+
+    /**
+     * @deprecated
+     */
     getBrokers() {
         // Properties examples:
         // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
@@ -37,11 +42,10 @@ export class ListSearchComponent {
         let rest = this.dataService.BROKERS_REST_NEW;
 
         //Calling a Promise function
+        //#PROMISE
         this.dataService.get(rest, properties).then(
             (data) => {
-
                 this.objects = data;
-                //                this.images = this.objects.images; // How to get images?
             }
         );
     }

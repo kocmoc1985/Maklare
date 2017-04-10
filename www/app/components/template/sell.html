@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid bg-light-grey">
   <div class="container">
-    <div class="row text-center align-items-center">
+    <div class="row text-center">
         <div class="col-12">
             <h2>Vi kontaktar dig!</h2>
         </div>
@@ -8,25 +8,26 @@
     <div class="row vertical-spacer-50"></div>
     <div class="row" *ngIf="!sent">
         <div class="col-1"></div>
-        <div class="col-4">
-            <h4>Telefonnummer</h4>
+
+        <div class="col-md-4">
+            <h4>Lämna telefonnummer</h4>
             
                 <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputTelefonnummer" name="exampleInputTelefonnummer" aria-describedby="phoneHelp" placeholder="Telefonnummer" [(ngModel)]="phoneNumber">
-                    <small id="phoneHelp" class="form-text text-muted">Våra mäklare kontaktar dig via telefon.</small>
+                    <input type="tel" class="form-control" id="contactFormPhone" name="exampleInputTelefonnummer" aria-describedby="emailHelp" placeholder="Telefonnummer" [(ngModel)]="phoneNumber">
+                     
                 </div>
-                <button class="btn btn-default"(click)="registerPhone()">Skicka</button>
+                <button class="btn btn-default"(click)="registerPhone()">Kontakta mig!</button>
             
         </div>
         <div class="col-2"></div>
-        <div class="col-4">
-            <h4>Mailadress</h4>
+        <div class="col-md-4">
+            <h4>Lämna mailadress</h4>
             
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mailadress" [(ngModel)]="email">
-                    <small id="emailHelp" class="form-text text-muted">Våra mäklare kontaktar dig via mail.</small>
+                    <input type="email" class="form-control " id="contactFormEmail" name="exampleInputEmail1" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Email">
+               
                 </div>
-                <button class="btn btn-default" (click)="registerMail()">Skicka</button>
+                <button class="btn btn-default" (click)="registerMail()">Kontakta mig!</button>
             
         </div>
     </div>
@@ -45,7 +46,7 @@
         <div class="col-md-6">
             <h2>Vill du ha bra betalt?</h2>
             <p>Vi vet hur mycket din bostad har stigit i värde, vi känner omgivningarna och vi har köparna som vill bo i ert område. Det är vår kunskap som gör oss till en fastighetsmäklare att räkna med och framförallt, till en trygg och erfaren samarbetspartner när du ska sälja din bostad i Skåne. Boka en fri värdering med en av våra erfarna och kunniga mäklare så får du dessutom 2 biobiljetter. Låter det intressant? Kontakta oss redan idag!</p>
-            <p>Vi på Bülow & Lind tror inte på trolleritrick eller hokus pokus.För att du ska få rätt pris för din bostad gäller det att vi genomför hela affären med omsorg om varje moment.</p>
+            <p>Vi på Bülow &amp; Lind tror inte på trolleritrick eller hokus pokus.För att du ska få rätt pris för din bostad gäller det att vi genomför hela affären med omsorg om varje moment.</p>
             <p>I grunden handlar det om ett systematiskt och genomtänkt arbete, där vi strävar efter att, så långt det går, komma bort från slumpmässiga resultat.</p>
             <p>Kunskap om bostadsförsäljning är lönsam.</p>
         </div>

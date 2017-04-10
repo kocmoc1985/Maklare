@@ -1,24 +1,28 @@
 <!-->#ROUTING_DETAILED<-->
-<!--div *ngIf="object">
-    <h3>Selected object: {{object.street}}</h3>
-</div-->
-
 
 <div class="container-fluid object-detailed" *ngIf="object">
 
-    <div class="row row-one">
-        <div class="col-6">
-            <img src="images/estate/{{object.objectnr}}/main.jpg">
+    <div class="row row-one" [style.background-image]="bgImg(object)">
+        <div class="col-8 main-img">
+            <!--<img class="img-fluid" src="images/estate/{{object.objectnr}}/main.jpg">-->
         </div>
 
-        <div class="col-6">
-            <p>{{object.shortInfo}}</p>
+        <div class="col-4">
+            <div class="panel basic-info">
+                <h2 class="object-title">{{object.street}}</h2>
+                <p>{{object.shortInfo}}</p>
+                <p>Pris: {{object.price}}</p>
+                <p>Månadsavgift: {{object.hyra}} kr/mån</p>
+                <p>Antal rum: {{object.rooms}}</p>
+                <p>Boarea: {{object.area}} m&#178;</p>
+            </div>
         </div>
     </div>
 
     <div class="row row-two" *ngFor="let image of objectImages">
          <div class="offset-1 col-10">
-            <img *ngIf="image !== 'main.jpg'" src="images/estate/{{object.objectnr}}/{{image}}">
+             
+            <img *ngIf="image !== 'main.jpg'" [hidden]="!loadedImages[image]" (load)="registerLoadedImage(image)" src="images/estate/{{object.objectnr}}/{{image}}">
         </div>
     </div>
 

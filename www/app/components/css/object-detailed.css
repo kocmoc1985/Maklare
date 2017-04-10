@@ -1,7 +1,40 @@
-.object-detailed .row-one .col-6 img{
-    width: 100%;
+.object-detailed .row-one {
+    /*height: 100vh;*/
+    background-color: lightgray;
+}
+
+.row-one {
+    background-size: cover;
+    background-position:center center;
+}
+
+.object-detailed .row-one .col-8{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+
+.object-detailed .basic-info{
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.object-detailed .col-4{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.object-title{
+    font-family: inherit;
 }
 
 .object-detailed .row-two .col-10 img{
     width: 100%;
+}
+ .object-detailed .row-four .col-6 img{
+    width: 100%;
+}
+
+.object-detailed .row{
+    width: 100vw;
 }
