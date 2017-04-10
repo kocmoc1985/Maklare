@@ -5,9 +5,15 @@
     padding-left: 5%;
     padding-right: 5%;
 }
+
+.jumbotron {
+    background: url("images/lite-2.jpg") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    margin-bottom: 0px;
+}
+
 .button{
     color: white;
     text-align: center;
-   
 }
- 
