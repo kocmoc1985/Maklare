@@ -9,19 +9,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var data_service_1 = require('../services/data.service');
 var SearchComponent = (function () {
-    function SearchComponent() {
+    function SearchComponent(dataService) {
+        this.dataService = dataService;
+        this.searchCounter = 0;
+        this.onSearch = new core_1.EventEmitter();
     }
-    SearchComponent.prototype.search = function (term) {
-        console.log('fake search made:', term);
-        // Perform search
+    SearchComponent.prototype.ngOnInit = function () {
+        this.search('');
     };
+    SearchComponent.prototype.search = function (term) {
+        term = term.trim();
+        if (term === this.previousSearchTerm)
+            return;
+        this.previousSearchTerm = term;
+        ++this.searchCounter;
+        var properties = {
+            $or: [
+                { district: { $regex: term, $options: "i" } },
+                { town: { $regex: term, $options: "i" } },
+                { street: { $regex: term, $options: "i" } },
+                { lan: { $regex: term, $options: "i" } }
+            ],
+            _fields: '',
+            _sort: 'name',
+            _skip: 0,
+            _limit: 10
+        };
+        this.sendSearchRequest(properties);
+    };
+    SearchComponent.prototype.sendSearchRequest = function (properties) {
+        var _this = this;
+        var rest = this.dataService.FASTIGHET_REST_NEW;
+        var currentSearchCounter = this.searchCounter;
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(function (data) {
+            // Ignore all results other than the newest/altered search-term
+            if (currentSearchCounter == _this.searchCounter) {
+                _this.objects = data;
+                _this.onSearch.emit(data);
+            }
+        });
+    };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], SearchComponent.prototype, "onSearch", void 0);
     SearchComponent = __decorate([
         core_1.Component({
             selector: 'search',
-            templateUrl: './app/components/template/search.html'
+            templateUrl: './app/components/template/search.html',
+            providers: [data_service_1.DataService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [data_service_1.DataService])
     ], SearchComponent);
     return SearchComponent;
 }());

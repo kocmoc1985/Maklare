@@ -18,24 +18,10 @@ var ListSearchComponent = (function () {
         this.dataService = dataService;
         this.router = router;
     }
-    ListSearchComponent.prototype.ngOnInit = function () { };
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED
         this.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
-    };
-    ListSearchComponent.prototype.getFastigheter = function () {
-        var _this = this;
-        this.clicked = true;
-        // Properties examples:
-        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
-        // {area:25}
-        var properties = { _fields: '', _sort: 'name', _skip: 0, _limit: 3 };
-        var rest = this.dataService.FASTIGHET_REST_NEW;
-        //Calling a Promise function
-        this.dataService.get(rest, properties).then(function (data) {
-            _this.objects = data;
-        });
     };
     ListSearchComponent.prototype.getBrokers = function () {
         var _this = this;
@@ -50,6 +36,10 @@ var ListSearchComponent = (function () {
             //                this.images = this.objects.images; // How to get images?
         });
     };
+    __decorate([
+        core_1.Input('estates'), 
+        __metadata('design:type', Array)
+    ], ListSearchComponent.prototype, "objects", void 0);
     ListSearchComponent = __decorate([
         core_1.Component({
             selector: 'list-app',
