@@ -36,7 +36,7 @@ export class SearchComponent implements OnInit {
                 {lan: {$regex: term, $options: "i"}}
             ],
             _fields: '',
-            _sort: 'name',
+            _sort: '-dateAdded',
             _skip: 0,
             _limit: 100
         };
