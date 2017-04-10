@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {DataService} from '../services/data.service';
@@ -13,40 +13,21 @@ import {DataService} from '../services/data.service';
     providers: [DataService]
 })
 
-export class ListSearchComponent implements OnInit {
+export class ListSearchComponent {
     constructor(
         private dataService: DataService,
         private router: Router
     ) {}
 
-    private objects: any[];
+	@Input('estates') objects: any[];
     private selectedObject: any;
     private clicked: boolean;
-
-    ngOnInit(): void {}
 
     showDetailedView(object: any) {
         //#ROUTING_DETAILED
         this.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
     }
-
-    getFastigheter() {
-        this.clicked = true;
-        // Properties examples:
-        // {_fields: '', _sort: 'name', _skip: 0, _limit: 3}
-        // {area:25}
-        let properties = {_fields: '', _sort: 'name', _skip: 0, _limit: 3};
-        let rest = this.dataService.FASTIGHET_REST_NEW;
-
-        //Calling a Promise function
-        this.dataService.get(rest, properties).then(
-            (data) => {
-                this.objects = data;
-            }
-        );
-    }
-
 
     getBrokers() {
         // Properties examples:
