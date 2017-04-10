@@ -23,6 +23,7 @@ export class DataService {
      * Find usage example in "list-app.components" -> getFastigheter(...) && getBrokers(...)
      */
     get(rest: RestEntity, properties: any): Promise<any[]> {
+        //#PROMISE
         return new Promise(
             (resolve, reject) => {
                 rest.find(this._find(properties)).then((data: any) => {
@@ -78,6 +79,5 @@ export class DataService {
     _find(obj: any) {
         return "find/" + JSON.stringify(obj);
     }
-
 
 }

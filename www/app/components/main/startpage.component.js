@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SellComponent = (function () {
-    function SellComponent() {
+var StartpageComponent = (function () {
+    function StartpageComponent() {
     }
-    SellComponent = __decorate([
+    StartpageComponent = __decorate([
         core_1.Component({
-            selector: 'sell',
-            templateUrl: 'app/components/template/sell.html',
-            styleUrls: ['app/components/css/sell.css']
+            selector: 'app-startpage',
+            templateUrl: 'app/components/template/startpage-pelle.html',
+            // templateUrl: 'app/components/template/startpage.html',
+            styleUrls: ['app/components/css/startpage.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], SellComponent);
-    return SellComponent;
+    ], StartpageComponent);
+    return StartpageComponent;
 }());
-exports.SellComponent = SellComponent;
-//# sourceMappingURL=sell.component.js.map
+exports.StartpageComponent = StartpageComponent;
+//# sourceMappingURL=startpage.component.js.map

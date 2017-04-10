@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'buy',
@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
 })
 
 export class BuyComponent {
-	searchResult: any[];
+    searchResult: any[];
 
-	onSearch(objects: any[]) {
-		this.searchResult = objects;
-	}
+    onSearch(objects: any[]) { //#EVENT_EMITTER
+        //#DATA_EXCHANGE
+        this.searchResult = objects;
+    }
 }

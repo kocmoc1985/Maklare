@@ -18,26 +18,22 @@ export class ObjectDetailedComponent implements OnInit {
 
     private object: any;
     private objectImages: String[];
+    private loadedImages = {};
     private broker: any;
-    private urlExist: boolean;
 
     constructor(
         private dataService: DataService,
         private route: ActivatedRoute,
         private location: Location
     ) {}
+    
+    bgImg(object){
+        return "url('images/estate/" + object.objectnr + "/main.jpg')"; 
+    }
 
-    urlExists(url: any) {
-        console.log("function called");
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        //        return http.status != 404;
-        if (http.status != 404) {
-            this.urlExist = true;
-        } else {
-            this.urlExist = false;
-        }
+
+    registerLoadedImage(img: string){
+       this.loadedImages[img] = true;
     }
 
     goBack(): void {
@@ -48,8 +44,6 @@ export class ObjectDetailedComponent implements OnInit {
         this.object = data[0];
         this.broker = data[0].broker;
         this.objectImages = data[0].images;
-//        console.log("object", this.object);
-        //        console.log("Imgages:", this.objectImages);
     }
 
     ngOnInit(): void {

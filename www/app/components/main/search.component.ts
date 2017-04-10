@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import {Component, EventEmitter, Output, OnInit} from '@angular/core';
 
-import { DataService } from '../services/data.service';
+import {DataService} from '../services/data.service';
 
 @Component ({
 	selector: 'search',
@@ -16,11 +16,11 @@ export class SearchComponent implements OnInit {
 	private timeoutKeyUp: any;
 	@Output() onSearch = new EventEmitter<any[]>();
 
-	constructor(private dataService: DataService) {}
+    constructor(private dataService: DataService) {}
 
-	ngOnInit() {
-		this.search('');
-	}
+    ngOnInit() {
+        this.search('');
+    }
 
 	search(term: string): void {
 		term = term.trim();
@@ -28,21 +28,21 @@ export class SearchComponent implements OnInit {
 			return;
 		this.previousSearchTerm = term;
 
-		let properties = {
-			$or: [
-				{ district: { $regex: term, $options: "i" } },
-				{ town: { $regex: term, $options: "i" } },
-				{ street: { $regex: term, $options: "i" } },
-				{ lan: { $regex: term, $options: "i" } }
-			],
-			_fields: '',
-			_sort: 'name',
-			_skip: 0,
-			_limit: 10
-		};
+        let properties = {
+            $or: [
+                {district: {$regex: term, $options: "i"}},
+                {town: {$regex: term, $options: "i"}},
+                {street: {$regex: term, $options: "i"}},
+                {lan: {$regex: term, $options: "i"}}
+            ],
+            _fields: '',
+            _sort: '-dateAdded',
+            _skip: 0,
+            _limit: 100
+        };
 
-		this.sendSearchRequest(properties);
-	}
+        this.sendSearchRequest(properties);
+    }
 
 	private sendSearchRequest(properties: Object) {
 		const keyUpDelayMs = 300;
