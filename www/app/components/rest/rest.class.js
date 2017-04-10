@@ -12,7 +12,7 @@ var RestEntity = (function () {
     }
     RestEntity.prototype.httpRequest = function (type, idOrQuery, requestBody) {
         var url = this.baseUrl + '/' + idOrQuery;
-        console.log("REST_URL:", url);
+        // console.log("REST_URL:", url);
         // remove trailing slahses
         while (url.substr(-1) == '/') {
             url = url.substring(0, url.length - 1);

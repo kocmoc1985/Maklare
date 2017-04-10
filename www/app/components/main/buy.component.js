@@ -13,6 +13,7 @@ var BuyComponent = (function () {
     function BuyComponent() {
     }
     BuyComponent.prototype.onSearch = function (objects) {
+        //#DATA_EXCHANGE
         this.searchResult = objects;
     };
     BuyComponent = __decorate([

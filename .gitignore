@@ -4,4 +4,6 @@
 *.js.map
 /www/app/*.js
 /www/app/components/*.js
+/www/app/components/main/*.js
+/www/app/components/rest/*.js
 nbproject
