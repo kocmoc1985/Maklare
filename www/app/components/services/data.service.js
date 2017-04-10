@@ -22,6 +22,7 @@ var DataService = (function () {
      */
     DataService.prototype.get = function (rest, properties) {
         var _this = this;
+        //#PROMISE
         return new Promise(function (resolve, reject) {
             rest.find(_this._find(properties)).then(function (data) {
                 resolve(data);
