@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+    
     <div class="row list-entry"  *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
@@ -7,10 +7,10 @@
             <img src="images/estate/{{object.objectnr}}/main.jpg">
         </div>
 
-        <div class="col-10 col-sm-10 col-md-6 hidden-sm-down list-entry-info-section">
-            <div class="row list-entry-prim-info">
+        <div class="col-10 col-sm-10 col-md-6 hidden-sm-down list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
+            <div class="row list-entry-prim-info" >
                 <div class="col-4">
-                    <p>{{object.price}} kr</p>
+                    <p >{{object.price}} kr</p>
                 </div>
                 <div class="col-4">
                     <p>{{object.district}}</p>
@@ -43,7 +43,7 @@
 
         <!-->MOBILE VIEW<-->
 
-        <div class="col-9 hidden-md-up list-entry-info-section">
+        <div class="col-9 hidden-md-up list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
             <div class="row list-entry-prim-info">
                 <div class="col-6">
                     <p>{{object.price}} kr</p>
