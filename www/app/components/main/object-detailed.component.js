@@ -20,6 +20,9 @@ var ObjectDetailedComponent = (function () {
         this.location = location;
         this.loadedImages = {};
     }
+    ObjectDetailedComponent.prototype.bgImg = function (object) {
+        return "url('images/estate/" + object.objectnr + "/main.jpg')";
+    };
     ObjectDetailedComponent.prototype.registerLoadedImage = function (img) {
         this.loadedImages[img] = true;
     };
