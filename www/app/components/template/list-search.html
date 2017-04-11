@@ -1,6 +1,7 @@
 <div class="container-fluid">
 
-    <div class="row list-entry"  *ngFor="let object of objects" (click)="showDetailedView(object)"><!-->#ROUTING_DETAILED<-->
+    <div class="row list-entry"  *ngFor="let object of objects"
+         (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
          <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
             <img src="images/estate/{{object.objectnr}}/main.jpg">
@@ -25,7 +26,10 @@
                 </div>
                 <div class="col-4">
                     <p>{{object.street}}</p>
-                </div>                  
+                </div> 
+                <div class="col-4 faded" [class.infaded]="selectedHoverObject == object">
+                    <p *ngIf="selectedHoverObject == object">{{formatDate(selectedHoverObject.dateAdded)}}</p>
+                </div>   
             </div>
 
             <div class="row list-entry-short-info">

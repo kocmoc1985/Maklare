@@ -23,6 +23,15 @@ var ListSearchComponent = (function () {
         this.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
     };
+    ListSearchComponent.prototype.over = function (object) {
+        this.selectedHoverObject = object;
+    };
+    ListSearchComponent.prototype.leave = function () {
+        this.selectedHoverObject = null;
+    };
+    ListSearchComponent.prototype.formatDate = function (date) {
+        return date.substring(0, 10);
+    };
     /**
      * @deprecated
      */

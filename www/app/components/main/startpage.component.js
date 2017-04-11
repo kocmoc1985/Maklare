@@ -15,7 +15,9 @@ var StartpageComponent = (function () {
     StartpageComponent = __decorate([
         core_1.Component({
             selector: 'app-startpage',
-            templateUrl: 'app/components/template/startpage.html'
+            templateUrl: 'app/components/template/startpage-pelle.html',
+            // templateUrl: 'app/components/template/startpage.html',
+            styleUrls: ['app/components/css/startpage.css']
         }), 
         __metadata('design:paramtypes', [])
     ], StartpageComponent);

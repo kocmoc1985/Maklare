@@ -16,6 +16,21 @@
     border-right: none;
 }
 
+.faded{
+    opacity: 0;
+    color: black;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+}
+
+.infaded{
+    opacity: 1;
+    color: lightgrey !important;
+}
+
 .list-entry .col-3, .col-2{
     height: 100%;
     padding: 0;
@@ -65,10 +80,7 @@
     line-height: 1.8em;
 }
 
-.button-clicked{
-    color: green;
-    font-weight: bold;
-}
+
 
 @media (max-width: 768px){
     .list-entry p{

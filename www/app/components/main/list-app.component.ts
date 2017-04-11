@@ -23,6 +23,7 @@ export class ListSearchComponent {
     ) {}
 
     private selectedObject: any;
+    private selectedHoverObject:any;
 
     showDetailedView(object: any) {
         //#ROUTING_DETAILED
@@ -30,7 +31,18 @@ export class ListSearchComponent {
         this.router.navigate(['/detail', object._id]);
     }
 
-
+    over(object:any){
+        this.selectedHoverObject = object;
+    }
+    
+    leave(){
+        this.selectedHoverObject = null;
+    }
+    
+    formatDate(date:String){
+        return date.substring(0,10);
+    }
+    
     /**
      * @deprecated
      */
