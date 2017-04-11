@@ -14,7 +14,7 @@ var SearchComponent = (function () {
     function SearchComponent(dataService) {
         this.dataService = dataService;
         this.searchCounter = 0;
-        this.onSearch = new core_1.EventEmitter();
+        this.onSearch = new core_1.EventEmitter(); //#EVENT_EMITTER
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.search('');
@@ -24,6 +24,7 @@ var SearchComponent = (function () {
         if (term === this.previousSearchTerm)
             return;
         this.previousSearchTerm = term;
+        ++this.searchCounter;
         var properties = {
             $or: [
                 { district: { $regex: term, $options: "i" } },
@@ -40,20 +41,16 @@ var SearchComponent = (function () {
     };
     SearchComponent.prototype.sendSearchRequest = function (properties) {
         var _this = this;
-        var keyUpDelayMs = 300;
         var rest = this.dataService.FASTIGHET_REST_NEW;
-        var currentSearchCounter = ++this.searchCounter;
-        // Wait to notice if the search-term gets altered before sending additional requests
-        clearTimeout(this.timeoutKeyUp);
-        this.timeoutKeyUp = setTimeout(function () {
-            _this.dataService.get(rest, properties).then(function (data) {
-                // Ignore all results other than the newest/altered search-term
-                if (currentSearchCounter == _this.searchCounter) {
-                    _this.objects = data;
-                    _this.onSearch.emit(data);
-                }
-            });
-        }, keyUpDelayMs);
+        var currentSearchCounter = this.searchCounter;
+        //Calling a Promise function
+        this.dataService.get(rest, properties).then(function (data) {
+            // Ignore all results other than the newest/altered search-term
+            if (currentSearchCounter == _this.searchCounter) {
+                _this.objects = data;
+                _this.onSearch.emit(data); //#EVENT_EMITTER
+            }
+        });
     };
     __decorate([
         core_1.Output(), 
@@ -63,7 +60,6 @@ var SearchComponent = (function () {
         core_1.Component({
             selector: 'search',
             templateUrl: './app/components/template/search.html',
-            styleUrls: ['./app/components/css/search.css'],
             providers: [data_service_1.DataService]
         }), 
         __metadata('design:paramtypes', [data_service_1.DataService])
