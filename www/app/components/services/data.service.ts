@@ -80,5 +80,4 @@ export class DataService {
         return "find/" + JSON.stringify(obj);
     }
 
-
 }
