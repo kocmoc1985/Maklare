@@ -1,8 +1,9 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Observable_1 = require("rxjs/Observable");
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/catch');
-require('rxjs/add/observable/throw');
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
+require("rxjs/add/observable/throw");
 var RestEntity = (function () {
     function RestEntity(entityName) {
         // Mocking with json

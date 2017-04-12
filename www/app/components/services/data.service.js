@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var rest_service_1 = require('../rest/rest.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var rest_service_1 = require("../rest/rest.service");
 var DataService = (function () {
     function DataService(restService) {
         this.restService = restService;
@@ -56,23 +57,14 @@ var DataService = (function () {
             });
         });
     };
-    // getBrokers() {
-    //     return new Promise(
-    //         (resolve, reject) => {
-    //             BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0}), (data: any, textStatus: any, jqXHR: any) => {
-    //                 resolve(data);
-    //             });
-    //         }
-    //     );
-    // }
     DataService.prototype._find = function (obj) {
         return "find/" + JSON.stringify(obj);
     };
-    DataService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [rest_service_1.RestService])
-    ], DataService);
     return DataService;
 }());
+DataService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [rest_service_1.RestService])
+], DataService);
 exports.DataService = DataService;
 //# sourceMappingURL=data.service.js.map

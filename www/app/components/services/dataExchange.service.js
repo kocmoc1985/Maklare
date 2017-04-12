@@ -8,32 +8,42 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-// A shared memory between components
-// and between initializations of components
-var DataExchange = (function () {
+var DataExchange = DataExchange_1 = (function () {
     function DataExchange() {
+        var _this = this;
+        DataExchange_1.globalMem = {};
+        // Share method through global mem
+        //#METHOD SHARING
+        DataExchange_1.globalMem.showInfoModal = function (title, infoMsg, customizedObj, size, type) {
+            _this.showInfoModal(title, infoMsg, customizedObj, size, type);
+        };
     }
     DataExchange.prototype.create = function (that) {
         // call from any component using this service with this as argument
         // to get a components specific memory that survives
         // between route changes
         var className = that.constructor.name;
-        DataExchange.localMem[className] = DataExchange.localMem[className] || {};
-        return DataExchange.localMem[className];
+        DataExchange_1.localMem[className] = DataExchange_1.localMem[className] || {};
+        return DataExchange_1.localMem[className];
     };
     DataExchange.prototype.global = function () {
         // call from any component using this service
         // to get a global memory shared between all components 
-        return DataExchange.globalMem;
+        return DataExchange_1.globalMem;
     };
-    DataExchange.globalMem = {}; // global for everyone
-    DataExchange.localMem = {}; // local per class/component
-    DataExchange = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], DataExchange);
+    //#METHOD SHARING
+    DataExchange.prototype.showInfoModal = function (title, infoMsg, customizedObj, size, type) {
+        MYMODALS.showInfoModal(title, infoMsg, customizedObj, size, type);
+    };
     return DataExchange;
 }());
+DataExchange.localMem = {}; // local per class/component
+DataExchange = DataExchange_1 = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], DataExchange);
 exports.DataExchange = DataExchange;
+var DataExchange_1;
 //# sourceMappingURL=dataExchange.service.js.map

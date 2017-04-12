@@ -64,18 +64,6 @@ export class DataService {
         );
     }
 
-    // getBrokers() {
-
-    //     return new Promise(
-    //         (resolve, reject) => {
-
-    //             BROKERS_REST.find(_find({_fields: '', _sort: 'name', _skip: 0}), (data: any, textStatus: any, jqXHR: any) => {
-    //                 resolve(data);
-    //             });
-    //         }
-    //     );
-    // }
-
     _find(obj: any) {
         return "find/" + JSON.stringify(obj);
     }

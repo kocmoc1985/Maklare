@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var common_1 = require('@angular/common');
-var data_service_1 = require('../services/data.service');
-require('rxjs/add/operator/switchMap');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var common_1 = require("@angular/common");
+var data_service_1 = require("../services/data.service");
+require("rxjs/add/operator/switchMap");
 var ObjectDetailedComponent = (function () {
     function ObjectDetailedComponent(dataService, route, location) {
         this.dataService = dataService;
@@ -20,6 +21,9 @@ var ObjectDetailedComponent = (function () {
         this.location = location;
         this.loadedImages = {};
     }
+    ObjectDetailedComponent.prototype.bgImg = function (object) {
+        return "url('images/estate/" + object.objectnr + "/main.jpg')";
+    };
     ObjectDetailedComponent.prototype.registerLoadedImage = function (img) {
         this.loadedImages[img] = true;
     };
@@ -37,16 +41,18 @@ var ObjectDetailedComponent = (function () {
             .switchMap(function (params) { return _this.dataService.getFastighetById(params['id']); })
             .subscribe(function (data) { return (_this.set(data)); }); //(console.log("data",data))
     };
-    ObjectDetailedComponent = __decorate([
-        core_1.Component({
-            //#ROUTING_DETAILED
-            selector: 'object-detailed',
-            templateUrl: 'app/components/template/object-detailed.html',
-            styleUrls: ['app/components/css/object-detailed.css']
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.ActivatedRoute, common_1.Location])
-    ], ObjectDetailedComponent);
     return ObjectDetailedComponent;
 }());
+ObjectDetailedComponent = __decorate([
+    core_1.Component({
+        //#ROUTING_DETAILED
+        selector: 'object-detailed',
+        templateUrl: 'app/components/template/object-detailed.html',
+        styleUrls: ['app/components/css/object-detailed.css']
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService,
+        router_1.ActivatedRoute,
+        common_1.Location])
+], ObjectDetailedComponent);
 exports.ObjectDetailedComponent = ObjectDetailedComponent;
 //# sourceMappingURL=object-detailed.component.js.map

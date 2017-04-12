@@ -1,3 +1,13 @@
+//        MYMODALS.showInfoModal('InfoModal', '', '', 'sm', '');
+//
+//        MYMODALS.showInputModalB('InputModal', '', '', 'sm', function (retComponent: any) {
+//            console.log("answer recieved:", retComponent);
+//        });
+//
+//        MYMODALS.showConfirmModal('ConfirmModal', 'Continue?', 'sm', 'warning', (modalInput: any) => {
+//            console.log("answer recieved:", modalInput);
+//        });
+
 class MyModals {
 
     constructor(path) {

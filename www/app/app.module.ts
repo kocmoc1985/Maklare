@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'; // #ngbootstrap
 import {FormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 
 
@@ -23,6 +22,9 @@ import {ObjectDetailedComponent} from './components/main/object-detailed.compone
 
 // Services
 import {RestService} from './components/rest/rest.service';
+
+// Pipes
+import {DateCutPipe} from './components/pipes/datecut.pipe';
 
 // for separate routing file
 import {AppRoutingModule} from './components/app-routing.module';
@@ -45,6 +47,7 @@ import {AppRoutingModule} from './components/app-routing.module';
         SellComponent,
         AboutComponent,
         SearchComponent,
+        DateCutPipe,
         ObjectDetailedComponent //#ROUTING_DETAILED
         // for separate routing file
         // AppRoutingModule

@@ -8,19 +8,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var SellComponent = (function () {
-    function SellComponent() {
+    function SellComponent(http) {
+        this.http = http;
+        this.sent = false;
     }
-    SellComponent = __decorate([
-        core_1.Component({
-            selector: 'sell',
-            templateUrl: 'app/components/template/sell.html',
-            styleUrls: ['app/components/css/sell.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], SellComponent);
+    //send mail
+    SellComponent.prototype.registerMail = function () {
+        this.sendContactInfo({ email: this.email });
+    };
+    //send phonenumber
+    SellComponent.prototype.registerPhone = function () {
+        this.sendContactInfo({ phoneNumber: this.phoneNumber });
+    };
+    SellComponent.prototype.sendContactInfo = function (data) {
+        this.sent = true;
+        var _observable = this.http.post("/register-contact-info", data);
+        _observable.subscribe();
+        console.log("SHOULD SEND", data, "HA", this.http);
+    };
     return SellComponent;
 }());
+SellComponent = __decorate([
+    core_1.Component({
+        selector: 'sell',
+        templateUrl: 'app/components/template/sell.html',
+        styleUrls: ['app/components/css/sell.css'],
+    }),
+    __metadata("design:paramtypes", [http_1.Http])
+], SellComponent);
 exports.SellComponent = SellComponent;
 //# sourceMappingURL=sell.component.js.map

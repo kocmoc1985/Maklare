@@ -1,3 +1,5 @@
+var FASTIGHETS_REST = new REST('fastighet');
+var BROKERS_REST = new REST('brokers');
 var TABLE_BROKERS;
 var TABLE_FASTIGHETER;
 var MYMODALS = new MyModalsCrud("js/modals/");

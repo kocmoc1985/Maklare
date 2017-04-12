@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var data_service_1 = require('../services/data.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var data_service_1 = require("../services/data.service");
 var AboutComponent = (function () {
     function AboutComponent(dataService) {
         this.dataService = dataService;
@@ -26,15 +27,15 @@ var AboutComponent = (function () {
             _this.brokers = data;
         });
     };
-    AboutComponent = __decorate([
-        core_1.Component({
-            selector: 'about',
-            templateUrl: 'app/components/template/about.html',
-            styleUrls: ['app/components/css/about.css']
-        }), 
-        __metadata('design:paramtypes', [data_service_1.DataService])
-    ], AboutComponent);
     return AboutComponent;
 }());
+AboutComponent = __decorate([
+    core_1.Component({
+        selector: 'about',
+        templateUrl: 'app/components/template/about.html',
+        styleUrls: ['app/components/css/about.css']
+    }),
+    __metadata("design:paramtypes", [data_service_1.DataService])
+], AboutComponent);
 exports.AboutComponent = AboutComponent;
 //# sourceMappingURL=about.component.js.map
