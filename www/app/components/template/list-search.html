@@ -1,10 +1,10 @@
 <div class="container-fluid">
 
-    <!--div class="row list-entry"  *ngFor="let object of objects"
-         (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"--><!-->#ROUTING_DETAILED<-->
-         
     <div class="row list-entry"  *ngFor="let object of objects"
-         (click)="showModal()" (mouseover)="over(object)" (mouseleave)="leave()">
+         (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
+         
+    <!--div class="row list-entry"  *ngFor="let object of objects"
+         (click)="showModal()" (mouseover)="over(object)" (mouseleave)="leave()"-->
 
          <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
             <img src="images/estate/{{object.objectnr}}/main.jpg">
