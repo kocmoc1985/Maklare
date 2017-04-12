@@ -27,6 +27,12 @@ export class ObjectDetailedComponent implements OnInit {
         private location: Location
     ) {}
     
+
+    bgImg(object:any){
+        return "url('images/estate/" + object.objectnr + "/main.jpg')"; 
+    }
+
+
     registerLoadedImage(img: string){
        this.loadedImages[img] = true;
     }

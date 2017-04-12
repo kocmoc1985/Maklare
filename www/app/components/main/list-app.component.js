@@ -11,17 +11,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var data_service_1 = require('../services/data.service');
+var dataExchange_service_1 = require('../services/dataExchange.service');
 //declare var FASTIGHETS_REST: any;
 //declare function _find(param: any): any;
 var ListSearchComponent = (function () {
-    function ListSearchComponent(dataService, router) {
+    function ListSearchComponent(dataService, dataExchange, router) {
         this.dataService = dataService;
+        this.dataExchange = dataExchange;
         this.router = router;
+        this.localMem = this.dataExchange.create(this);
     }
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED
-        this.selectedObject = object;
+        this.localMem.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
+    };
+    ListSearchComponent.prototype.over = function (object) {
+        this.selectedHoverObject = object;
+    };
+    ListSearchComponent.prototype.leave = function () {
+        this.selectedHoverObject = null;
+    };
+    ListSearchComponent.prototype.formatDate = function (date) {
+        return date.substring(0, 10);
+    };
+    ListSearchComponent.prototype.equals = function (selectedObj, obj) {
+        if (!selectedObj || !obj) {
+            return false;
+        }
+        if (selectedObj._id && obj._id) {
+            if (selectedObj._id == obj._id) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
     };
     /**
      * @deprecated
@@ -48,9 +76,9 @@ var ListSearchComponent = (function () {
             selector: 'list-app',
             templateUrl: 'app/components/template/list-search.html',
             styleUrls: ['app/components/css/list-search.css'],
-            providers: [data_service_1.DataService]
+            providers: [data_service_1.DataService, dataExchange_service_1.DataExchange]
         }), 
-        __metadata('design:paramtypes', [data_service_1.DataService, router_1.Router])
+        __metadata('design:paramtypes', [data_service_1.DataService, dataExchange_service_1.DataExchange, router_1.Router])
     ], ListSearchComponent);
     return ListSearchComponent;
 }());
