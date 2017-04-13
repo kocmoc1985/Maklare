@@ -57,7 +57,7 @@ export class ListSearchComponent implements OnInit {
         event.stopPropagation();
 
         var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal('Karta', '', mapContainer, 'md', '', (ret: any) => {
+        MYMODALS.showInfoModal(object.street+', ' + object.town, '', mapContainer, 'md', '', (ret: any) => {
             var location = new google.maps.LatLng(object.mapslat, object.mapslng);
 
             var mapProp = {

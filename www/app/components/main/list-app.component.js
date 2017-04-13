@@ -39,7 +39,7 @@ var ListSearchComponent = (function () {
         var _this = this;
         event.stopPropagation();
         var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal('Karta', '', mapContainer, 'md', '', function (ret) {
+        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', function (ret) {
             var location = new google.maps.LatLng(object.mapslat, object.mapslng);
             var mapProp = {
                 center: location,
