@@ -2,8 +2,8 @@ module.exports = function (mongoose) {
 
     // Mongoose Schema, One-to-Few relation
     var shema = mongoose.Schema({
-        dateAdded:{type: Date, default: Date.now},
-        objectnr:{type:String,required:true},
+        dateAdded: {type: Date, default: Date.now},
+        objectnr: {type: String, required: true},
         type: {type: String, enum: ['villa', "hyresrätt", "bostadsrätt"]}, //{type:Number,required: true,min: 1, max: 10}
         price: {type: Number, required: true},
         area: {type: Number, required: true}, //{type:Boolean,default: false}
@@ -12,13 +12,15 @@ module.exports = function (mongoose) {
         //
         country: {type: String, required: true},
         lan: {type: String, required: true},
-        district:{type: String, required: true},
+        district: {type: String, required: true},
         town: {type: String, required: true},
         street: {type: String, required: true},
         zip: {type: String, required: true},
         //
         shortInfo: {type: String},
         longInfo: {type: String},
+        mapslat: {type: String},
+        mapslng: {type: String},
         images: [{type: String}],
         //
         broker: {type: mongoose.Schema.Types.ObjectId, ref: 'brokers'}
@@ -35,8 +37,8 @@ module.exports = function (mongoose) {
         json.forEach(function (act) {
             //
             var classroom = new me({
-                dateAdded:act.dateAdded,
-                objectnr:act.objectnr,
+                dateAdded: act.dateAdded,
+                objectnr: act.objectnr,
                 type: act.type,
                 price: act.price,
                 area: act.area,
@@ -45,13 +47,15 @@ module.exports = function (mongoose) {
                 //
                 country: act.country,
                 lan: act.lan,
-                district:act.district,
+                district: act.district,
                 town: act.town,
                 street: act.street,
                 zip: act.zip,
                 //
                 shortInfo: act.shortInfo,
                 longInfo: act.longInfo,
+                mapslat: act.mapslat,
+                mapslng: act.mapslng,
                 images: act.images,
                 //
                 broker: act.broker

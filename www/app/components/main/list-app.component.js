@@ -13,7 +13,6 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var data_service_1 = require("../services/data.service");
 var dataExchange_service_1 = require("../services/dataExchange.service");
-//declare var MYMODALS: any;
 //declare function _find(param: any): any;
 var ListSearchComponent = (function () {
     function ListSearchComponent(el, //#JQUERY + ANGULAR

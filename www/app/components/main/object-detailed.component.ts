@@ -1,10 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Location} from '@angular/common';
 
 import {DataService} from '../services/data.service';
 
 import 'rxjs/add/operator/switchMap';
+
+declare var google: any;
 
 @Component({
     //#ROUTING_DETAILED
@@ -14,27 +16,50 @@ import 'rxjs/add/operator/switchMap';
 })
 
 
-export class ObjectDetailedComponent implements OnInit {
+export class ObjectDetailedComponent implements OnInit, AfterViewInit {
 
     private object: any;
     private objectImages: String[];
     private loadedImages = {};
     private broker: any;
+    private map: any;
 
     constructor(
         private dataService: DataService,
         private route: ActivatedRoute,
         private location: Location
     ) {}
-    
 
-    bgImg(object:any){
-        return "url('images/estate/" + object.objectnr + "/main.jpg')"; 
+    showGoogleMap() {
+        //#GOOGLE_MAP
+        if (this.map) {
+            return;
+        }
+
+        var location = new google.maps.LatLng(this.object.mapslat, this.object.mapslng);
+
+        var mapProp = {
+            center: location,
+            zoom: 10,
+
+        };
+        this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: this.map,
+            title: this.object.street
+        });
+
+    }
+
+    bgImg(object: any) {
+        return "url('images/estate/" + object.objectnr + "/main.jpg')";
     }
 
 
-    registerLoadedImage(img: string){
-       this.loadedImages[img] = true;
+    registerLoadedImage(img: string) {
+        this.loadedImages[img] = true;
     }
 
     goBack(): void {
@@ -47,10 +72,17 @@ export class ObjectDetailedComponent implements OnInit {
         this.objectImages = data[0].images;
     }
 
+
+    ngAfterViewInit() {
+       
+    }
+
     ngOnInit(): void {
+        //#ROUTING_DETAILED
         this.route.params
             .switchMap((params: Params) => this.dataService.getFastighetById(params['id']))
             .subscribe(data => (this.set(data))); //(console.log("data",data))
+                   
     }
 
 }

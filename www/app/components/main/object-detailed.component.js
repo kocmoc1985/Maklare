@@ -21,6 +21,23 @@ var ObjectDetailedComponent = (function () {
         this.location = location;
         this.loadedImages = {};
     }
+    ObjectDetailedComponent.prototype.showGoogleMap = function () {
+        //#GOOGLE_MAP
+        if (this.map) {
+            return;
+        }
+        var location = new google.maps.LatLng(this.object.mapslat, this.object.mapslng);
+        var mapProp = {
+            center: location,
+            zoom: 10,
+        };
+        this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({
+            position: location,
+            map: this.map,
+            title: this.object.street
+        });
+    };
     ObjectDetailedComponent.prototype.bgImg = function (object) {
         return "url('images/estate/" + object.objectnr + "/main.jpg')";
     };
@@ -35,8 +52,11 @@ var ObjectDetailedComponent = (function () {
         this.broker = data[0].broker;
         this.objectImages = data[0].images;
     };
+    ObjectDetailedComponent.prototype.ngAfterViewInit = function () {
+    };
     ObjectDetailedComponent.prototype.ngOnInit = function () {
         var _this = this;
+        //#ROUTING_DETAILED
         this.route.params
             .switchMap(function (params) { return _this.dataService.getFastighetById(params['id']); })
             .subscribe(function (data) { return (_this.set(data)); }); //(console.log("data",data))

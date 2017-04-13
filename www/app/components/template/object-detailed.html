@@ -3,12 +3,12 @@
 <div class="container-fluid object-detailed" *ngIf="object">
 
     <div class="row row-one" [style.background-image]="bgImg(object)">
-        <div class="col-8 main-img">
+        <div class="col-md-8 col-12 main-img">
             <!--<img class="img-fluid" src="images/estate/{{object.objectnr}}/main.jpg">-->
         </div>
 
-        <div class="col-4">
-            <div class="panel basic-info">
+        <div class="col-md-4 col-12 basic-info">
+            <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
                 <p>Pris: {{object.price}}</p>
@@ -21,19 +21,18 @@
 
     <div class="row row-two" *ngFor="let image of objectImages">
          <div class="offset-1 col-10">
-             
             <img *ngIf="image !== 'main.jpg'" [hidden]="!loadedImages[image]" (load)="registerLoadedImage(image)" src="images/estate/{{object.objectnr}}/{{image}}">
         </div>
     </div>
 
     <div class="row row-three">
-        <div class="col-12">
+        <div class="col-12 col-long-info" *ngIf="object.longInfo">
             <p>{{object.longInfo}}</p>
         </div>
     </div>
 
     <div class="row row-four">
-        <div class="col-6" *ngIf="broker">
+        <div class="offset-md-1 col-md-5 offset-1 col-10 col-broker" *ngIf="broker">
             <div class="card card-margin-bottom">
                 <img class="card-img-top img-fluid" src="/images/brokers/{{broker.image}}" alt="Card image cap">
                 <div class="card-block">
@@ -45,14 +44,17 @@
             </div>
         </div>
 
-        <div class="col-6">
-             <h2>MAP</h2>
+        <div class="col-12 col-md-5 col-map">
+            {{showGoogleMap()}}
+            <div id="googleMap"></div>
         </div>
-        
+
     </div>
-    
+
     <div class="row row-five">
-        <h2><br><br>VISNING<br><br></h2>
+        <div class="col-12">
+            <h2><br><br>VISNING<br><br></h2>
+        </div>
     </div>
 
 

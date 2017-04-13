@@ -8,13 +8,12 @@
     background-position:center center;
 }
 
-.object-detailed .row-one .col-8{
+.row-one .col-8{
     padding-right: 0px;
     padding-left: 0px;
 }
 
-
-.object-detailed .basic-info{
+.basic-info{
     padding: 20px;
     background: rgba(255, 255, 255, 0.7);
 }
@@ -28,13 +27,70 @@
     font-family: inherit;
 }
 
-.object-detailed .row-two .col-10 img{
-    width: 100%;
-}
- .object-detailed .row-four .col-6 img{
+.row-two .col-10 img{
     width: 100%;
 }
 
-.object-detailed .row{
-    width: 100vw;
+.row-four .col-6 img{
+    width: 100%;
 }
+
+.row-four{
+    height: 50vh;
+}
+
+.row-four .col-md-5, .col-12{
+    overflow: auto;
+}
+
+.row-four .col-md-5{
+    height: 100%;
+}
+
+.col-long-info{
+    padding: 20px;
+}
+
+#googleMap{
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px){
+    .row{
+        font-size: 2vmax; 
+    }
+
+    h2{
+        font-size: 2.7vmax!important;
+    }
+    
+    .basic-info{
+        width: 100%;
+    }
+    
+    .col-broker{
+        margin-bottom: 5px;
+    }
+    
+   
+
+    .row-four{
+        height: auto;
+    }
+
+    .row-four .col-12{
+        margin-bottom: 5px;
+    }
+
+    .row{
+        margin-bottom: 5px;
+    }
+
+    #googleMap{
+        height: 50vh;
+        border: 1px solid lightgray;
+    }
+
+}
+

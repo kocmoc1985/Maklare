@@ -9,8 +9,6 @@ declare var $: any
 
 declare var MYMODALS: any;
 
-
-//declare var MYMODALS: any;
 //declare function _find(param: any): any;
 
 @Component({
