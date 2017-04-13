@@ -6,8 +6,8 @@ import {DataExchange} from '../services/dataExchange.service';
 
 //#JQUERY + ANGULAR
 declare var $: any
-
 declare var MYMODALS: any;
+declare var google: any;
 
 //declare function _find(param: any): any;
 
@@ -24,6 +24,7 @@ export class ListSearchComponent implements OnInit {
 
     private localMem: any;
     private globalMem: any;
+    private map: any;
 
     constructor(
         private el: ElementRef, //#JQUERY + ANGULAR
@@ -49,17 +50,34 @@ export class ListSearchComponent implements OnInit {
         this.router.navigate(['/detail', object._id]);
     }
 
-    showModal() {
 
-        MYMODALS.showInfoModal('InfoModal', '', '', 'sm', '');
+    showGoogleMapInModal(object: any, event: any) {
+        //#GOOGLE_MAP
 
-//        MYMODALS.showInputModalB('InputModal', '', '', 'sm', function (retComponent: any) {
-//            console.log("answer recieved:", retComponent);
-//        });
-//
-//        MYMODALS.showConfirmModal('ConfirmModal', 'Continue?', 'sm', 'warning', (modalInput: any) => {
-//            console.log("answer recieved:", modalInput);
-//        });
+        event.stopPropagation();
+
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        MYMODALS.showInfoModal('Karta', '', mapContainer, 'md', '', (ret: any) => {
+            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+
+            var mapProp = {
+                center: location,
+                zoom: 10,
+
+            };
+            this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: this.map,
+                title: object.street
+            });
+
+            google.maps.event.addListenerOnce(this.map, 'idle', () => {
+                //Map loaded
+            });
+        });
+
     }
 
     over(object: any) {

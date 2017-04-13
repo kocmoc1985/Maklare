@@ -65,6 +65,14 @@
     line-height: 1.8em;
 }
 
+.google-map:hover{
+    cursor: pointer;
+}
+
+.google-map p:after {
+    content: url('../images/map.png');
+}
+
 .faded{
     opacity: 0;
     color: black;

@@ -27,7 +27,10 @@ class MyModals {
         MyModals.once = true;
     }
 
-    showInfoModal(title, infoMsg, customizedObj, size, type) {
+    //------------------------------------------------------------------------------
+
+
+    showInfoModal(title, infoMsg, customizedObj, size, type, cb) {
         var modalObj = $.parseHTML(this.loadTemplate(this.PATH + "modal_info.html"));
         if (title) {
             $(modalObj).find(".modal-title").text(title);
@@ -59,7 +62,14 @@ class MyModals {
             $("body").append(modalObj);
         }
 
+        $('#modal-info').off('shown.bs.modal');
+
+        $('#modal-info').on('shown.bs.modal', function (e) {
+            cb("loaded");
+        });
+
         $('#modal-info').modal();
+
     }
 
 //------------------------------------------------------------------------------

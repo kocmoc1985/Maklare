@@ -34,15 +34,27 @@ var ListSearchComponent = (function () {
         this.localMem.selectedObject = object;
         this.router.navigate(['/detail', object._id]);
     };
-    ListSearchComponent.prototype.showModal = function () {
-        MYMODALS.showInfoModal('InfoModal', '', '', 'sm', '');
-        //        MYMODALS.showInputModalB('InputModal', '', '', 'sm', function (retComponent: any) {
-        //            console.log("answer recieved:", retComponent);
-        //        });
-        //
-        //        MYMODALS.showConfirmModal('ConfirmModal', 'Continue?', 'sm', 'warning', (modalInput: any) => {
-        //            console.log("answer recieved:", modalInput);
-        //        });
+    ListSearchComponent.prototype.showGoogleMapInModal = function (object, event) {
+        //#GOOGLE_MAP
+        var _this = this;
+        event.stopPropagation();
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        MYMODALS.showInfoModal('Karta', '', mapContainer, 'md', '', function (ret) {
+            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+            var mapProp = {
+                center: location,
+                zoom: 10,
+            };
+            _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: location,
+                map: _this.map,
+                title: object.street
+            });
+            google.maps.event.addListenerOnce(_this.map, 'idle', function () {
+                //Map loaded
+            });
+        });
     };
     ListSearchComponent.prototype.over = function (object) {
         this.selectedHoverObject = object;

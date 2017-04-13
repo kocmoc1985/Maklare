@@ -15,8 +15,8 @@
                 <div class="col-4">
                     <p >{{object.price}} kr</p>
                 </div>
-                <div class="col-4">
-                    <p>{{object.district}}</p>
+                <div class="col-4 google-map" *ngIf="object">
+                    <p (click)="showGoogleMapInModal(object,$event)">{{object.district}}</p>
                 </div> 
                 <div class="col-4">
                     <p>{{object.area}} m&#178; / {{object.rooms}} rum</p>
@@ -27,8 +27,8 @@
                 <div class="col-4">
                     <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
                 </div>
-                <div class="col-4">
-                    <p>{{object.street}}</p>
+                <div class="col-4 " >
+                    <p >{{object.street}}</p>
                 </div>
                 <div class="col-4 faded" [class.infaded]="selectedHoverObject == object">
                      <p *ngIf="selectedHoverObject == object">{{selectedHoverObject.dateAdded | cutdate}}</p><!-->#PIPE ANGULAR<-->
