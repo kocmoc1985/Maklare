@@ -1,6 +1,6 @@
 .list-entry{
     margin: 10px 0px 10px 0px;
-    height: 15vh;
+    height: 19vh;
     font-size: 1.6vmin;
     color:#666666;
 }
@@ -73,6 +73,10 @@
     content: url('../images/map.png');
 }
 
+.short-info:before{
+     content: url('../images/door.png');
+}
+
 .faded{
     opacity: 0;
     color: black;
@@ -97,7 +101,13 @@
     .list-entry p{
         font-size: 1.7vmax;
         /*color:orange;*/
+         
     }
+    
+    .list-entry{
+        height: 15vh;
+    }
+    
 }
 
 @media (max-width: 480px){
