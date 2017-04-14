@@ -1,11 +1,8 @@
-.object-detailed .row-one {
-    /*height: 100vh;*/
-    background-color: lightgray;
-}
-
 .row-one {
     background-size: cover;
     background-position:center center;
+    display: inline-block;
+    height: 100%;
 }
 
 .row-one .col-8{
@@ -27,8 +24,11 @@
     font-family: inherit;
 }
 
-.row-two .col-10 img{
+.row-two .col-12 img{
     width: 100%;
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .row-four .col-6 img{
@@ -48,7 +48,9 @@
 }
 
 .col-long-info{
-    padding: 20px;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #googleMap{
@@ -71,9 +73,8 @@
     
     .col-broker{
         margin-bottom: 5px;
+        position: center, center;
     }
-    
-   
 
     .row-four{
         height: auto;
@@ -90,6 +91,21 @@
     #googleMap{
         height: 50vh;
         border: 1px solid lightgray;
+    } 
+
+    .basic-info{
+        background: lightsteelblue;
+        position: relative;
+    }
+
+    .row .row-one .col-12{
+        display: block;
+        width: 100%;
+    }  
+
+    .row-two .col-12 img{
+        padding-left: 0%;
+        padding-right: 0%;
     }
 
 }
