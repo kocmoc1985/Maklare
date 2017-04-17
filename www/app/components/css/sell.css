@@ -16,6 +16,20 @@ small{
 	background-color: white;
 }
 
-.jumbotron h4 {
+.h4-shadow {
 	text-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
+}
+
+.card-margin-bottom {
+    margin-bottom: 40px;
+}
+
+.p-white {
+    color: white;
+/*    font-size: 1.2rem;*/
+/*    text-shadow: 2px 1px 6px rgba(255, 255, 255, 1);*/
+}
+
+.bg-trans{
+    background: rgba(56,66,96, 0.5);
 }

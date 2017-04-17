@@ -10,7 +10,7 @@
         <div class="col-1"></div>
 
         <div class="col-md-4">
-            <h4>Lämna telefonnummer</h4>
+            <h4 class="h4-shadow">Lämna telefonnummer</h4>
             
                 <div class="form-group">
                     <input type="tel" class="form-control" id="contactFormPhone" name="exampleInputTelefonnummer" aria-describedby="emailHelp" placeholder="Telefonnummer" [(ngModel)]="phoneNumber">
@@ -21,7 +21,7 @@
         </div>
         <div class="col-2"></div>
         <div class="col-md-4">
-            <h4>Lämna mailadress</h4>
+            <h4 class="h4-shadow">Lämna mailadress</h4>
             
                 <div class="form-group">
                     <input type="email" class="form-control " id="contactFormEmail" name="exampleInputEmail1" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Email">
@@ -32,11 +32,16 @@
         </div>
     </div>
     <div class="row" *ngIf="sent">
-        <div class="col-12">
-            <p>Tack för att du kontaktar oss! Vi återkommer så snart som möjligt.</p>
+        <div class="col-lg-9">
+            <div class="card bg-trans p-white">
+                <div class="card-block">
+                    <h4 class="card-title">Tack för att du kontaktar oss!</h4>
+                    <p class="card-text">Vi återkommer så snart som möjligt.</p>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
+</div>
 </div>
 <div class="container">
     <div class="row article">
