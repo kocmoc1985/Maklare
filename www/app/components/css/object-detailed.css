@@ -1,13 +1,8 @@
 .row-one {
     background-size: cover;
     background-position:center center;
-    display: inline-block;
+    /*display: inline-block;*/
     height: 100%;
-}
-
-.row-one .col-8{
-    padding-right: 0px;
-    padding-left: 0px;
 }
 
 .basic-info{
@@ -58,7 +53,7 @@
     height: 100%;
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
     .row{
         font-size: 2vmax; 
     }
@@ -72,8 +67,9 @@
     }
     
     .col-broker{
-        margin-bottom: 5px;
+        margin: auto;
         position: center, center;
+        padding-bottom: 15px;
     }
 
     .row-four{
@@ -108,5 +104,20 @@
         padding-right: 0%;
     }
 
+    .mobile-hidden{
+        display: none;
+    }
+
+    .main-image > img{
+        width: 100%;
+        height: auto;
+    } 
+}
+
+@media (min-width: 768px){
+
+    .desktop-hidden{
+    display: none;
+    }
 }
 

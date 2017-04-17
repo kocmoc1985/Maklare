@@ -1,6 +1,7 @@
 .jumbotron {
     background: url("images/lite-3.jpg") no-repeat center center;
     background-size: cover;
+    border-radius: 0rem;
 }
 
 .card-margin-bottom {
@@ -9,6 +10,7 @@
 
 .p-white {
     color: white;
+    border: 0px;
 /*    font-size: 1.2rem;*/
 /*    text-shadow: 2px 1px 6px rgba(255, 255, 255, 1);*/
 }
