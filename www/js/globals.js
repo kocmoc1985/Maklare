@@ -1,3 +1,4 @@
+console.log = function() {};
 var MYMODALS = new MyModals("js/modals/");
 
 var FASTIGHETS_REST = new REST('fastighet');
