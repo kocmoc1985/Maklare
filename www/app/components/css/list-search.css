@@ -1,6 +1,6 @@
 .list-entry{
     margin: 10px 0px 10px 0px;
-    height: 19vh;
+    height: 18vmin;
     font-size: 1.6vmin;
     color:#666666;
 }
@@ -105,7 +105,7 @@
     }
     
     .list-entry{
-        height: 15vh;
+        height: 15vmax;
     }
     
 }
