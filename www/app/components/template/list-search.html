@@ -19,7 +19,8 @@
                     <p (click)="showGoogleMapInModal(object,$event)">{{object.district}}</p>
                 </div> 
                 <div class="col-4">
-                    <p>{{object.area}} m&#178; / {{object.rooms}} rum</p>
+                    <!--p>{{object.area}} m&#178; / {{object.rooms}} rum</p-->
+                    <p [innerHTML]="object.area | special_a:object.rooms"></p>
                 </div> 
             </div>
 
@@ -61,7 +62,7 @@
                     <p>{{object.hyra}} kr/mån</p>
                 </div>
                 <div class="col-6">
-                    <p>{{object.area}} m&#178;</p>
+                    <p [innerHTML]="(object.area | kvadratM)"></p>
                 </div>                  
             </div>
 
