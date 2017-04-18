@@ -1,16 +1,8 @@
-.object-detailed .row-one {
-    /*height: 100vh;*/
-    background-color: lightgray;
-}
-
 .row-one {
     background-size: cover;
     background-position:center center;
-}
-
-.row-one .col-8{
-    padding-right: 0px;
-    padding-left: 0px;
+    /*display: inline-block;*/
+    height: 100%;
 }
 
 .basic-info{
@@ -27,8 +19,11 @@
     font-family: inherit;
 }
 
-.row-two .col-10 img{
+.row-two .col-12 img{
     width: 100%;
+    padding-top: 3%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .row-four .col-6 img{
@@ -48,7 +43,9 @@
 }
 
 .col-long-info{
-    padding: 20px;
+    padding: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 #googleMap{
@@ -56,7 +53,7 @@
     height: 100%;
 }
 
-@media (max-width: 768px){
+@media (max-width: 767px){
     .row{
         font-size: 2vmax; 
     }
@@ -70,10 +67,10 @@
     }
     
     .col-broker{
-        margin-bottom: 5px;
+        margin: auto;
+        position: center, center;
+        padding-bottom: 15px;
     }
-    
-   
 
     .row-four{
         height: auto;
@@ -90,7 +87,37 @@
     #googleMap{
         height: 50vh;
         border: 1px solid lightgray;
+    } 
+
+    .basic-info{
+        background: lightsteelblue;
+        position: relative;
     }
 
+    .row .row-one .col-12{
+        display: block;
+        width: 100%;
+    }  
+
+    .row-two .col-12 img{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .mobile-hidden{
+        display: none;
+    }
+
+    .main-image > img{
+        width: 100%;
+        height: auto;
+    } 
+}
+
+@media (min-width: 768px){
+
+    .desktop-hidden{
+    display: none;
+    }
 }
 

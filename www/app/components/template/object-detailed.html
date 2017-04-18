@@ -2,12 +2,29 @@
 
 <div class="container-fluid object-detailed" *ngIf="object">
 
-    <div class="row row-one" [style.background-image]="bgImg(object)">
-        <div class="col-md-8 col-12 main-img">
-            <!--<img class="img-fluid" src="images/estate/{{object.objectnr}}/main.jpg">-->
+    <!--<div class="row main-image desktop-hidden"[style.background-image]="bgImg(object)">
+    </div>-->
+    <div class="row desktop-hidden">
+        <div class="main-image">
+            <img src="images/estate/{{object.objectnr}}/main.jpg">
+        </div>
+        <div class="col-12 basic-info">
+                
+                <div class="panel">
+                    <h2 class="object-title">{{object.street}}</h2>
+                    <p>{{object.shortInfo}}</p>
+                    <p>Pris: {{object.price}}</p>
+                    <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra}} kr/mån</p>
+                    <p>Antal rum: {{object.rooms}}</p>
+                    <p>Boarea: {{object.area}} m&#178;</p>
+                </div>
         </div>
 
-        <div class="col-md-4 col-12 basic-info">
+    </div>
+
+    <div class="row row-one"[style.background-image]="bgImg(object)">
+
+        <div class="col-md-4 col-12 basic-info mobile-hidden">
             <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
@@ -20,19 +37,20 @@
     </div>
 
     <div class="row row-two" *ngFor="let image of objectImages">
-         <div class="offset-1 col-10">
+         <div class="col-12">
             <img *ngIf="image !== 'main.jpg'" [hidden]="!loadedImages[image]" (load)="registerLoadedImage(image)" src="images/estate/{{object.objectnr}}/{{image}}">
         </div>
     </div>
 
     <div class="row row-three">
         <div class="col-12 col-long-info" *ngIf="object.longInfo">
+            <h2>Objektbeskrivning</h2>
             <p>{{object.longInfo}}</p>
         </div>
     </div>
 
     <div class="row row-four">
-        <div class="offset-md-1 col-md-5 offset-1 col-10 col-broker" *ngIf="broker">
+        <div class="offset-md-1 col-md-5 col-10 col-broker" *ngIf="broker">
             <div class="card card-margin-bottom">
                 <img class="card-img-top img-fluid" src="/images/brokers/{{broker.image}}" alt="Card image cap">
                 <div class="card-block">

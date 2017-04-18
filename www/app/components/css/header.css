@@ -1,14 +1,37 @@
 .header a{
-    color:inherit;
+    color: inherit;
     text-decoration: none;
-}
-
-@media (max-width: 576px) {
-    h2 {
-        margin: 0;
-    }
 }
 
 .header a:hover{
     text-decoration: none;
 }
+
+@media (max-width: 576px) {
+    h2{
+        margin: 0px;
+    }
+}
+
+/*
+@media (max-width: 576px) {
+    .main-header{
+        display: none;
+    }
+
+    .col-10{
+        padding-right: 0px;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 577px) {
+
+    .mobile-header{
+        display: none;
+    }
+}
+*/
