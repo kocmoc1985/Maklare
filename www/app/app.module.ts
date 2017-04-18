@@ -25,6 +25,8 @@ import {RestService} from './components/rest/rest.service';
 
 // Pipes
 import {DateCutPipe} from './components/pipes/datecut.pipe';
+import {KvadratMeter} from './components/pipes/kvadratm.pipe';
+import {SpecialA} from './components/pipes/special_a.pipe';
 
 // for separate routing file
 import {AppRoutingModule} from './components/app-routing.module';
@@ -48,6 +50,8 @@ import {AppRoutingModule} from './components/app-routing.module';
         AboutComponent,
         SearchComponent,
         DateCutPipe,
+        KvadratMeter,
+        SpecialA,
         ObjectDetailedComponent //#ROUTING_DETAILED
         // for separate routing file
         // AppRoutingModule
