@@ -48,7 +48,7 @@
     "mongodb": "^2.2.25",
     "mongoose": "4.9.4",
     "mysql": "*",
-    "nodemailer": "^4.0.0",
+    "nodemailer": "^4.0.1",
     "rxjs": "5.0.1",
     "serve-favicon": "*",
     "sha1": "*",
