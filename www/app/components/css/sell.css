@@ -31,3 +31,9 @@ small{
 button p {
     margin: 0;
 }
+
+@media (max-width: 576px) {
+    .jumbotron {
+        padding: 62px 0;
+    }
+}
