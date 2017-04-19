@@ -54,6 +54,40 @@ export class ListSearchComponent implements OnInit {
         this.router.navigate(['/detail', object._id]);
     }
 
+    showAllObjectsOnMap(selectedHoverObject: boolean,selectedObj:any,event:any) {
+        if (!selectedHoverObject) {
+            return;
+        }
+        
+        event.stopPropagation();
+        
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        var oneTimeFlag = true;
+        MYMODALS.showInfoModal('Alla objekt', '', mapContainer, 'md', '', (ret: any) => {
+
+            for (let object of this.objects) {
+                var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+
+                if (oneTimeFlag) {
+                    location = new google.maps.LatLng(selectedObj.mapslat, selectedObj.mapslng);
+                    var mapProp = {
+                        center: location,
+                        zoom: 10,
+                    };
+                    //
+                    this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                    oneTimeFlag = false;
+                }
+
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: this.map,
+                    title: object.street
+                });
+            }
+        });
+    }
+
 
     showGoogleMapInModal(object: any, event: any) {
         //#GOOGLE_MAP

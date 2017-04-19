@@ -6,13 +6,13 @@
 }
 
 .row-sort{
+    height: 5vmin;
     margin: 10px 0px 10px 0px;
 }
 
 .col-sort{
     padding: 0;
 }
-
 
 .list-entry:hover .list-entry-info-section {
     border: 2px solid black;
@@ -82,10 +82,19 @@
     margin-left: 2px;
 }
 
+.google-map-b:hover{
+    cursor: pointer;
+}
+
+.google-map-b:after {
+    content: url('../images/map-many.png');
+    margin-left: 2px;
+}
+
 
 .short-info:before{
-     content: url('../images/door.png');
-     margin-right: 2px;
+    content: url('../images/door.png');
+    margin-right: 2px;
 }
 
 .faded{
@@ -112,13 +121,13 @@
     .list-entry p{
         font-size: 1.7vmax;
         /*color:orange;*/
-         
+
     }
-    
+
     .list-entry{
         height: 15vmax;
     }
-    
+
 }
 
 @media (max-width: 480px){
