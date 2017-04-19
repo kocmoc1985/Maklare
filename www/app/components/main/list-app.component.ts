@@ -42,6 +42,10 @@ export class ListSearchComponent implements OnInit {
         //        $el.css('display', 'block');
     }
 
+    dropDownSortValueChanged(event: any) {
+        console.log("DropDown value changed:", event.target.value);
+    }
+
     private selectedHoverObject: any;
 
     showDetailedView(object: any) {
@@ -57,7 +61,7 @@ export class ListSearchComponent implements OnInit {
         event.stopPropagation();
 
         var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal(object.street+', ' + object.town, '', mapContainer, 'md', '', (ret: any) => {
+        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', (ret: any) => {
             var location = new google.maps.LatLng(object.mapslat, object.mapslng);
 
             var mapProp = {

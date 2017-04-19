@@ -5,6 +5,10 @@
     color:#666666;
 }
 
+.row-sort{
+    margin: 10px 0px 10px 0px;
+}
+
 
 .list-entry:hover .list-entry-info-section {
     border: 2px solid black;

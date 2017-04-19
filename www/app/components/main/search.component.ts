@@ -2,19 +2,19 @@ import {Component, EventEmitter, Output, OnInit} from '@angular/core';
 
 import {DataService} from '../services/data.service';
 
-@Component ({
-	selector: 'search',
-	templateUrl: './app/components/template/search.html',
-	styleUrls: [ './app/components/css/search.css' ],
-	providers: [ DataService ]
+@Component({
+    selector: 'search',
+    templateUrl: './app/components/template/search.html',
+    styleUrls: ['./app/components/css/search.css'],
+    providers: [DataService]
 })
 
 export class SearchComponent implements OnInit {
-	private objects: any[];
-	private previousSearchTerm: string;
-	private searchCounter: number = 0;
-	private timeoutKeyUp: any;
-	@Output() onSearch = new EventEmitter<any[]>();
+    private objects: any[];
+    private previousSearchTerm: string;
+    private searchCounter: number = 0;
+    private timeoutKeyUp: any;
+    @Output() onSearch = new EventEmitter<any[]>();
 
     constructor(private dataService: DataService) {}
 
@@ -22,11 +22,11 @@ export class SearchComponent implements OnInit {
         this.search('');
     }
 
-	search(term: string): void {
-		term = term.trim();
-		if (term === this.previousSearchTerm)
-			return;
-		this.previousSearchTerm = term;
+    search(term: string): void {
+        term = term.trim();
+        if (term === this.previousSearchTerm)
+            return;
+        this.previousSearchTerm = term;
 
         let properties = {
             $or: [
@@ -44,24 +44,24 @@ export class SearchComponent implements OnInit {
         this.sendSearchRequest(properties);
     }
 
-	private sendSearchRequest(properties: Object) {
-		const keyUpDelayMs = 300;
-		let rest = this.dataService.FASTIGHET_REST_NEW;
-		let currentSearchCounter = ++this.searchCounter;
+    private sendSearchRequest(properties: Object) {
+        const keyUpDelayMs = 300;
+        let rest = this.dataService.FASTIGHET_REST_NEW;
+        let currentSearchCounter = ++this.searchCounter;
 
-		// Wait to notice if the search-term gets altered before sending additional requests
-		clearTimeout(this.timeoutKeyUp);
+        // Wait to notice if the search-term gets altered before sending additional requests
+        clearTimeout(this.timeoutKeyUp);
 
-		this.timeoutKeyUp = setTimeout(() => {
-			this.dataService.get(rest, properties).then(
-				(data: any[]) => {
-					// Ignore all results other than the newest/altered search-term
-					if (currentSearchCounter == this.searchCounter) {
-						this.objects = data;
-						this.onSearch.emit(data);
-					}
-				}
-			);
-		}, keyUpDelayMs);
-	}
+        this.timeoutKeyUp = setTimeout(() => {
+            this.dataService.get(rest, properties).then(
+                (data: any[]) => {
+                    // Ignore all results other than the newest/altered search-term
+                    if (currentSearchCounter == this.searchCounter) {
+                        this.objects = data;
+                        this.onSearch.emit(data);
+                    }
+                }
+            );
+        }, keyUpDelayMs);
+    }
 }

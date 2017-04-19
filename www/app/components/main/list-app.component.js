@@ -29,6 +29,9 @@ var ListSearchComponent = (function () {
         var $el = $(this.el.nativeElement);
         //        $el.css('display', 'block');
     };
+    ListSearchComponent.prototype.dropDownSortValueChanged = function (event) {
+        console.log("DropDown value changed:", event.target.value);
+    };
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED
         this.localMem.selectedObject = object;
