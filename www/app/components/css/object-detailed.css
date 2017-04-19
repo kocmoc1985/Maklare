@@ -75,13 +75,11 @@
     border-bottom: 1px solid lightgrey;
     padding: 10px;
     padding-bottom: 5px;
-    background-color: lightgrey;
 }
 
 .card-object-detailed-read-more:first-line{
     font-weight: bolder;
 }
-
 
 #googleMap{
     width: 100%;
