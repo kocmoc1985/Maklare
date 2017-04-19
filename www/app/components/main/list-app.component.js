@@ -23,6 +23,7 @@ var ListSearchComponent = (function () {
         this.router = router;
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
+        console.log("LIST APP CONSTRUCTOR", this.dataExchange.global());
     }
     ListSearchComponent.prototype.ngOnInit = function () {
         //#JQUERY + ANGULAR
@@ -31,6 +32,9 @@ var ListSearchComponent = (function () {
     };
     ListSearchComponent.prototype.dropDownSortValueChanged = function (event) {
         console.log("DropDown value changed:", event.target.value);
+        //        this.globalMem = this.dataExchange.global();
+        console.log("GlobalMem", this.dataExchange.global());
+        this.globalMem.test("", "");
     };
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED

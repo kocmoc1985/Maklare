@@ -13,12 +13,16 @@ var core_1 = require("@angular/core");
 var DataExchange = DataExchange_1 = (function () {
     function DataExchange() {
         var _this = this;
-        DataExchange_1.globalMem = {};
+        //
+        if (DataExchange_1.globalMem == null) {
+            DataExchange_1.globalMem = {};
+        }
         // Share method through global mem
         //#METHOD SHARING
         DataExchange_1.globalMem.showInfoModal = function (title, infoMsg, customizedObj, size, type) {
             _this.showInfoModal(title, infoMsg, customizedObj, size, type);
         };
+        console.log("DS CONSTRUCTOR", DataExchange_1.globalMem);
     }
     DataExchange.prototype.create = function (that) {
         // call from any component using this service with this as argument

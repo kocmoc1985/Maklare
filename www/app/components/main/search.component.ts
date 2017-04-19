@@ -1,12 +1,13 @@
 import {Component, EventEmitter, Output, OnInit} from '@angular/core';
 
 import {DataService} from '../services/data.service';
+import {DataExchange} from '../services/dataExchange.service';
 
 @Component({
     selector: 'search',
     templateUrl: './app/components/template/search.html',
     styleUrls: ['./app/components/css/search.css'],
-    providers: [DataService]
+    providers: [DataService, DataExchange]
 })
 
 export class SearchComponent implements OnInit {
@@ -14,9 +15,25 @@ export class SearchComponent implements OnInit {
     private previousSearchTerm: string;
     private searchCounter: number = 0;
     private timeoutKeyUp: any;
+    private globalMem: any;
     @Output() onSearch = new EventEmitter<any[]>();
 
-    constructor(private dataService: DataService) {}
+    constructor(
+        private dataService: DataService,
+        private dataExchange: DataExchange
+    ) {
+        
+        this.globalMem = this.dataExchange.global();
+        
+        this.globalMem.test = (message: string, type: string) => {
+            this.test(message, type);
+        }
+        console.log("SEARCH CONSTRUCTOR",this.dataExchange.global());
+    }
+
+    test(message: string, type: string) {
+        console.log("Test reachedddddddddd");
+    }
 
     ngOnInit() {
         this.search('');
