@@ -23,7 +23,6 @@ export class DataExchange {
             this.showInfoModal(title, infoMsg, customizedObj, size, type);
         }
 
-        console.log("DS CONSTRUCTOR", DataExchange.globalMem);
     }
 
     create(that: any) {

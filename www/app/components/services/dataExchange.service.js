@@ -22,7 +22,6 @@ var DataExchange = DataExchange_1 = (function () {
         DataExchange_1.globalMem.showInfoModal = function (title, infoMsg, customizedObj, size, type) {
             _this.showInfoModal(title, infoMsg, customizedObj, size, type);
         };
-        console.log("DS CONSTRUCTOR", DataExchange_1.globalMem);
     }
     DataExchange.prototype.create = function (that) {
         // call from any component using this service with this as argument

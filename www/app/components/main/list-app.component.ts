@@ -34,7 +34,6 @@ export class ListSearchComponent implements OnInit {
     ) {
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
-        console.log("LIST APP CONSTRUCTOR", this.dataExchange.global());
     }
 
     ngOnInit() {
@@ -44,11 +43,7 @@ export class ListSearchComponent implements OnInit {
     }
 
     dropDownSortValueChanged(event: any) {
-        console.log("DropDown value changed:", event.target.value);
-        //        this.globalMem = this.dataExchange.global();
-        console.log("GlobalMem", this.dataExchange.global());
-        console.log("PREVIOUS:",this.globalMem.previousSearchTerm);
-        this.globalMem.search(this.globalMem.previousSearchTerm, ""+event.target.value);
+        this.globalMem.search(this.globalMem.previousSearchTerm, event.target.value);
     }
 
     private selectedHoverObject: any;

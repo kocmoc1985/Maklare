@@ -29,7 +29,6 @@ export class SearchComponent implements OnInit {
             this.search(term, sort);
         }
         
-        console.log("SEARCH CONSTRUCTOR", this.dataExchange.global());
     }
 
 

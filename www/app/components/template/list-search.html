@@ -1,14 +1,17 @@
 <div class="container-fluid">
 
     <div class="row row-sort">
-        <div class="col-2 offset-8">
+        <div class="col-7 offset-5 col-sm-4 offset-sm-7 col-md-2 offset-md-8 col-sort">
             <div class="form-group">
-                <label for="sel1">Sortera efter:</label>
+                <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" id="sel1" (change)="dropDownSortValueChanged($event)">
+                    <option value="dateAdded">Datum</option>
                     <option value="price">Pris</option>
                     <option value="area">Yta</option>
                     <option value="rooms">Rum</option>
-                    <option value="dateAdded">Finns sedan</option>
+                    <option value="-price">Pris fallande</option>
+                    <option value="-area">Yta fallande</option>
+                    <option value="-rooms">Rum fallande</option>
                 </select>
             </div>
         </div>

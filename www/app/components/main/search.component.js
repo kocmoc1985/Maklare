@@ -23,7 +23,6 @@ var SearchComponent = (function () {
         this.globalMem.search = function (term, sort) {
             _this.search(term, sort);
         };
-        console.log("SEARCH CONSTRUCTOR", this.dataExchange.global());
     }
     SearchComponent.prototype.ngOnInit = function () {
         this.search('', '-dateAdded');

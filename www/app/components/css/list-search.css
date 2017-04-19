@@ -9,6 +9,10 @@
     margin: 10px 0px 10px 0px;
 }
 
+.col-sort{
+    padding: 0;
+}
+
 
 .list-entry:hover .list-entry-info-section {
     border: 2px solid black;
