@@ -1,7 +1,10 @@
 footer {
 	background-color: #ccc;
 	min-height: 50px;
-	font-family: 'Roboto', sans-serif;
+}
+
+footer p {
+	margin: 8px;
 }
 
 footer .flex-vert {

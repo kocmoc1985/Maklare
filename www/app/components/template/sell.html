@@ -16,10 +16,11 @@
                     <input type="tel" class="form-control" id="contactFormPhone" name="exampleInputTelefonnummer" aria-describedby="emailHelp" placeholder="Telefonnummer" [(ngModel)]="phoneNumber">
                      
                 </div>
-                <button class="btn btn-default"(click)="registerPhone()">Kontakta mig!</button>
+                <button class="btn btn-default"(click)="registerPhone()"><p class="open-sans">Kontakta mig!</p></button>
             
         </div>
         <div class="col-2"></div>
+        <div class="hidden-md-up vertical-spacer-32"></div>
         <div class="col-md-4">
             <h4 class="h4-shadow">Lämna mailadress</h4>
             
@@ -27,7 +28,7 @@
                     <input type="email" class="form-control " id="contactFormEmail" name="exampleInputEmail1" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Email">
                
                 </div>
-                <button class="btn btn-default" (click)="registerMail()">Kontakta mig!</button>
+                <button class="btn btn-default" (click)="registerMail()"><p class="open-sans">Kontakta mig!</p></button>
             
         </div>
     </div>
@@ -36,7 +37,7 @@
             <div class="card bg-trans p-white">
                 <div class="card-block">
                     <h4 class="card-title">Tack för att du kontaktar oss!</h4>
-                    <p class="card-text">Vi återkommer så snart som möjligt.</p>
+                    <p class="card-text open-sans">Vi återkommer så snart som möjligt.</p>
                 </div>
             </div>
         </div>
