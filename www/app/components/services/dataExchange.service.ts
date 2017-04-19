@@ -13,12 +13,17 @@ export class DataExchange {
 
     constructor(
     ) {
-        DataExchange.globalMem = {};
+        //
+        if (DataExchange.globalMem == null) { //SUPER IMPORTANT
+            DataExchange.globalMem = {};
+        }
         // Share method through global mem
         //#METHOD SHARING
         DataExchange.globalMem.showInfoModal = (title: any, infoMsg: any, customizedObj: any, size: any, type: any) => {
             this.showInfoModal(title, infoMsg, customizedObj, size, type);
         }
+
+        console.log("DS CONSTRUCTOR", DataExchange.globalMem);
     }
 
     create(that: any) {

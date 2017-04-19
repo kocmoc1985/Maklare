@@ -23,11 +23,19 @@ var ListSearchComponent = (function () {
         this.router = router;
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
+        console.log("LIST APP CONSTRUCTOR", this.dataExchange.global());
     }
     ListSearchComponent.prototype.ngOnInit = function () {
         //#JQUERY + ANGULAR
         var $el = $(this.el.nativeElement);
         //        $el.css('display', 'block');
+    };
+    ListSearchComponent.prototype.dropDownSortValueChanged = function (event) {
+        console.log("DropDown value changed:", event.target.value);
+        //        this.globalMem = this.dataExchange.global();
+        console.log("GlobalMem", this.dataExchange.global());
+        console.log("PREVIOUS:", this.globalMem.previousSearchTerm);
+        this.globalMem.search(this.globalMem.previousSearchTerm, "" + event.target.value);
     };
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED

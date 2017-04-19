@@ -26,10 +26,14 @@ small{
 
 .p-white {
     color: white;
-/*    font-size: 1.2rem;*/
-/*    text-shadow: 2px 1px 6px rgba(255, 255, 255, 1);*/
 }
 
-.bg-trans{
-    background: rgba(56,66,96, 0.5);
+button p {
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .jumbotron {
+        padding: 62px 0;
+    }
 }

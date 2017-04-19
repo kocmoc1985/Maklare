@@ -21,6 +21,14 @@ var ObjectDetailedComponent = (function () {
         this.location = location;
         this.loadedImages = {};
     }
+    ObjectDetailedComponent.prototype.toggleReadMore = function () {
+        if (this.readMore) {
+            this.readMore = false;
+        }
+        else {
+            this.readMore = true;
+        }
+    };
     ObjectDetailedComponent.prototype.showGoogleMap = function () {
         //#GOOGLE_MAP
         if (this.map) {

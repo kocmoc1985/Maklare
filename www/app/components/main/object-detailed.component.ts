@@ -23,12 +23,21 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     private loadedImages = {};
     private broker: any;
     private map: any;
+    private readMore:boolean;
 
     constructor(
         private dataService: DataService,
         private route: ActivatedRoute,
         private location: Location
     ) {}
+
+    toggleReadMore(){
+        if (this.readMore){
+            this.readMore = false;
+        }else{
+            this.readMore = true;
+        }
+    }
 
     showGoogleMap() {
         //#GOOGLE_MAP

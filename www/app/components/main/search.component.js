@@ -11,20 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
+var dataExchange_service_1 = require("../services/dataExchange.service");
 var SearchComponent = (function () {
-    function SearchComponent(dataService) {
+    function SearchComponent(dataService, dataExchange) {
+        var _this = this;
         this.dataService = dataService;
+        this.dataExchange = dataExchange;
         this.searchCounter = 0;
         this.onSearch = new core_1.EventEmitter();
+        this.globalMem = this.dataExchange.global();
+        this.globalMem.search = function (term, sort) {
+            _this.search(term, sort);
+        };
+        console.log("SEARCH CONSTRUCTOR", this.dataExchange.global());
     }
     SearchComponent.prototype.ngOnInit = function () {
-        this.search('');
+        this.search('', '-dateAdded');
     };
-    SearchComponent.prototype.search = function (term) {
+    SearchComponent.prototype.search = function (term, sort) {
         term = term.trim();
-        if (term === this.previousSearchTerm)
-            return;
         this.previousSearchTerm = term;
+        this.globalMem.previousSearchTerm = term;
         var properties = {
             $or: [
                 { district: { $regex: term, $options: "i" } },
@@ -33,7 +40,7 @@ var SearchComponent = (function () {
                 { lan: { $regex: term, $options: "i" } }
             ],
             _fields: '',
-            _sort: '-dateAdded',
+            _sort: sort,
             _skip: 0,
             _limit: 100
         };
@@ -67,9 +74,10 @@ SearchComponent = __decorate([
         selector: 'search',
         templateUrl: './app/components/template/search.html',
         styleUrls: ['./app/components/css/search.css'],
-        providers: [data_service_1.DataService]
+        providers: [data_service_1.DataService, dataExchange_service_1.DataExchange]
     }),
-    __metadata("design:paramtypes", [data_service_1.DataService])
+    __metadata("design:paramtypes", [data_service_1.DataService,
+        dataExchange_service_1.DataExchange])
 ], SearchComponent);
 exports.SearchComponent = SearchComponent;
 //# sourceMappingURL=search.component.js.map

@@ -5,6 +5,10 @@
     color:#666666;
 }
 
+.row-sort{
+    margin: 10px 0px 10px 0px;
+}
+
 
 .list-entry:hover .list-entry-info-section {
     border: 2px solid black;
@@ -71,10 +75,13 @@
 
 .google-map p:after {
     content: url('../images/map.png');
+    margin-left: 2px;
 }
+
 
 .short-info:before{
      content: url('../images/door.png');
+     margin-right: 2px;
 }
 
 .faded{

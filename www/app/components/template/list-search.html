@@ -1,10 +1,22 @@
 <div class="container-fluid">
 
+    <div class="row row-sort">
+        <div class="col-2 offset-8">
+            <div class="form-group">
+                <label for="sel1">Sortera efter:</label>
+                <select class="form-control" id="sel1" (change)="dropDownSortValueChanged($event)">
+                    <option value="price">Pris</option>
+                    <option value="area">Yta</option>
+                    <option value="rooms">Rum</option>
+                    <option value="dateAdded">Finns sedan</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row list-entry"  *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
-         
-    <!--div class="row list-entry"  *ngFor="let object of objects"
-         (click)="showModal()" (mouseover)="over(object)" (mouseleave)="leave()"-->
 
          <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
             <img src="images/estate/{{object.objectnr}}/main.jpg">
