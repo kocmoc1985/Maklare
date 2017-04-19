@@ -20,22 +20,18 @@ var SearchComponent = (function () {
         this.searchCounter = 0;
         this.onSearch = new core_1.EventEmitter();
         this.globalMem = this.dataExchange.global();
-        this.globalMem.test = function (message, type) {
-            _this.test(message, type);
+        this.globalMem.search = function (term, sort) {
+            _this.search(term, sort);
         };
         console.log("SEARCH CONSTRUCTOR", this.dataExchange.global());
     }
-    SearchComponent.prototype.test = function (message, type) {
-        console.log("Test reachedddddddddd");
-    };
     SearchComponent.prototype.ngOnInit = function () {
-        this.search('');
+        this.search('', '-dateAdded');
     };
-    SearchComponent.prototype.search = function (term) {
+    SearchComponent.prototype.search = function (term, sort) {
         term = term.trim();
-        if (term === this.previousSearchTerm)
-            return;
         this.previousSearchTerm = term;
+        this.globalMem.previousSearchTerm = term;
         var properties = {
             $or: [
                 { district: { $regex: term, $options: "i" } },
@@ -44,7 +40,7 @@ var SearchComponent = (function () {
                 { lan: { $regex: term, $options: "i" } }
             ],
             _fields: '',
-            _sort: '-dateAdded',
+            _sort: sort,
             _skip: 0,
             _limit: 100
         };

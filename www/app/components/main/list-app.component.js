@@ -34,7 +34,8 @@ var ListSearchComponent = (function () {
         console.log("DropDown value changed:", event.target.value);
         //        this.globalMem = this.dataExchange.global();
         console.log("GlobalMem", this.dataExchange.global());
-        this.globalMem.test("", "");
+        console.log("PREVIOUS:", this.globalMem.previousSearchTerm);
+        this.globalMem.search(this.globalMem.previousSearchTerm, "" + event.target.value);
     };
     ListSearchComponent.prototype.showDetailedView = function (object) {
         //#ROUTING_DETAILED

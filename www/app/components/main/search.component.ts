@@ -22,28 +22,25 @@ export class SearchComponent implements OnInit {
         private dataService: DataService,
         private dataExchange: DataExchange
     ) {
-        
+
         this.globalMem = this.dataExchange.global();
-        
-        this.globalMem.test = (message: string, type: string) => {
-            this.test(message, type);
+
+        this.globalMem.search = (term: string, sort: string) => {
+            this.search(term, sort);
         }
-        console.log("SEARCH CONSTRUCTOR",this.dataExchange.global());
+        
+        console.log("SEARCH CONSTRUCTOR", this.dataExchange.global());
     }
 
-    test(message: string, type: string) {
-        console.log("Test reachedddddddddd");
-    }
 
     ngOnInit() {
-        this.search('');
+        this.search('', '-dateAdded');
     }
 
-    search(term: string): void {
+    search(term: string, sort: string): void {
         term = term.trim();
-        if (term === this.previousSearchTerm)
-            return;
         this.previousSearchTerm = term;
+        this.globalMem.previousSearchTerm = term;
 
         let properties = {
             $or: [
@@ -53,7 +50,7 @@ export class SearchComponent implements OnInit {
                 {lan: {$regex: term, $options: "i"}}
             ],
             _fields: '',
-            _sort: '-dateAdded',
+            _sort: sort,
             _skip: 0,
             _limit: 100
         };
