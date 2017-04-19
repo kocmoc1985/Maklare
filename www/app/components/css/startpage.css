@@ -1,19 +1,46 @@
-.startpic{
-    background: url("images/startpage.jpg") no-repeat center fixed;
-    min-height: 70vh;
-    background-size: cover;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.jumbotron {
+.background-pic {
     background: url("images/lite-2.jpg") no-repeat center center;
     background-size: cover;
-    height: 700px;
-    margin-bottom: 0px;
+    min-height: 700px;
 }
 
-.button{
-    color: white;
-    text-align: center;
+.bg-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-container {
+	padding-top: 8rem;
+	color: white;
+	text-shadow: 2px 2px 2px black;
+}
+
+.links-container a {
+	padding: 8rem 1rem;
+	color: rgb(225, 113, 0);
+	text-shadow: 2px 2px 4px black;
+	font-weight: 700;
+	font-size: 3rem;
+    transition: 0.3s linear;
+
+	border-color: rgba(0, 0, 0, 0.0);
+	border-width: 0px;
+	border-left-width: 0px;
+	border-style: none;
+}
+
+.links-container a.left-link {
+	text-align: right;
+}
+
+.links-container a:hover {
+	text-shadow: 1px 1px 2px rgb(105, 52, 0);
+	text-decoration: none;
+
+	border-left-width: 10px;
+	border-style: solid;
+}
+
+.links-container a.left-link:hover {
+	border-left-width: 0px;
+	border-right-width: 10px;
 }
