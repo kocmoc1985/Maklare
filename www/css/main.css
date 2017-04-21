@@ -1,7 +1,7 @@
 h1  {
-    font-family: 'Pinyon Script', cursive;
-    color: #fcb332;
-    font-size: 3rem;
+    font-family: 'Parisienne', cursive;
+    color: #F56E26;
+    font-size: 4rem;
     padding-top: 0.5rem;
     }
 
@@ -47,5 +47,5 @@ a {
 }
 
 .bg-trans{
-    background: rgba(0,0,0, 0.6);
+    background: rgba(25, 162, 121, 0.7);
 }
