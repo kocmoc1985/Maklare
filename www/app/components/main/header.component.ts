@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
     styleUrls: ['app/components/css/header.css']
 })
 
+    
 export class HeaderComponent {
+    constructor(){}
+
+    ngAfterViewInit(){
+        
+        $(document).on('click', '.header a', function(){
+            $('.header a').removeClass('selected');
+            $(this).addClass('selected');
+        })
+    }
 }

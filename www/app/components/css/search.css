@@ -1,5 +1,6 @@
 .search-card {
 	border: none;
+    background-color: inherit;
 }
 
 button p {
@@ -13,4 +14,9 @@ button{
 
 .button-card {
     padding-top: 0;
+    
+}
+
+.background{
+    background-color: rgba(135, 208, 186);
 }

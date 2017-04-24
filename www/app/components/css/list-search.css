@@ -1,3 +1,9 @@
+.background{
+    background-image: url('images/list-search-bg.png');
+    background-repeat: repeat-y repeat-x;
+    padding-bottom: 15px;
+}
+
 .list-entry{
     margin: 10px 0px 10px 0px;
     height: 18vmin;
@@ -8,7 +14,7 @@
 .row-sort{
     display:  inline;
     height: 5vmin;
-    margin: 10px 0px 10px 0px;
+    padding: 10px;
 }
 
 .col-sort{
@@ -41,6 +47,7 @@
     padding-bottom: 5px;
     border: 2px solid lightgray;
     border-left: none;
+    background-color: white;
 }
 
 .list-entry .list-entry-prim-info{
