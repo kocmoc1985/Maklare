@@ -12,6 +12,7 @@
 }
 
 .row-sort{
+    display:  inline;
     height: 5vmin;
     padding: 10px;
 }
@@ -120,15 +121,17 @@
 }
 
 .prev-obj{
-    background-color: #D9D4D0;
+    /*background-color: #D9D4D0;*/
 }
 
 
 @media (max-width: 768px){
     .list-entry p{
         font-size: 1.7vmax;
-        /*color:orange;*/
-
+    }
+    
+    .row-sort{
+         margin: 10px 0px 30px 0px;
     }
 
     .list-entry{

@@ -2,7 +2,7 @@
 
     <div class="row row-sort">
 
-        <div class="col-7 offset-5 col-sm-4 offset-sm-7 col-md-2 offset-md-8 col-sort">
+        <div class="col-12  col-sm-4 offset-sm-7 col-md-2 offset-md-8 col-sort">
             <div class="form-group" style="height:100%">
                 <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" (change)="dropDownSortValueChanged($event)">
@@ -48,7 +48,7 @@
                     <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
                 </div>
                 <div class="col-4" >
-                    <p [class.google-map-b]="selectedHoverObject == object" (click)="showAllObjectsOnMap(selectedHoverObject == object,object,$event)">{{object.street}}</p>
+                    <p class="google-map-b" (click)="showAllObjectsOnMap(selectedHoverObject == object,object,$event)">{{object.street}}</p>
                 </div>
                 <div class="col-4 faded" [class.infaded]="selectedHoverObject == object">
                      <p *ngIf="selectedHoverObject == object">{{selectedHoverObject.dateAdded | cutdate}}</p><!-->#PIPE ANGULAR<-->
