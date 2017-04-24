@@ -57,7 +57,7 @@ p{
 }
 
 .card-block-object-detailed{
-   
+   overflow: hidden;
 }
 
 /*.card-block-content-x{
@@ -95,6 +95,12 @@ p{
 }
 
 @media (max-width: 767px){
+    
+    #googleMap{
+       width: 100%;
+       height: 300px;
+    }
+    
     .row{
         font-size: 2vmax; 
     }
