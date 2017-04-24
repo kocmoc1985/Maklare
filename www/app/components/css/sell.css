@@ -37,3 +37,7 @@ button p {
         padding: 62px 0;
     }
 }
+
+.jumbotron h2{
+    font-size: 3.5rem;
+}
