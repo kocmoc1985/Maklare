@@ -1,22 +1,24 @@
 .search-card {
 	border: none;
-    background-color: inherit;
+	background-color: inherit;
 }
 
 button p {
-    margin: 0;
+	margin: 0;
 }
 
 button{
-    width: 100%;
+	width: 100%;
 }
 
-
 .button-card {
-    padding-top: 0;
-    
+	padding-top: 0;
+}
+
+.dropdown-item {
+	cursor:pointer;
 }
 
 .background{
-    background-color: rgba(135, 208, 186);
+	background-color: rgba(135, 208, 186);
 }

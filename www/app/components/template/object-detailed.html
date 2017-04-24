@@ -45,12 +45,12 @@
     <div class="row row-three">
         <div class="col-12 col-long-info" *ngIf="object.longInfo">
             <h2>Objektbeskrivning</h2>
-            <p>{{object.longInfo}}</p>
+            <p class="long-info" [innerHTML]="object.longInfo"></p>
         </div>
     </div>
 
     <div class="row row-four">
-        <div class="offset-md-1 col-md-5 col-10 col-broker" *ngIf="broker">
+        <div class="offset-md-1 col-md-5 col-12 col-broker" *ngIf="broker">
             <div class="card card-margin-bottom card-object-detailed">
                 <img *ngIf="readMore != true" class="card-img-top img-fluid" src="/images/brokers/{{broker.image}}" alt="Card image cap">
                     <div *ngIf="readMore" class="card-object-detailed-read-more">
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-md-5 col-map">
+        <div class="col-12 col-md-5">
             {{showGoogleMap()}}
             <div id="googleMap"></div>
         </div>
@@ -77,8 +77,8 @@
 
     <br><br>
 
-    <div class="row row-five">
-        <div class="col-12">
+    <div class="row">
+        <div class="col-12 col-sm-10 offset-sm-1">
              {{showVisningar()}}
              <div id="show-visningar"></div>
              <br><br>
