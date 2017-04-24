@@ -7,6 +7,8 @@ import {DataService} from '../services/data.service';
 import 'rxjs/add/operator/switchMap';
 
 declare var google: any;
+declare var TABLE_VISNING: any;
+declare function createTableVisning(param: any): any;
 
 @Component({
     //#ROUTING_DETAILED
@@ -23,7 +25,8 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     private loadedImages = {};
     private broker: any;
     private map: any;
-    private readMore:boolean;
+    private readMore: boolean;
+    private oneTimeFlag: boolean;
 
     constructor(
         private dataService: DataService,
@@ -31,10 +34,17 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
         private location: Location
     ) {}
 
-    toggleReadMore(){
-        if (this.readMore){
+    showVisningar() {
+        if (!this.oneTimeFlag) {
+            TABLE_VISNING.show(true);
+            this.oneTimeFlag = true;
+        }
+    }
+
+    toggleReadMore() {
+        if (this.readMore) {
             this.readMore = false;
-        }else{
+        } else {
             this.readMore = true;
         }
     }
@@ -79,11 +89,12 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
         this.object = data[0];
         this.broker = data[0].broker;
         this.objectImages = data[0].images;
+        createTableVisning(this.object.objectnr);
     }
 
 
     ngAfterViewInit() {
-       
+
     }
 
     ngOnInit(): void {
@@ -91,7 +102,7 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
         this.route.params
             .switchMap((params: Params) => this.dataService.getFastighetById(params['id']))
             .subscribe(data => (this.set(data))); //(console.log("data",data))
-                   
+
     }
 
 }

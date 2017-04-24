@@ -100,6 +100,10 @@ function MyCrudTable(
         this.buildTable();
         //
         $(this.containerId).append(this.template);
+        //
+        if(this.canEdit === false){
+            $(".add-new-btn").remove();
+        }
     };
 
     //#STATIC

@@ -6,8 +6,9 @@ module.exports = function JSONLoader(models) {
 
     this.fastigheter = require('./fastigheter.json');
     this.brokers = require('./brokers.json');
+    this.visning = require('./visning.json');
 
-    this.jsons = [this.fastigheter, this.brokers];
+    this.jsons = [this.fastigheter, this.brokers,this.visning];
 
 
     this.fillData = function () {

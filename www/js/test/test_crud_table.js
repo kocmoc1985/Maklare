@@ -1,7 +1,9 @@
 var FASTIGHETS_REST = new REST('fastighet');
 var BROKERS_REST = new REST('brokers');
+var VISNING_REST = new REST('visning');
 var TABLE_BROKERS;
 var TABLE_FASTIGHETER;
+var TABLE_VISNING;
 var MYMODALS = new MyModalsCrud("js/modals/");
 
 $(document).ready(function () {
@@ -13,9 +15,28 @@ $(document).ready(function () {
      $('#showCrudTableFastigheter').click(function () {
         TABLE_FASTIGHETER.show(true);
     });
+    
+     $('#showCrudTableVisningar').click(function () {
+        TABLE_VISNING.show(true);
+    });
 });
 
+
+
 function createCrudTables() {
+    TABLE_VISNING = new MyCrudTable(
+            'visning',
+            true,
+            VISNING_REST,
+            'Administrate Visningar',
+            '#output',
+            ['Tillfälle ett', 'Tillfälle två','Tillfälle tre'],
+            ['time1', 'time2','time3'],
+            {_fields: '', _sort: 'fastighet', _skip: 0, _limit: 5}
+    );
+    
+//    TABLE_VISNING.setShowAlwaysInvert();
+        
     TABLE_BROKERS = new MyCrudTable(
             'brokers',
             true,
