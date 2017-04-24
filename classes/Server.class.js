@@ -65,8 +65,9 @@ module.exports = class Server {
             //
             var fastighetModel = require('./models/Fastighet.model')(mongoose);
             var brokersModel = require('./models/Brokers.model')(mongoose);
+            var visningModel = require('./models/Visning.model')(mongoose);
             //
-            var models = [fastighetModel, brokersModel];
+            var models = [fastighetModel, brokersModel, visningModel];
             //
             var JSONLoader = require('./json/jsonLoader.class')(models);
             //
@@ -75,6 +76,7 @@ module.exports = class Server {
             //Set up basic routes
             new Restrouter(this.app, fastighetModel, "fastighet", false, 'broker');
             new Restrouter(this.app, brokersModel, "brokers", false);
+            new Restrouter(this.app, visningModel, "visning", false);
 
 //            new Restrouter(this.app, studentModel, "student", '_education', '_teachers'); // populate deep
 //            new Restrouter(this.app, educationModel, "edu", '_teachers'); // populate one

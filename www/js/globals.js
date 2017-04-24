@@ -3,9 +3,25 @@ var MYMODALS = new MyModals("js/modals/");
 
 var FASTIGHETS_REST = new REST('fastighet');
 var BROKERS_REST = new REST('brokers');
-
+var VISNING_REST = new REST('visning');
 
 addScrollTopListener();
+
+var TABLE_VISNING;
+
+function createTableVisning(fastighet) {
+//    console.log("CreateTableVisning: ",fastighet);
+     TABLE_VISNING = new MyCrudTable(
+            'visning',
+            false,
+            VISNING_REST,
+            'Visningar',
+            '#show-visningar',
+            ['Tillfälle ett', 'Tillfälle två', 'Tillfälle tre'],
+            ['time1', 'time2', 'time3'],
+            {fastighet:fastighet,_fields: '', _sort: 'fastighet', _skip: 0, _limit: 5}
+    );
+}
 
 function EXAMPLE_ONLY() {
     //GET WITH OPTIONS
