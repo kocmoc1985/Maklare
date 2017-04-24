@@ -5,7 +5,7 @@
 }
 
 .bg-overlay {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(93, 197, 166, 0.4);
 }
 
 .header-container {
@@ -16,12 +16,12 @@
 
 .links-container a {
 	padding: 8rem 1rem;
-	color: rgb(225, 113, 0);
+	color: #F56E26;
 	text-shadow: 2px 2px 4px black;
 	font-weight: 700;
 	font-size: 3rem;
     transition: 0.3s linear;
-
+	font-family: 'Parisienne', cursive;
 	border-color: rgba(0, 0, 0, 0.0);
 	border-width: 0px;
 	border-left-width: 0px;
