@@ -9,6 +9,14 @@ p{
     height: 100%;
 }
 
+.long-info{
+    /*line-height: 1.4;*/
+}
+
+.long-info:first-letter{
+    font-weight:bolder;
+}
+
 .basic-info{
     padding: 20px;
     background: rgba(255, 255, 255, 0.7);

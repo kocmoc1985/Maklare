@@ -45,7 +45,7 @@
     <div class="row row-three">
         <div class="col-12 col-long-info" *ngIf="object.longInfo">
             <h2>Objektbeskrivning</h2>
-            <p>{{object.longInfo}}</p>
+            <p class="long-info" [innerHTML]="object.longInfo"></p>
         </div>
     </div>
 
