@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid background">
 
     <div class="row row-sort">
 
@@ -78,7 +78,8 @@
 
             <div class="row list-entry-sec-info">
                 <div class="col-6">
-                    <p>{{object.hyra}} kr/mån</p>
+                    <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
+                    <p *ngIf="object.hyra == 0">-</p>
                 </div>
                 <div class="col-6">
                     <p [innerHTML]="(object.area | kvadratM)"></p>

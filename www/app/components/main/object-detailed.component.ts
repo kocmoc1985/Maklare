@@ -52,6 +52,7 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     showGoogleMap() {
         //#GOOGLE_MAP
         if (this.map) {
+            console.log("ShowMap");
             return;
         }
 

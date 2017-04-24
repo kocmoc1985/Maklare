@@ -36,6 +36,10 @@ button p {
     .jumbotron {
         padding: 62px 0;
     }
+
+    .img-fluid{
+        padding-bottom: 15px;
+    }
 }
 
 .jumbotron h2{
