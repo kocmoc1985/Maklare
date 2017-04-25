@@ -3,8 +3,9 @@
     background-color: inherit;
 }
 
-button p {
+button > p {
     margin: 0;
+    display: inline;
 }
 
 button{
