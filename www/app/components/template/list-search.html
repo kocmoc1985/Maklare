@@ -3,7 +3,7 @@
     <div class="row row-sort">
 
         <div class="col-12  col-sm-4 offset-sm-7 col-md-2 offset-md-8 col-sort">
-            <div class="form-group" style="height:100%">
+            <div class="form-group">
                 <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" (change)="dropDownSortValueChanged($event)">
                     <option value="dateAdded">Datum</option>
@@ -14,7 +14,6 @@
                     <option value="-area">Yta fallande</option>
                     <option value="-rooms">Rum fallande</option>
                 </select>
-                
             </div>
            
         </div>
@@ -25,7 +24,7 @@
     <div class="row list-entry"  *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
-         <div class="col-3 col-sm-2 offset-md-2 list-entry-img-section">
+         <div class="col-4 col-sm-2 offset-md-2 list-entry-img-section">
             <img class="img-fluid" src="images/estate/{{object.objectnr}}/main.jpg">
         </div>
 
@@ -66,7 +65,7 @@
 
         <!-->MOBILE VIEW<-->
 
-        <div class="col-9 hidden-md-up list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
+        <div class="col-8 hidden-md-up list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
             <div class="row list-entry-prim-info">
                 <div class="col-6">
                     <p>{{object.price}} kr</p>

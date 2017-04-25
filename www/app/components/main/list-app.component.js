@@ -45,11 +45,13 @@ var ListSearchComponent = (function () {
         event.stopPropagation();
         var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
         var oneTimeFlag = true;
+        var location;
+        this.map = null;
         MYMODALS.showInfoModal('Alla objekt', '', mapContainer, 'md', '', function (ret) {
             for (var _i = 0, _a = _this.objects; _i < _a.length; _i++) {
                 var object = _a[_i];
-                var location = new google.maps.LatLng(object.mapslat, object.mapslng);
                 if (oneTimeFlag) {
+                    oneTimeFlag = false;
                     location = new google.maps.LatLng(selectedObj.mapslat, selectedObj.mapslng);
                     var mapProp = {
                         center: location,
@@ -57,9 +59,9 @@ var ListSearchComponent = (function () {
                     };
                     //
                     _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                    oneTimeFlag = false;
                 }
-                var marker = new google.maps.Marker({
+                location = new google.maps.LatLng(object.mapslat, object.mapslng);
+                new google.maps.Marker({
                     position: location,
                     map: _this.map,
                     title: object.street
