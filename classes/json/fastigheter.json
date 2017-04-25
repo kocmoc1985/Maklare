@@ -104,8 +104,8 @@
     {
         "dateAdded":"2017-03-12 13:15:10",
         "objectnr": "b4",
-        "type": "bostadsrätt",
-        "price": "2100000",
+        "type": "hyresrätt",
+        "price": "1100000",
         "area": "55",
         "rooms": "3",
         "hyra": "3800",
@@ -129,8 +129,8 @@
     {
         "dateAdded":"2017-04-12 10:55:54",
         "objectnr": "b5",
-        "type": "bostadsrätt",
-        "price": "1395000",
+        "type": "hyresrätt",
+        "price": "130000",
         "area": "60",
         "rooms": "2",
         "hyra": "2722",

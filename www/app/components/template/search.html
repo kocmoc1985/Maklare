@@ -1,4 +1,3 @@
-<div class="container-fluid background">
 	<div class="row">
 		<div class="offset-sm-2 col-sm-8">
 			<div class="card search-card">
@@ -17,90 +16,94 @@
 		<div class="card-block button-card">
 			<div class="row">
 				<!--PRIS -->
-				<div class="offset-md-2 col-12 col-sm-4 col-md-2">
+				<div class="col-sm-6 col-md-4 offset-md-2 col-lg-2 offset-lg-2">
 					<div class="row">
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Pris från</p>
-								</button>
-								<div class="dropdown-menu">
-									<a (click)="setFilter('minPrice', 0)" class="dropdown-item"><span>0 kr</span></a>
-									<a *ngFor="let price of prices" (click)="setFilter('minPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Pris från</span>
+							</button>
+							<div class="dropdown-menu">
+								<a (click)="setFilter('minPrice', 0)" class="dropdown-item"><span>0 kr</span></a>
+								<a *ngFor="let price of prices" (click)="setFilter('minPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
 							</div>
 						</div>
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Pris till</p>
-								</button>
-								<div class="dropdown-menu">
-									<a *ngFor="let price of prices" (click)="setFilter('maxPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
-									<a (click)="setFilter('maxPrice', 0)" class="dropdown-item"><span>Obegränsat</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Pris till</span>
+							</button>
+							<div class="dropdown-menu">
+								<a *ngFor="let price of prices" (click)="setFilter('maxPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
+								<a (click)="setFilter('maxPrice', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<!--Rum -->
-				<div class="col-12 col-sm-4 col-md-2">
+				<div class="col-12 col-sm-6 col-md-4 col-lg-2">
 					<div class="row">
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Min rum</p>
-								</button>
-								<div class="dropdown-menu">
-									<a *ngFor="let room of rooms" (click)="setFilter('minRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Rum min</span>
+							</button>
+							<div class="dropdown-menu">
+								<a *ngFor="let room of rooms" (click)="setFilter('minRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
 							</div>
 						</div>
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Max rum</p>
-								</button>
-								<div class="dropdown-menu">
-									<a *ngFor="let room of rooms" (click)="setFilter('maxRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
-									<a (click)="setFilter('maxRooms', 0)" class="dropdown-item"><span>Obegränsat</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Rum max</span>
+							</button>
+							<div class="dropdown-menu">
+								<a *ngFor="let room of rooms" (click)="setFilter('maxRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
+								<a (click)="setFilter('maxRooms', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!--Boyta -->
-				<div class="col-12 col-sm-4 col-md-2">
+				<div class="col-12 col-sm-6 col-md-4 offset-md-2 col-lg-2 offset-lg-0">
 					<div class="row">
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Boyta från</p>
-								</button>
-								<div class="dropdown-menu">
-									<a (click)="setFilter('minArea', 0)" class="dropdown-item"><span>0 &#13217;</span></a>
-									<a *ngFor="let area of areas" (click)="setFilter('minArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Boyta från</span>
+							</button>
+							<div class="dropdown-menu">
+								<a (click)="setFilter('minArea', 0)" class="dropdown-item"><span>0 &#13217;</span></a>
+								<a *ngFor="let area of areas" (click)="setFilter('minArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
 							</div>
 						</div>
-						<div class="col-12">
-							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-							    <p>Boyta till</p>
-								</button>
-								<div class="dropdown-menu">
-									<a *ngFor="let area of areas" (click)="setFilter('maxArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
-									<a (click)="setFilter('maxArea', 0)" class="dropdown-item"><span>Obegränsat</span></a>
-								</div>
+						<div class="col-6 col-sm-12 dropdown dropdown-buttons">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+						    <span>Boyta till</span>
+							</button>
+							<div class="dropdown-menu">
+								<a *ngFor="let area of areas" (click)="setFilter('maxArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
+								<a (click)="setFilter('maxArea', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 							</div>
 						</div>
 					</div>
 				</div>
-				<button (click)="toggleTypeFilter('villa')"> hej v </button>
-				<button (click)="toggleTypeFilter('hyresrätt')"> hej h </button>
-				<button (click)="toggleTypeFilter('bostadsrätt')"> hej b </button>
+				<!--Botyp -->
+				<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+					<div class="row">
+						<div class="col-6 no-pad-above-small">
+							<button class="btn btn-secondary" type="button" (click)="toggleTypeFilter('villa')" [ngClass]="{ 'active': checkActiveType('villa')}">
+								<span class="img-icon villa"></span><span>Villa</span>
+							</button>
+						</div>
+						<div class="col-6 no-pad-above-small">
+							<button class="btn btn-secondary" type="button" (click)="toggleTypeFilter('hyresrätt')" [ngClass]="{ 'active': checkActiveType('hyresrätt')}">
+								<span class="img-icon hyresratt"></span><span>Hyra</span>
+							</button>
+						</div>
+					</div>
+					<div class="row extra-pad-on-small">
+						<button class="col-12 btn btn-secondary" type="button" (click)="toggleTypeFilter('bostadsrätt')" [ngClass]="{ 'active': checkActiveType('bostadsrätt')}">
+							<span class="img-icon bostadsratt"></span><span>Bostadsrätt</span>
+						</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
