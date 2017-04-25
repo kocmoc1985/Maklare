@@ -92,7 +92,7 @@
 }
 
 .google-map p:after {
-    content: url('../images/map.png');
+    content: url('../images/map-many.png');
     margin-left: 2px;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .google-map-b:after {
-    content: url('../images/map-many.png');
+    content: url('../images/map.png');
     margin-left: 2px;
 }
 
@@ -135,9 +135,9 @@
     .list-entry p{
         font-size: 1.7vmax;
     }
-    
+
     .row-sort{
-         margin: 10px 0px 30px 0px;
+        margin: 10px 0px 30px 0px;
     }
 
     .list-entry{

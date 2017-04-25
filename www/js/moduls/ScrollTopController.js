@@ -53,7 +53,7 @@ function addScrollTopListener() {
         $(elem).css('cursor', 'pointer');
         $(elem).attr("src", IMAGE_PATH);
         $(elem).css("position", "fixed");
-        $(elem).css("top", "80px");
+        $(elem).css("bottom", "120px");
         $(elem).css("right", "20px");
         $(elem).fadeIn(1000);
         $("body").append(elem);
