@@ -12,13 +12,20 @@
 }
 
 .row-sort{
-    display:  inline;
-    height: 5vmin;
-    padding: 10px;
+    /*display:  inline;*/
+    /*height: 5vmin;*/
+    width: 100%;
+    margin: 0 !important;
+    padding: 20px 0px 10px 0px;
 }
 
 .col-sort{
     padding: 0;
+    height: 100%;
+}
+
+.form-group{
+    margin-bottom: 0 !important;
 }
 
 .list-entry:hover .list-entry-info-section {
@@ -31,7 +38,7 @@
     border-right: none;
 }
 
-.list-entry .col-3, .col-2{
+.list-entry .col-3, .col-2, .list-entry-img-section{
     height: 100%;
     padding: 0;
 }

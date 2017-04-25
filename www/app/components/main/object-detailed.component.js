@@ -21,6 +21,12 @@ var ObjectDetailedComponent = (function () {
         this.location = location;
         this.loadedImages = {};
     }
+    ObjectDetailedComponent.prototype.showVisningar = function () {
+        if (!this.oneTimeFlag) {
+            TABLE_VISNING.show(true);
+            this.oneTimeFlag = true;
+        }
+    };
     ObjectDetailedComponent.prototype.toggleReadMore = function () {
         if (this.readMore) {
             this.readMore = false;
@@ -59,6 +65,7 @@ var ObjectDetailedComponent = (function () {
         this.object = data[0];
         this.broker = data[0].broker;
         this.objectImages = data[0].images;
+        createTableVisning(this.object.objectnr);
     };
     ObjectDetailedComponent.prototype.ngAfterViewInit = function () {
     };
