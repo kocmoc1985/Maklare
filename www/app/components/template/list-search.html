@@ -1,27 +1,24 @@
 <div class="container-fluid background">
 
     <div class="row">
-
         <div class="offset-6 col-6 col-sm-3 offset-sm-9 offset-md-7 offset-lg-8 col-lg-2">
             <div class="form-group">
                 <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" (change)="dropDownSortValueChanged($event)">
                     <option value="dateAdded">Datum</option>
-                    <option value="price">Pris</option>
-                    <option value="area">Yta</option>
-                    <option value="rooms">Rum</option>
-                    <option value="-price">Pris fallande</option>
-                    <option value="-area">Yta fallande</option>
-                    <option value="-rooms">Rum fallande</option>
+                    <option value="price">Billigast först</option>
+                    <option value="-price">Dyrast först</option>
+                    <option value="area">Minst först</option>
+                    <option value="-area">Störst först</option>
+                    <option value="rooms">Rum, minst först</option>
+                    <option value="-rooms">Rum, flest först</option>
                 </select>
             </div>
-
         </div>
-
     </div>
 
 
-    <div class="row list-entry"  *ngFor="let object of objects"
+    <div class="row list-entry" *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
          <div class="col-4 col-md-2 offset-md-2 list-entry-img-section">
@@ -96,12 +93,6 @@
                     <p>{{object.town}}, {{object.street}}</p>
                 </div>
             </div>
-
-
         </div>
-
-
-
     </div>
-
 </div>
