@@ -1,4 +1,8 @@
-//console.log = function() {};
+//
+console.log = function() {}; // kommentera ut för att aktivera console messages
+console.warn = function(){};
+//
+
 var MYMODALS = new MyModals("js/modals/");
 
 var FASTIGHETS_REST = new REST('fastighet');

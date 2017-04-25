@@ -2,4 +2,5 @@
     background-image: url('images/list-search-bg.png');
     background-repeat: repeat;
     padding-bottom: 15px;
+    min-height: 45vh;
 }

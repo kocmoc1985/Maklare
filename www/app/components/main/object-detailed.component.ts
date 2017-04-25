@@ -52,13 +52,13 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     showGoogleMap() {
         //#GOOGLE_MAP
         if (this.map) {
-            console.log("ShowMap");
             return;
         }
 
         var location = new google.maps.LatLng(this.object.mapslat, this.object.mapslng);
 
         var mapProp = {
+            scrollwheel: false,
             center: location,
             zoom: 10,
 

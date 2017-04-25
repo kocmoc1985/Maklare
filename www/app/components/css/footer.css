@@ -1,20 +1,32 @@
 footer {
 	background-color: #ccc;
 	min-height: 50px;
+	position: relative;
+	bottom: 0px;
+	width: 100%;
+	overflow: visible;
+	z-index: 99;
+	padding: 4px 0;
 }
 
 footer p {
-	margin: 8px;
+	margin: 0;
 }
 
-footer .flex-vert {
+/*footer .flex-vert {
 	display: flex;
 	align-items: center;
 }
-
+*/
 footer .copyright {
 	color: #888;
 }
+
+.row > div {
+	padding-left: 0;
+}
+
+
 /*
 footer:before {
 	content: "";
