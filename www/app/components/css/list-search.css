@@ -1,24 +1,8 @@
-.background{
-    background-image: url('images/list-search-bg.png');
-    background-repeat: repeat-y repeat-x;
-    padding-bottom: 15px;
-}
-
 .list-entry{
     margin: 10px 0px 10px 0px;
     height: 18vmin;
     font-size: 1.6vmin;
     color:#666666;
-}
-
-.row-sort{
-    display:  inline;
-    height: 5vmin;
-    padding: 10px;
-}
-
-.col-sort{
-    padding: 0;
 }
 
 .list-entry:hover .list-entry-info-section {
@@ -128,10 +112,6 @@
 @media (max-width: 768px){
     .list-entry p{
         font-size: 1.7vmax;
-    }
-    
-    .row-sort{
-         margin: 10px 0px 30px 0px;
     }
 
     .list-entry{
