@@ -75,6 +75,10 @@ export class SearchComponent implements OnInit {
         this.sendSearchRequest(properties, delayMs);
     }
 
+    checkActiveType(name: string) {
+    	return SearchComponent.filters.types.length === 0 || SearchComponent.filters.types.indexOf(name) !== -1;
+    }
+
     private insertFiltersIntoQuery(properties: any) {
         for (let name in SearchComponent.filters) {
             let value: any = SearchComponent.filters[name];
@@ -109,7 +113,7 @@ export class SearchComponent implements OnInit {
         } else {
             SearchComponent.filters.types.splice(index, 1);
         }
-
+        console.log(SearchComponent.filters.types);
         this.search(this.previousSearchTerm, this.previousSearchSort, 0);
     }
 
