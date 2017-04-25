@@ -1,8 +1,8 @@
 <div class="container-fluid background">
 
-    <div class="row row-sort">
+    <div class="row">
 
-        <div class="col-12  col-sm-4 offset-sm-7 col-md-2 offset-md-8 col-sort">
+        <div class="offset-6 col-6 col-sm-3 offset-sm-9 offset-md-7 offset-lg-8 col-lg-2">
             <div class="form-group">
                 <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" (change)="dropDownSortValueChanged($event)">
@@ -15,7 +15,7 @@
                     <option value="-rooms">Rum fallande</option>
                 </select>
             </div>
-           
+
         </div>
 
     </div>
@@ -24,7 +24,7 @@
     <div class="row list-entry"  *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
-         <div class="col-4 col-sm-2 offset-md-2 list-entry-img-section">
+         <div class="col-4 col-md-2 offset-md-2 list-entry-img-section">
             <img class="img-fluid" src="images/estate/{{object.objectnr}}/main.jpg">
         </div>
 
@@ -35,11 +35,11 @@
                 </div>
                 <div class="col-4 google-map" *ngIf="object">
                     <p  (click)="showAllObjectsOnMap(selectedHoverObject == object,object,$event)">{{object.district}}</p>
-                </div> 
+                </div>
                 <div class="col-4">
                     <!--p>{{object.area}} m&#178; / {{object.rooms}} rum</p-->
                     <p [innerHTML]="object.area | special_a:object.rooms"></p>
-                </div> 
+                </div>
             </div>
 
             <div class="row list-entry-sec-info">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-4 faded" [class.infaded]="selectedHoverObject == object">
                      <p *ngIf="selectedHoverObject == object">{{selectedHoverObject.dateAdded | cutdate}}</p><!-->#PIPE ANGULAR<-->
-                </div> 
+                </div>
             </div>
 
             <div class="row list-entry-short-info">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-6">
                     <p>{{object.rooms}} rum</p>
-                </div> 
+                </div>
             </div>
 
             <div class="row list-entry-sec-info">
@@ -82,23 +82,23 @@
                 </div>
                 <div class="col-6">
                     <p [innerHTML]="(object.area | kvadratM)"></p>
-                </div>                  
+                </div>
             </div>
 
             <div class="row list-entry-sec-info">
                 <div class="col-12">
                     <p>{{object.district}}</p>
-                </div>    
+                </div>
             </div>
 
             <div class="row list-entry-sec-info">
                 <div class="col-12">
                     <p>{{object.town}}, {{object.street}}</p>
-                </div>    
+                </div>
             </div>
 
 
-        </div> 
+        </div>
 
 
 
