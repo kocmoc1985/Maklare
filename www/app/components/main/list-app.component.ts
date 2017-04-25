@@ -66,7 +66,7 @@ export class ListSearchComponent implements OnInit {
         var location;
         this.map = null;
 
-        MYMODALS.showInfoModal('Alla objekt', '', mapContainer, 'md', '', (ret: any) => {
+        MYMODALS.showInfoModal(selectedObj.street, '', mapContainer, 'md', '', (ret: any) => {
 
             for (let object of this.objects) {
 
@@ -75,7 +75,7 @@ export class ListSearchComponent implements OnInit {
                     location = new google.maps.LatLng(selectedObj.mapslat, selectedObj.mapslng);
                     var mapProp = {
                         center: location,
-                        zoom: 10,
+                        zoom: 14,
                     };
                     //
                     this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);

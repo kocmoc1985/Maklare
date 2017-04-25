@@ -55,6 +55,9 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.insertFiltersIntoQuery(properties);
         this.sendSearchRequest(properties, delayMs);
     };
+    SearchComponent.prototype.checkActiveType = function (name) {
+        return SearchComponent_1.filters.types.length === 0 || SearchComponent_1.filters.types.indexOf(name) !== -1;
+    };
     SearchComponent.prototype.insertFiltersIntoQuery = function (properties) {
         for (var name_1 in SearchComponent_1.filters) {
             var value = SearchComponent_1.filters[name_1];
@@ -85,6 +88,7 @@ var SearchComponent = SearchComponent_1 = (function () {
         else {
             SearchComponent_1.filters.types.splice(index, 1);
         }
+        console.log(SearchComponent_1.filters.types);
         this.search(this.previousSearchTerm, this.previousSearchSort, 0);
     };
     SearchComponent.prototype.setFilter = function (name, value) {
