@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'buy',
-    templateUrl: 'app/components/template/buy.html'
+    templateUrl: 'app/components/template/buy.html',
+    styleUrls: ['./app/components/css/buy.css']
 })
 
 export class BuyComponent {

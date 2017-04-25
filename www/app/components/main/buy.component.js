@@ -19,7 +19,8 @@ var BuyComponent = (function () {
 BuyComponent = __decorate([
     core_1.Component({
         selector: 'buy',
-        templateUrl: 'app/components/template/buy.html'
+        templateUrl: 'app/components/template/buy.html',
+        styleUrls: ['./app/components/css/buy.css']
     })
 ], BuyComponent);
 exports.BuyComponent = BuyComponent;
