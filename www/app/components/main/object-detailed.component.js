@@ -42,6 +42,7 @@ var ObjectDetailedComponent = (function () {
         }
         var location = new google.maps.LatLng(this.object.mapslat, this.object.mapslng);
         var mapProp = {
+            scrollwheel: false,
             center: location,
             zoom: 10,
         };

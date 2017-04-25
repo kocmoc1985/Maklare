@@ -119,13 +119,9 @@ p{
 
     .basic-info{
         width: 100%;
+        padding-bottom: 0px ! important;
     }
 
-    /*    .col-broker{
-            margin: auto;
-            position: center, center;
-            padding-bottom: 15px;
-        }*/
 
     .row-four{
         height: auto;
