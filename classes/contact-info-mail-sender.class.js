@@ -1,19 +1,18 @@
-
-
 module.exports = class ContactInfoMailSender {
 
 	constructor(app){
+		let nodeMailer = require("nodemailer");
+		// We will need to require the node-mailer here
+
+		let transporter = nodeMailer.createTransport({
+		    service: 'gmail',
+		    auth: {
+		        user: 'parallaxen@gmail.com',
+		        pass: 'SUW16angular'
+		    }
+		});
+
 		app.post('/register-contact-info', (req,res) => {
-			// We will need to require the node-mailer here
-			let nodeMailer = require("nodemailer");
-console.log("HAHA",nodeMailer)
-			let transporter = nodeMailer.createTransport({
-			    service: 'gmail',
-			    auth: {
-			        user: 'parallaxen@gmail.com',
-			        pass: 'SUW16angular'
-			    }
-			});
 
 			let jsonText = JSON.stringify(req.body);
 
@@ -23,7 +22,7 @@ console.log("HAHA",nodeMailer)
 			    to: 'david.bottiger@gmail.com',
 
 			    // Subject of the message
-			    subject: 'This person would like to be contacted by us ' + jsonText, //
+			    subject: 'This person would like to be contacted by us ' + jsonText,
 
 			    // plaintext body
 			    text: 'Contact: ' + jsonText,
@@ -37,22 +36,13 @@ console.log("HAHA",nodeMailer)
 			    if (error) {
 			        return console.log(error);
 			    }
-			    console.log('Message %s sent: %s', info.messageId, info.response);
 			});
-			
-
-		    console.log("Got some funky stuff!",req.body);
-         	// req.body contains info to send via mail
+			// req.body contains info to send via mail
 			// now - go look up the node-mailer documentation
 
-
             res.json({ok:true});
-
-            
         });
-
 	}
-
 
 }
 
