@@ -21,79 +21,23 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Pris från</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#"><p>200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>5 000 000 kr </p></a>
+								<div class="dropdown-menu">
+									<a (click)="setFilter('minPrice', 0)" class="dropdown-item"><span>0 kr</span></a>
+									<a *ngFor="let price of prices" (click)="setFilter('minPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
 								</div>
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Pris till</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#"><p>200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>1 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>2 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>3 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 000 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 200 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 400 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 600 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>4 800 000 kr </p></a>
-									<a class="dropdown-item" href="#"><p>5 000 000 kr </p></a>
+								<div class="dropdown-menu">
+									<a *ngFor="let price of prices" (click)="setFilter('maxPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
+									<a (click)="setFilter('maxPrice', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 								</div>
 							</div>
 						</div>
@@ -105,45 +49,22 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Min rum</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#">1 rum</a>
-									<a class="dropdown-item" href="#">2 rum</a>
-									<a class="dropdown-item" href="#">3 rum</a>
-									<a class="dropdown-item" href="#">4 rum</a>
-									<a class="dropdown-item" href="#">5 rum</a>
-									<a class="dropdown-item" href="#">6 rum</a>
-									<a class="dropdown-item" href="#">7 rum</a>
-									<a class="dropdown-item" href="#">8 rum</a>
-									<a class="dropdown-item" href="#">9 rum</a>
-									<a class="dropdown-item" href="#">10 rum</a>
-									<a class="dropdown-item" href="#">12 rum</a>
-									<a class="dropdown-item" href="#">13 rum</a>
-									<a class="dropdown-item" href="#">14+ rum</a>
+								<div class="dropdown-menu">
+									<a *ngFor="let room of rooms" (click)="setFilter('minRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
 								</div>
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Max rum</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#">1 rum</a>
-									<a class="dropdown-item" href="#">2 rum</a>
-									<a class="dropdown-item" href="#">3 rum</a>
-									<a class="dropdown-item" href="#">4 rum</a>
-									<a class="dropdown-item" href="#">5 rum</a>
-									<a class="dropdown-item" href="#">6 rum</a>
-									<a class="dropdown-item" href="#">7 rum</a>
-									<a class="dropdown-item" href="#">8 rum</a>
-									<a class="dropdown-item" href="#">9 rum</a>
-									<a class="dropdown-item" href="#">10 rum</a>
-									<a class="dropdown-item" href="#">12 rum</a>
-									<a class="dropdown-item" href="#">13 rum</a>
-									<a class="dropdown-item" href="#">14+ rum</a>
+								<div class="dropdown-menu">
+									<a *ngFor="let room of rooms" (click)="setFilter('maxRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
+									<a (click)="setFilter('maxRooms', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 								</div>
 							</div>
 						</div>
@@ -154,64 +75,31 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Boyta från</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#">10 kvm</a>
-									<a class="dropdown-item" href="#">20 kvm</a>
-									<a class="dropdown-item" href="#">30 kvm</a>
-									<a class="dropdown-item" href="#">40 kvm</a>
-									<a class="dropdown-item" href="#">50 kvm</a>
-									<a class="dropdown-item" href="#">60 kvm</a>
-									<a class="dropdown-item" href="#">70 kvm</a>
-									<a class="dropdown-item" href="#">80 kvm</a>
-									<a class="dropdown-item" href="#">90 kvm</a>
-									<a class="dropdown-item" href="#">100 kvm</a>
-									<a class="dropdown-item" href="#">110 kvm</a>
-									<a class="dropdown-item" href="#">120 kvm</a>
-									<a class="dropdown-item" href="#">130 kvm</a>
-									<a class="dropdown-item" href="#">140 kvm</a>
-									<a class="dropdown-item" href="#">150 kvm</a>
-									<a class="dropdown-item" href="#">160 kvm</a>
-									<a class="dropdown-item" href="#">170 kvm</a>
-									<a class="dropdown-item" href="#">180 kvm</a>
-									<a class="dropdown-item" href="#">190 kvm</a>
-									<a class="dropdown-item" href="#">200 kvm</a>
+								<div class="dropdown-menu">
+									<a (click)="setFilter('minArea', 0)" class="dropdown-item"><span>0 &#13217;</span></a>
+									<a *ngFor="let area of areas" (click)="setFilter('minArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
 								</div>
 							</div>
 						</div>
 						<div class="col-12">
 							<div class="dropdown dropdown-buttons">
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
 							    <p>Boyta till</p>
 								</button>
-								<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									<a class="dropdown-item" href="#">10 kvm</a>
-									<a class="dropdown-item" href="#">20 kvm</a>
-									<a class="dropdown-item" href="#">30 kvm</a>
-									<a class="dropdown-item" href="#">40 kvm</a>
-									<a class="dropdown-item" href="#">50 kvm</a>
-									<a class="dropdown-item" href="#">60 kvm</a>
-									<a class="dropdown-item" href="#">70 kvm</a>
-									<a class="dropdown-item" href="#">80 kvm</a>
-									<a class="dropdown-item" href="#">90 kvm</a>
-									<a class="dropdown-item" href="#">100 kvm</a>
-									<a class="dropdown-item" href="#">110 kvm</a>
-									<a class="dropdown-item" href="#">120 kvm</a>
-									<a class="dropdown-item" href="#">130 kvm</a>
-									<a class="dropdown-item" href="#">140 kvm</a>
-									<a class="dropdown-item" href="#">150 kvm</a>
-									<a class="dropdown-item" href="#">160 kvm</a>
-									<a class="dropdown-item" href="#">170 kvm</a>
-									<a class="dropdown-item" href="#">180 kvm</a>
-									<a class="dropdown-item" href="#">190 kvm</a>
-									<a class="dropdown-item" href="#">200 kvm</a>
+								<div class="dropdown-menu">
+									<a *ngFor="let area of areas" (click)="setFilter('maxArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
+									<a (click)="setFilter('maxArea', 0)" class="dropdown-item"><span>Obegränsat</span></a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<button (click)="toggleTypeFilter('villa')"> hej v </button>
+				<button (click)="toggleTypeFilter('hyresrätt')"> hej h </button>
+				<button (click)="toggleTypeFilter('bostadsrätt')"> hej b </button>
 			</div>
 		</div>
 	</div>

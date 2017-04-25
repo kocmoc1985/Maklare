@@ -1,15 +1,16 @@
 <style type="text/css">
 
+    
     table{
         width: 99%;
-        color:white;
+        color:black; /*white*/
         border-spacing: 2px;
     }
 
     table tr{
-        background-color: #49515A;
+        background-color: #000\9/*#49515A*/
     }
-    
+
     table tr:hover{
         color:black;
     }
@@ -18,7 +19,7 @@
         width: 99%;
         min-height: 20vh;
         padding: 5px;
-        color:white;
+        color:black;/*white*/
     }
 
     .table-show-invert .table-invert-entry {
@@ -28,7 +29,7 @@
     .table-show-invert .row-invert {
         width: 100%;
         height: 5vh;
-        background-color: #49515A;
+        background-color: #000\9;/*#49515A*/
         border: 1px solid black;
     }
 
@@ -40,7 +41,7 @@
         padding: 5px 0px 0px 5px;
         border-right: 1px solid black;
     }
-    
+
     .table-show-invert .row-invert td {
         word-wrap: break-word;
         display: block;
@@ -49,6 +50,10 @@
         min-width: 50%;
         padding: 5px 0px 0px 5px;
         float: left;
+    }
+
+    .admin-show-items, .table-show-invert{
+        width: 100% !important;
     }
 
     @media (max-width:480px){
@@ -64,7 +69,7 @@
         text-align: left;
     }
     .admin-show-items th,.table-show-invert th {
-        color: white !important;
+        color: black !important;
     }
     .admin-show-items .basic-icon:hover,.table-show-invert .basic-icon:hover {
         cursor: pointer;
@@ -80,6 +85,7 @@
     .table-basic-auto-create-form p{
         padding-top: 10px;
     }
+    
 
 
 </style>

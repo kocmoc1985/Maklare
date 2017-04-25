@@ -9,6 +9,14 @@ p{
     height: 100%;
 }
 
+.long-info{
+    /*line-height: 1.4;*/
+}
+
+.long-info:first-letter{
+    font-weight:bolder;
+}
+
 .basic-info{
     padding: 20px;
     background: rgba(255, 255, 255, 0.7);
@@ -57,7 +65,7 @@ p{
 }
 
 .card-block-object-detailed{
-   
+   overflow: hidden;
 }
 
 /*.card-block-content-x{
@@ -95,6 +103,12 @@ p{
 }
 
 @media (max-width: 767px){
+    
+    #googleMap{
+       width: 100%;
+       height: 300px;
+    }
+    
     .row{
         font-size: 2vmax; 
     }
