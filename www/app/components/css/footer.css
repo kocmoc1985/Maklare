@@ -1,31 +1,26 @@
 footer {
-	background-color: #ccc;
-	min-height: 50px;
-	position: relative;
-	bottom: 0px;
-	width: 100%;
-	overflow: visible;
-	z-index: 99;
-	padding: 4px 0;
+/*	padding: 4px 0;*/
+	height: 100%;
 }
 
 footer p {
-	margin: 0;
+	margin: 0;;
+	font-size: 0.8rem
 }
 
-/*footer .flex-vert {
-	display: flex;
-	align-items: center;
-}
-*/
 footer .copyright {
 	color: #888;
 }
 
 .row > div {
-	padding-left: 0;
+	padding: 10px 0 2px;
 }
 
+@media screen and (max-width: 969px) {
+	.row > div {
+		padding: 6px 0 0;
+	}
+}
 
 /*
 footer:before {
