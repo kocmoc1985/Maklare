@@ -2,6 +2,7 @@
     background-image: url('images/list-search-bg.png');
     background-repeat: repeat-y repeat-x;
     padding-bottom: 15px;
+    min-height:45vh;
 }
 
 .list-entry{
