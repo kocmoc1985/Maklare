@@ -2,6 +2,7 @@
     background-image: url('images/list-search-bg.png');
     background-repeat: repeat-y repeat-x;
     padding-bottom: 15px;
+    min-height:45vh;
 }
 
 .list-entry{
@@ -12,8 +13,6 @@
 }
 
 .row-sort{
-    /*display:  inline;*/
-    /*height: 5vmin;*/
     width: 100%;
     margin: 0 !important;
     padding: 20px 0px 10px 0px;
