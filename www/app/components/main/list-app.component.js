@@ -47,7 +47,7 @@ var ListSearchComponent = (function () {
         var oneTimeFlag = true;
         var location;
         this.map = null;
-        MYMODALS.showInfoModal('Alla objekt', '', mapContainer, 'md', '', function (ret) {
+        MYMODALS.showInfoModal(selectedObj.street, '', mapContainer, 'md', '', function (ret) {
             for (var _i = 0, _a = _this.objects; _i < _a.length; _i++) {
                 var object = _a[_i];
                 if (oneTimeFlag) {
@@ -55,7 +55,7 @@ var ListSearchComponent = (function () {
                     location = new google.maps.LatLng(selectedObj.mapslat, selectedObj.mapslng);
                     var mapProp = {
                         center: location,
-                        zoom: 10,
+                        zoom: 14,
                     };
                     //
                     _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);

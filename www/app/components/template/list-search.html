@@ -47,7 +47,7 @@
                     <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
                 </div>
                 <div class="col-4" >
-                    <p class="google-map-b" (click)="showGoogleMapInModal(object,$event)">{{object.street}}</p>
+                    <p class="google-map-b">{{object.street}}</p>
                 </div>
                 <div class="col-4 faded" [class.infaded]="selectedHoverObject == object">
                      <p *ngIf="selectedHoverObject == object">{{selectedHoverObject.dateAdded | cutdate}}</p><!-->#PIPE ANGULAR<-->
