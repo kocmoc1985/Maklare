@@ -26,7 +26,8 @@ export class ListSearchComponent implements OnInit {
     private globalMem: any;
     private map: any;
     private oldHeight: any;
-    private setHeight: '';
+    private setHeight:any = '';
+    private $el: any;
 
     constructor(
         private el: ElementRef, //#JQUERY + ANGULAR
