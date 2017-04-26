@@ -16,9 +16,8 @@ var BuyComponent = (function () {
     }
     BuyComponent.prototype.onSearch = function (objects) {
         //#DATA_EXCHANGE
-        console.log("BUY", objects);
         this.searchResult = objects;
-        //        this.ref.tick();
+        this.ref.tick();
     };
     BuyComponent.prototype.stringifier = function (ex) {
         return JSON.stringify(ex);

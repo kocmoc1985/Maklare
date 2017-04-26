@@ -34,12 +34,9 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.initFilterData();
     }
     SearchComponent.prototype.ngOnInit = function () {
-        console.log("NgOnInit");
         this.search('', '-dateAdded', 0);
     };
     SearchComponent.prototype.ngOnDestroy = function () {
-        //        this.onSearch.emit(null);
-        this.onSearch.complete();
     };
     SearchComponent.prototype.search = function (term, sort, delayMs) {
         if (delayMs === void 0) { delayMs = undefined; }
@@ -115,11 +112,7 @@ var SearchComponent = SearchComponent_1 = (function () {
             _this.dataService.get(rest, properties).then(function (data) {
                 // Ignore all results other than the newest/altered search-term
                 if (currentSearchCounter == _this.searchCounter) {
-                    console.log("AAAAAAA", data);
                     _this.onSearch.emit(data);
-                }
-                else {
-                    console.log("BBBBBB");
                 }
             });
         }, keyUpDelayMs);

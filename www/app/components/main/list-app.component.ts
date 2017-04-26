@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, OnChanges, ElementRef} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, ElementRef, AfterViewInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {DataService} from '../services/data.service';
@@ -18,7 +18,7 @@ declare var google: any;
     providers: [DataService, DataExchange]
 })
 
-export class ListSearchComponent implements OnInit, OnChanges {
+export class ListSearchComponent implements OnInit, OnChanges, AfterViewInit {
     //#DATA_EXCHANGE
     @Input('estates') objects: any[];
 
@@ -26,7 +26,7 @@ export class ListSearchComponent implements OnInit, OnChanges {
     private globalMem: any;
     private map: any;
     private oldHeight: any;
-    private setHeight:any = '';
+    private setHeight: any = '';
     private $el: any;
 
     constructor(
@@ -39,18 +39,31 @@ export class ListSearchComponent implements OnInit, OnChanges {
         this.globalMem = this.dataExchange.global();
 
     }
+    
+    empty(){
+        if (this.objects == null || this.objects.length == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     ngOnChanges(changes: any) {
-         console.log("Objects", this.objects);
+        // This one triggers when objects are updated
+        //         console.log("Objects", this.objects);
     }
 
     ngOnInit() {
         //#JQUERY + ANGULAR
         this.$el = $(this.el.nativeElement).parent();
-        setInterval(()=>{ this.checkHeightResize(); },100);
+
     }
 
-    checkHeightResize(){
+    ngAfterViewInit() {
+        setInterval(() => {this.checkHeightResize();}, 100);
+    }
+
+    checkHeightResize() {
         this.$el.height(''); // remove style attribute that sets a specific height
         let heightNoPadding = this.$el.height();
         let height = this.$el.outerHeight();
@@ -58,9 +71,9 @@ export class ListSearchComponent implements OnInit, OnChanges {
         this.$el.height(this.setHeight); // add a set height from "mem" if needed
         let diffPadding = height - heightNoPadding;
         let bottom = this.$el.offset().top + height;
-        if(footerTop - bottom >= 1){
+        if (footerTop - bottom >= 1) {
             // we need to extend the height
-            this.setHeight = height + (footerTop-bottom) - diffPadding;
+            this.setHeight = height + (footerTop - bottom) - diffPadding;
             this.$el.height(this.setHeight);
         }
         else {
