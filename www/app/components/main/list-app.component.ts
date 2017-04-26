@@ -42,7 +42,7 @@ export class ListSearchComponent implements OnInit {
     ngOnInit() {
         //#JQUERY + ANGULAR
         this.$el = $(this.el.nativeElement).parent();
-        setInterval(()=>{ this.checkHeightResize(); },100);
+        setInterval(()=>{ this.checkHeightResize(); },50);
     }
 
     checkHeightResize(){
