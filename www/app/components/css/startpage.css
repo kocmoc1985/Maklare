@@ -59,3 +59,9 @@
 	 transition-duration: 0.3s;
 	text-shadow: 1.8px 1.8px 1.8px #212121;
 }
+
+@media(min-width: 768px){
+	.links-container a{
+		font-size: 5rem;
+	}
+}
