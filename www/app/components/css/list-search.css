@@ -128,10 +128,10 @@
 }*/
 
 
-.short-info:before{
+/*.short-info:before{
     content: url('../images/door.png');
     margin-right: 2px;
-}
+}*/
 
 .faded{
     opacity: 0;
