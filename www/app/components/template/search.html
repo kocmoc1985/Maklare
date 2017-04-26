@@ -3,7 +3,7 @@
         <div class="card search-card">
             <div class="card-block">
                 <div class="input-group">
-                    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Sök efter område, stad eller adress" type="text" />
+                    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Sök efter område, stad eller adress" type="text" value="{{localSearchTerm}}"/>
                     <span class="input-group-btn">
                         <button (click)="search(searchBox.value)" class="btn btn-secondary" type="button">Sök</button>
                     </span>
