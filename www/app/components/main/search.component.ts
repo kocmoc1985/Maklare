@@ -60,8 +60,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-//        this.onSearch.emit(null);
-        this.onSearch.complete();
     }
 
     search(term: string, sort: string, delayMs: any = undefined): void {
@@ -148,10 +146,7 @@ export class SearchComponent implements OnInit, OnDestroy {
                 (data: any[]) => {
                     // Ignore all results other than the newest/altered search-term
                     if (currentSearchCounter == this.searchCounter) {
-                        console.log("AAAAAAA", data);
                         this.onSearch.emit(data);
-                    } else {
-                        console.log("BBBBBB");
                     }
                 }
             );

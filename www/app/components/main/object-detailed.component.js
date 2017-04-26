@@ -60,7 +60,10 @@ var ObjectDetailedComponent = (function () {
         return "url('images/estate/" + object.objectnr + "/main.jpg')";
     };
     ObjectDetailedComponent.prototype.registerLoadedImage = function (img) {
-        this.loadedImages[img] = true;
+        var _this = this;
+        setTimeout(function () {
+            _this.loadedImages[img] = true;
+        }, 0);
     };
     ObjectDetailedComponent.prototype.goBack = function () {
         this.location.back();

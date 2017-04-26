@@ -19,9 +19,10 @@
         </div>
 
     </div>
+    
+    <p *ngIf="empty()" style="text-align: center">Inga objekt hittades</p>
 
-
-    <div class="row list-entry"  *ngFor="let object of objects"
+    <div class="row list-entry" *ngFor="let object of objects"
          (click)="showDetailedView(object)" (mouseover)="over(object)" (mouseleave)="leave()"><!-->#ROUTING_DETAILED<-->
 
          <div class="col-4 col-sm-3 col-md-2 offset-md-2 list-entry-img-section">

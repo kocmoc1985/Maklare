@@ -25,13 +25,24 @@ var ListSearchComponent = (function () {
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
     }
+    ListSearchComponent.prototype.empty = function () {
+        if (this.objects == null || this.objects.length == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     ListSearchComponent.prototype.ngOnChanges = function (changes) {
-        console.log("Objects", this.objects);
+        // This one triggers when objects are updated
+        //         console.log("Objects", this.objects);
     };
     ListSearchComponent.prototype.ngOnInit = function () {
-        var _this = this;
         //#JQUERY + ANGULAR
         this.$el = $(this.el.nativeElement).parent();
+    };
+    ListSearchComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
         setInterval(function () { _this.checkHeightResize(); }, 100);
     };
     ListSearchComponent.prototype.checkHeightResize = function () {
