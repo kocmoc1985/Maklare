@@ -2,11 +2,15 @@
     margin-bottom: 5px;
 }
 
+.custom-lg-padding {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .type-filter{
    margin-bottom: 5px;
    width: 98%;
 }
-
 
 .search-card {
     border: none;
@@ -59,4 +63,8 @@ button{
     .col-6.no-pad-above-small:last-child {
         padding-right: 0px;
     }
+
+	.custom-lg-padding {
+		padding-right: 0px;
+	}
 }

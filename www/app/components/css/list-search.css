@@ -14,14 +14,11 @@
 }
 
 .row-sort{
-    width: 100%;
-    margin: 0 !important;
-    padding: 20px 0px 10px 0px;
+    margin: 0;
 }
 
 .col-sort{
     padding: 0;
-    height: 100%;
 }
 
 .form-group{
@@ -153,10 +150,6 @@
 @media (max-width: 768px){
     .list-entry p{
         font-size: 1.7vmax;
-    }
-
-    .row-sort{
-        margin: 10px 0px 30px 0px;
     }
 
     .list-entry{

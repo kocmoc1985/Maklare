@@ -1,22 +1,20 @@
-<div class="row">
-    <div class="offset-sm-2 col-sm-8">
-        <div class="card search-card">
-            <div class="card-block">
-                <div class="input-group">
-                    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Sök efter område, stad eller adress" type="text" value="{{localSearchTerm}}"/>
-                    <span class="input-group-btn">
-                        <button (click)="search(searchBox.value)" class="btn btn-secondary" type="button">Sök</button>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="card search-card">
     <div class="card-block button-card">
         <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-md-8 offset-md-2 custom-lg-padding">
+                        <div class="input-group">
+                            <input #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control" placeholder="Sök efter område, stad eller adress" type="text" value="{{localSearchTerm}}"/>
+                            <span class="input-group-btn">
+                                <button (click)="search(searchBox.value)" class="btn btn-secondary" type="button">Sök</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!--PRIS -->
-            <div class="col-sm-6 col-md-4 offset-md-2 col-lg-2 offset-lg-2">
+            <div class="col-sm-6 col-md-4 offset-md-2 col-lg-2">
                 <div class="row">
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
