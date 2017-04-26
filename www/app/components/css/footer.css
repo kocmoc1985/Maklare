@@ -14,7 +14,7 @@ footer .copyright {
 }
 
 .row > div {
-	padding: 10px 0 8px;
+	padding: 10px 0 4px;
 }
 
 @media screen and (max-width: 969px) {
