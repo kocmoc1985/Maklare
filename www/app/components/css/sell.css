@@ -32,6 +32,20 @@ button p {
     margin: 0;
 }
 
+.text-content{
+    padding-top: 20px;
+}
+
+.container{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 0.3rem;
+}
+
+.jumbotron h2{
+    font-size: 3.5rem;
+}
+
 @media (max-width: 576px) {
     .jumbotron {
         padding: 62px 0;
@@ -40,8 +54,17 @@ button p {
     .img-fluid{
         padding-bottom: 15px;
     }
-}
 
-.jumbotron h2{
-    font-size: 3.5rem;
+    .text-content{
+        padding-top: 5px;
+    }
+
+    .jumbotron h2{
+    font-size: 2.5rem;
+    }
+
+    .container{
+        border-radius: 0px;
+    }
+
 }
