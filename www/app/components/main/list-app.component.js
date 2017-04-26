@@ -21,6 +21,7 @@ var ListSearchComponent = (function () {
         this.dataService = dataService;
         this.dataExchange = dataExchange;
         this.router = router;
+        this.setHeight = '';
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
     }
@@ -28,9 +29,29 @@ var ListSearchComponent = (function () {
         console.log("Objects", this.objects);
     };
     ListSearchComponent.prototype.ngOnInit = function () {
+        var _this = this;
         //#JQUERY + ANGULAR
-        var $el = $(this.el.nativeElement);
-        //        $el.css('display', 'block');
+        this.$el = $(this.el.nativeElement).parent();
+        setInterval(function () { _this.checkHeightResize(); }, 100);
+    };
+    ListSearchComponent.prototype.checkHeightResize = function () {
+        this.$el.height(''); // remove style attribute that sets a specific height
+        var heightNoPadding = this.$el.height();
+        var height = this.$el.outerHeight();
+        var footerTop = $('footer').offset().top;
+        this.$el.height(this.setHeight); // add a set height from "mem" if needed
+        var diffPadding = height - heightNoPadding;
+        var bottom = this.$el.offset().top + height;
+        if (footerTop - bottom >= 1) {
+            // we need to extend the height
+            this.setHeight = height + (footerTop - bottom) - diffPadding;
+            this.$el.height(this.setHeight);
+        }
+        else {
+            // we don't need to extend the height
+            this.setHeight = '';
+        }
+        this.oldHeight = height;
     };
     ListSearchComponent.prototype.dropDownSortValueChanged = function (event) {
         this.globalMem.search(this.globalMem.previousSearchTerm, event.target.value);

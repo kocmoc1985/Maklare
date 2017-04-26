@@ -14,6 +14,11 @@ app-footer {
   height: 60px;
 }
 
+
+router-outlet{
+  height: 100vh;
+}
+
 @media screen and (max-width: 720px) {
 
     body {
@@ -21,6 +26,10 @@ app-footer {
     }
 
     app-footer {
+      height: 55px;
+    }
+
+    footer {
       height: 55px;
     }
 

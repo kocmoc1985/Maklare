@@ -2,7 +2,6 @@
     background-image: url('images/list-search-bg.png');
     background-repeat: repeat-y repeat-x;
     padding-bottom: 15px;
-    min-height:45vh;
     padding-left: 1px;
     padding-right: 1px;
 }
@@ -12,8 +11,6 @@
     height: 18vmin;
     font-size: 1.6vmin;
     color:#666666;
-
-
 }
 
 .row-sort{

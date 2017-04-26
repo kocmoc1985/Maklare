@@ -25,6 +25,9 @@ export class ListSearchComponent implements OnInit, OnChanges {
     private localMem: any;
     private globalMem: any;
     private map: any;
+    private oldHeight: any;
+    private setHeight:any = '';
+    private $el: any;
 
     constructor(
         private el: ElementRef, //#JQUERY + ANGULAR
@@ -43,9 +46,28 @@ export class ListSearchComponent implements OnInit, OnChanges {
 
     ngOnInit() {
         //#JQUERY + ANGULAR
-        let $el = $(this.el.nativeElement);
-        //        $el.css('display', 'block');
-       
+        this.$el = $(this.el.nativeElement).parent();
+        setInterval(()=>{ this.checkHeightResize(); },100);
+    }
+
+    checkHeightResize(){
+        this.$el.height(''); // remove style attribute that sets a specific height
+        let heightNoPadding = this.$el.height();
+        let height = this.$el.outerHeight();
+        let footerTop = $('footer').offset().top;
+        this.$el.height(this.setHeight); // add a set height from "mem" if needed
+        let diffPadding = height - heightNoPadding;
+        let bottom = this.$el.offset().top + height;
+        if(footerTop - bottom >= 1){
+            // we need to extend the height
+            this.setHeight = height + (footerTop-bottom) - diffPadding;
+            this.$el.height(this.setHeight);
+        }
+        else {
+            // we don't need to extend the height
+            this.setHeight = '';
+        }
+        this.oldHeight = height;
     }
 
     dropDownSortValueChanged(event: any) {
