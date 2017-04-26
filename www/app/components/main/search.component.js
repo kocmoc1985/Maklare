@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("../services/data.service");
 var dataExchange_service_1 = require("../services/dataExchange.service");
+//declare function setTimeout(f:any,c:any): any;
 var Filters = (function () {
     function Filters() {
         this.types = [];
@@ -33,7 +34,12 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.initFilterData();
     }
     SearchComponent.prototype.ngOnInit = function () {
+        console.log("NgOnInit");
         this.search('', '-dateAdded', 0);
+    };
+    SearchComponent.prototype.ngOnDestroy = function () {
+        //        this.onSearch.emit(null);
+        this.onSearch.complete();
     };
     SearchComponent.prototype.search = function (term, sort, delayMs) {
         if (delayMs === void 0) { delayMs = undefined; }
@@ -109,8 +115,11 @@ var SearchComponent = SearchComponent_1 = (function () {
             _this.dataService.get(rest, properties).then(function (data) {
                 // Ignore all results other than the newest/altered search-term
                 if (currentSearchCounter == _this.searchCounter) {
-                    _this.objects = data;
+                    console.log("AAAAAAA", data);
                     _this.onSearch.emit(data);
+                }
+                else {
+                    console.log("BBBBBB");
                 }
             });
         }, keyUpDelayMs);

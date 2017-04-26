@@ -21,13 +21,37 @@ var ListSearchComponent = (function () {
         this.dataService = dataService;
         this.dataExchange = dataExchange;
         this.router = router;
+        this.setHeight = '';
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
     }
+    ListSearchComponent.prototype.ngOnChanges = function (changes) {
+        console.log("Objects", this.objects);
+    };
     ListSearchComponent.prototype.ngOnInit = function () {
+        var _this = this;
         //#JQUERY + ANGULAR
-        var $el = $(this.el.nativeElement);
-        //        $el.css('display', 'block');
+        this.$el = $(this.el.nativeElement).parent();
+        setInterval(function () { _this.checkHeightResize(); }, 100);
+    };
+    ListSearchComponent.prototype.checkHeightResize = function () {
+        this.$el.height(''); // remove style attribute that sets a specific height
+        var heightNoPadding = this.$el.height();
+        var height = this.$el.outerHeight();
+        var footerTop = $('footer').offset().top;
+        this.$el.height(this.setHeight); // add a set height from "mem" if needed
+        var diffPadding = height - heightNoPadding;
+        var bottom = this.$el.offset().top + height;
+        if (footerTop - bottom >= 1) {
+            // we need to extend the height
+            this.setHeight = height + (footerTop - bottom) - diffPadding;
+            this.$el.height(this.setHeight);
+        }
+        else {
+            // we don't need to extend the height
+            this.setHeight = '';
+        }
+        this.oldHeight = height;
     };
     ListSearchComponent.prototype.dropDownSortValueChanged = function (event) {
         this.globalMem.search(this.globalMem.previousSearchTerm, event.target.value);
@@ -69,28 +93,6 @@ var ListSearchComponent = (function () {
             }
         });
     };
-    ListSearchComponent.prototype.showGoogleMapInModal = function (object, event) {
-        //#GOOGLE_MAP
-        var _this = this;
-        event.stopPropagation();
-        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', function (ret) {
-            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
-            var mapProp = {
-                center: location,
-                zoom: 10,
-            };
-            _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: location,
-                map: _this.map,
-                title: object.street
-            });
-            google.maps.event.addListenerOnce(_this.map, 'idle', function () {
-                //Map loaded
-            });
-        });
-    };
     ListSearchComponent.prototype.over = function (object) {
         this.selectedHoverObject = object;
     };
@@ -127,6 +129,31 @@ var ListSearchComponent = (function () {
         //#PROMISE
         this.dataService.get(rest, properties).then(function (data) {
             _this.objects = data;
+        });
+    };
+    /**
+     * @deprecated
+     */
+    ListSearchComponent.prototype.showGoogleMapInModal = function (object, event) {
+        //#GOOGLE_MAP
+        var _this = this;
+        event.stopPropagation();
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', function (ret) {
+            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+            var mapProp = {
+                center: location,
+                zoom: 10,
+            };
+            _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: location,
+                map: _this.map,
+                title: object.street
+            });
+            google.maps.event.addListenerOnce(_this.map, 'idle', function () {
+                //Map loaded
+            });
         });
     };
     return ListSearchComponent;

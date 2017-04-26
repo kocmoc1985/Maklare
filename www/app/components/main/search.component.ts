@@ -1,7 +1,9 @@
-import {Component, EventEmitter, Output, OnInit} from '@angular/core';
+import {Component, EventEmitter, Output, OnInit, OnDestroy} from '@angular/core';
 
 import {DataService} from '../services/data.service';
 import {DataExchange} from '../services/dataExchange.service';
+
+//declare function setTimeout(f:any,c:any): any;
 
 class Filters {
     minPrice: number;
@@ -20,7 +22,7 @@ class Filters {
     providers: [DataService, DataExchange]
 })
 
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
     private objects: any[];
     private previousSearchTerm: string;
     private previousSearchSort: string;
@@ -38,7 +40,8 @@ export class SearchComponent implements OnInit {
         private dataService: DataService,
         private dataExchange: DataExchange
     ) {
-    	this.localFilters = SearchComponent.filters;
+
+        this.localFilters = SearchComponent.filters;
         this.globalMem = this.dataExchange.global();
 
         this.globalMem.search = (term: string, sort: string) => {
@@ -50,7 +53,13 @@ export class SearchComponent implements OnInit {
 
 
     ngOnInit() {
+        console.log("NgOnInit");
         this.search('', '-dateAdded', 0);
+    }
+
+    ngOnDestroy() {
+//        this.onSearch.emit(null);
+        this.onSearch.complete();
     }
 
     search(term: string, sort: string, delayMs: any = undefined): void {
@@ -77,7 +86,7 @@ export class SearchComponent implements OnInit {
     }
 
     checkActiveType(name: string) {
-    	return SearchComponent.filters.types.length === 0 || SearchComponent.filters.types.indexOf(name) !== -1;
+        return SearchComponent.filters.types.length === 0 || SearchComponent.filters.types.indexOf(name) !== -1;
     }
 
     private insertFiltersIntoQuery(properties: any) {
@@ -138,8 +147,10 @@ export class SearchComponent implements OnInit {
                 (data: any[]) => {
                     // Ignore all results other than the newest/altered search-term
                     if (currentSearchCounter == this.searchCounter) {
-                        this.objects = data;
+                        console.log("AAAAAAA", data);
                         this.onSearch.emit(data);
+                    } else {
+                        console.log("BBBBBB");
                     }
                 }
             );
