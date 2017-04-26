@@ -12,6 +12,8 @@
     height: 18vmin;
     font-size: 1.6vmin;
     color:#666666;
+
+
 }
 
 .row-sort{
@@ -29,13 +31,31 @@
     margin-bottom: 0 !important;
 }
 
+.list-entry-info-section{
+    border: 2px solid #000\9;
+    -webkit-transition: border-color 1s ease;
+    -moz-transition: border-color 1s ease;
+    -o-transition: border-color 1s ease;
+    -ms-transition: border-color 1s ease;
+    transition: border-color 1s ease;
+}
+
+.list-entry-img-section{
+    border: 2px solid #000\9;
+    -webkit-transition: border-color 1s ease;
+    -moz-transition: border-color 1s ease;
+    -o-transition: border-color 1s ease;
+    -ms-transition: border-color 1s ease;
+    transition: border-color 1s ease;
+}
+
 .list-entry:hover .list-entry-info-section {
-    border: 2px solid black;
+    border: 2px solid #F56E26;
     border-left: none;
 }
 
 .list-entry:hover .list-entry-img-section {
-    border: 2px solid black;
+    border: 2px solid #F56E26;
     border-right: none;
 }
 
