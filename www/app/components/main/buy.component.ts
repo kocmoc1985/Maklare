@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,ApplicationRef} from '@angular/core';
 
 @Component({
     selector: 'buy',
@@ -11,6 +11,15 @@ export class BuyComponent {
 
     onSearch(objects: any[]) { //#EVENT_EMITTER
         //#DATA_EXCHANGE
+        console.log("BUY",objects);
         this.searchResult = objects;
+//        this.ref.tick();
+    }
+    
+    constructor(private ref: ApplicationRef)
+    {}
+    
+    stringifier(ex:any){
+        return JSON.stringify(ex);
     }
 }

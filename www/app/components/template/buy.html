@@ -1,4 +1,5 @@
 <div class="container-fluid background">
-	<search (onSearch)="onSearch($event)">Loading List App components</search><!-->#EVENT_EMITTER<-->
-	<list-app [estates]="searchResult">Loading List App components</list-app><!-->//#DATA_EXCHANGE<-->
+	<search (onSearch)="onSearch($event)"></search><!-->#EVENT_EMITTER<-->
+      
+	<list-app [estates]="searchResult"></list-app><!-->//#DATA_EXCHANGE<-->
 </div>

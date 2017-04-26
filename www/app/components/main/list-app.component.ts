@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, ElementRef} from '@angular/core';
+import {Component, Input, OnInit, OnChanges, ElementRef} from '@angular/core';
 import {Router} from '@angular/router';
 
 import {DataService} from '../services/data.service';
@@ -18,7 +18,7 @@ declare var google: any;
     providers: [DataService, DataExchange]
 })
 
-export class ListSearchComponent implements OnInit {
+export class ListSearchComponent implements OnInit, OnChanges {
     //#DATA_EXCHANGE
     @Input('estates') objects: any[];
 
@@ -34,12 +34,18 @@ export class ListSearchComponent implements OnInit {
     ) {
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
+
+    }
+
+    ngOnChanges(changes: any) {
+         console.log("Objects", this.objects);
     }
 
     ngOnInit() {
         //#JQUERY + ANGULAR
         let $el = $(this.el.nativeElement);
         //        $el.css('display', 'block');
+       
     }
 
     dropDownSortValueChanged(event: any) {
@@ -80,7 +86,7 @@ export class ListSearchComponent implements OnInit {
                     //
                     this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
                 }
-                
+
                 location = new google.maps.LatLng(object.mapslat, object.mapslng);
 
                 new google.maps.Marker({
@@ -91,36 +97,6 @@ export class ListSearchComponent implements OnInit {
 
             }
         });
-    }
-
-
-    showGoogleMapInModal(object: any, event: any) {
-        //#GOOGLE_MAP
-
-        event.stopPropagation();
-
-        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', (ret: any) => {
-            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
-
-            var mapProp = {
-                center: location,
-                zoom: 10,
-
-            };
-            this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-            var marker = new google.maps.Marker({
-                position: location,
-                map: this.map,
-                title: object.street
-            });
-
-            google.maps.event.addListenerOnce(this.map, 'idle', () => {
-                //Map loaded
-            });
-        });
-
     }
 
     over(object: any) {
@@ -164,6 +140,38 @@ export class ListSearchComponent implements OnInit {
                 this.objects = data;
             }
         );
+    }
+
+    /**
+     * @deprecated
+     */
+    showGoogleMapInModal(object: any, event: any) {
+        //#GOOGLE_MAP
+
+        event.stopPropagation();
+
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', (ret: any) => {
+            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+
+            var mapProp = {
+                center: location,
+                zoom: 10,
+
+            };
+            this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: this.map,
+                title: object.street
+            });
+
+            google.maps.event.addListenerOnce(this.map, 'idle', () => {
+                //Map loaded
+            });
+        });
+
     }
 
 }

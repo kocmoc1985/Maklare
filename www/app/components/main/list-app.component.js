@@ -24,6 +24,9 @@ var ListSearchComponent = (function () {
         this.localMem = this.dataExchange.create(this);
         this.globalMem = this.dataExchange.global();
     }
+    ListSearchComponent.prototype.ngOnChanges = function (changes) {
+        console.log("Objects", this.objects);
+    };
     ListSearchComponent.prototype.ngOnInit = function () {
         //#JQUERY + ANGULAR
         var $el = $(this.el.nativeElement);
@@ -69,28 +72,6 @@ var ListSearchComponent = (function () {
             }
         });
     };
-    ListSearchComponent.prototype.showGoogleMapInModal = function (object, event) {
-        //#GOOGLE_MAP
-        var _this = this;
-        event.stopPropagation();
-        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
-        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', function (ret) {
-            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
-            var mapProp = {
-                center: location,
-                zoom: 10,
-            };
-            _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            var marker = new google.maps.Marker({
-                position: location,
-                map: _this.map,
-                title: object.street
-            });
-            google.maps.event.addListenerOnce(_this.map, 'idle', function () {
-                //Map loaded
-            });
-        });
-    };
     ListSearchComponent.prototype.over = function (object) {
         this.selectedHoverObject = object;
     };
@@ -127,6 +108,31 @@ var ListSearchComponent = (function () {
         //#PROMISE
         this.dataService.get(rest, properties).then(function (data) {
             _this.objects = data;
+        });
+    };
+    /**
+     * @deprecated
+     */
+    ListSearchComponent.prototype.showGoogleMapInModal = function (object, event) {
+        //#GOOGLE_MAP
+        var _this = this;
+        event.stopPropagation();
+        var mapContainer = $("<div id='googleMap' style='width:100%;height:400px'></div>");
+        MYMODALS.showInfoModal(object.street + ', ' + object.town, '', mapContainer, 'md', '', function (ret) {
+            var location = new google.maps.LatLng(object.mapslat, object.mapslng);
+            var mapProp = {
+                center: location,
+                zoom: 10,
+            };
+            _this.map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: location,
+                map: _this.map,
+                title: object.street
+            });
+            google.maps.event.addListenerOnce(_this.map, 'idle', function () {
+                //Map loaded
+            });
         });
     };
     return ListSearchComponent;
