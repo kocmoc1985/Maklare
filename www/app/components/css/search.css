@@ -1,25 +1,33 @@
+.dropdown-toggle{
+    margin-bottom: 5px;
+}
+
+.type-filter{
+   margin-bottom: 5px;
+}
+
 .search-card {
-	border: none;
-	background-color: inherit;
+    border: none;
+    background-color: inherit;
 }
 
 button{
-	width: 100%;
+    width: 100%;
 }
 
 .button-card {
-	padding-top: 0;
+    padding-top: 0;
 }
 
 .dropdown-item {
-	cursor:pointer;
+    cursor:pointer;
 }
 
 .img-icon {
     display: inline-block;
-	width: 16px;
-	height: 16px;
-	margin-right: 4px;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -29,24 +37,24 @@ button{
 .img-icon.hyresratt {   background-image: url('icons/hyresratt.png'); }
 
 @media (max-width: 991px) {
-	.row.extra-pad-on-small {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
+    .row.extra-pad-on-small {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 @media (min-width: 576px) {
-	.col-6.no-pad-above-small:first-child {
-		padding-right: 0px;
-	}
-	.col-6.no-pad-above-small:last-child {
-		padding-left: 0px;
-	}
+    .col-6.no-pad-above-small:first-child {
+        padding-right: 0px;
+    }
+    .col-6.no-pad-above-small:last-child {
+        padding-left: 0px;
+    }
 }
 @media (min-width: 992px) {
-	.col-6.no-pad-above-small:first-child {
-		padding-left: 0px;
-	}
-	.col-6.no-pad-above-small:last-child {
-		padding-right: 0px;
-	}
+    .col-6.no-pad-above-small:first-child {
+        padding-left: 0px;
+    }
+    .col-6.no-pad-above-small:last-child {
+        padding-right: 0px;
+    }
 }
