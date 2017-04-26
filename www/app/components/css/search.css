@@ -49,18 +49,18 @@ button{
     }
 }
 @media (min-width: 576px) {
-    .col-6.no-pad-above-small:first-child {
+    .no-pad-above-small:first-child {
         padding-right: 0px;
     }
-    .col-6.no-pad-above-small:last-child {
+    .no-pad-above-small:last-child {
         padding-left: 0px;
     }
 }
 @media (min-width: 992px) {
-    .col-6.no-pad-above-small:first-child {
+    .no-pad-above-small:first-child {
         padding-left: 0px;
     }
-    .col-6.no-pad-above-small:last-child {
+    .no-pad-above-small:last-child {
         padding-right: 0px;
     }
 

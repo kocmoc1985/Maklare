@@ -84,7 +84,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.sendSearchRequest(properties, delayMs);
     }
 
-    checkActiveType(name: string) {
+    private checkActiveType(name: string) {
         return SearchComponent.filters.types.length === 0 || SearchComponent.filters.types.indexOf(name) !== -1;
     }
 
@@ -130,6 +130,12 @@ export class SearchComponent implements OnInit, OnDestroy {
         if (!value) {
             delete SearchComponent.filters[name];
         }
+        this.search(SearchComponent.previousSearchTerm, SearchComponent.previousSearchSort, 0);
+    }
+
+    private clearFilters() {
+    	this.localFilters = SearchComponent.filters = new Filters();
+    	this.localSearchTerm = SearchComponent.previousSearchTerm = '';
         this.search(SearchComponent.previousSearchTerm, SearchComponent.previousSearchSort, 0);
     }
 
