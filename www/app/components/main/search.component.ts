@@ -31,13 +31,14 @@ export class SearchComponent implements OnInit {
     private rooms: number[];
     private areas: number[];
     private static filters = new Filters();
+    private localFilters: Filters;
     @Output() onSearch = new EventEmitter<any[]>();
 
     constructor(
         private dataService: DataService,
         private dataExchange: DataExchange
     ) {
-
+    	this.localFilters = SearchComponent.filters;
         this.globalMem = this.dataExchange.global();
 
         this.globalMem.search = (term: string, sort: string) => {
@@ -113,7 +114,6 @@ export class SearchComponent implements OnInit {
         } else {
             SearchComponent.filters.types.splice(index, 1);
         }
-        console.log(SearchComponent.filters.types);
         this.search(this.previousSearchTerm, this.previousSearchSort, 0);
     }
 
