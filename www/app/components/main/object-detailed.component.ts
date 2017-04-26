@@ -26,13 +26,16 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     private broker: any;
     private map: any;
     private readMore: boolean;
+    private readMoreText: String;
     private oneTimeFlag: boolean;
 
     constructor(
         private dataService: DataService,
         private route: ActivatedRoute,
         private location: Location
-    ) {}
+    ) {
+        this.readMoreText = "Läs mer om mig";
+    }
 
     showVisningar() {
         if (!this.oneTimeFlag) {
@@ -44,8 +47,10 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
     toggleReadMore() {
         if (this.readMore) {
             this.readMore = false;
+            this.readMoreText = "Läs mer om mig";
         } else {
             this.readMore = true;
+            this.readMoreText = "Visa mig";
         }
     }
 
