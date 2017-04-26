@@ -13,8 +13,8 @@
             <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
-                <p>Pris: {{object.price}}</p>
-                <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra}} kr/mån</p>
+                <p>Pris: {{object.price | pricekr}}</p>
+                <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra | pricekr}} /mån</p>
                 <p>Antal rum: {{object.rooms}}</p>
                 <p>Boarea: {{object.area}} m&#178;</p>
             </div>
@@ -28,8 +28,8 @@
             <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
-                <p>Pris: {{object.price}}</p>
-                <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra}} kr/mån</p>
+                <p>Pris: {{object.price | pricekr}}</p>
+                <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra | pricekr}} /mån</p>
                 <p>Antal rum: {{object.rooms}}</p>
                 <p [innerHTML]="'Boarea:' + (object.area | kvadratM)"></p>
             </div>
@@ -60,7 +60,7 @@
                     <div class="card-block-content-x">
                         <h5 class="card-title">{{broker.name}}</h5>
 
-                        <p class="card-object-detailed-p" style="margin-bottom: 0px" (click)="toggleReadMore()">Läs mer om mig</p>
+                        <p class="card-object-detailed-p" style="margin-bottom: 0px" (click)="toggleReadMore()">{{readMoreText}}</p>
                         <p class="card-text" style="margin-bottom: 0px"><small>{{broker.tel}}</small></p>
                         <a href="mailto:{{broker.epost}}"><small>{{broker.epost}}</small></a>
                     </div>

@@ -28,7 +28,8 @@ var rest_service_1 = require("./components/rest/rest.service");
 // Pipes
 var datecut_pipe_1 = require("./components/pipes/datecut.pipe");
 var kvadratm_pipe_1 = require("./components/pipes/kvadratm.pipe");
-var special_a_pipe_1 = require("./components/pipes/special_a.pipe");
+var special_a_pipe_1 = require("./components/pipes/special_a.pipe"); //PriceKr
+var pricekr_pipe_1 = require("./components/pipes/pricekr.pipe");
 // for separate routing file
 var app_routing_module_1 = require("./components/app-routing.module");
 var AppModule = (function () {
@@ -58,6 +59,7 @@ AppModule = __decorate([
             datecut_pipe_1.DateCutPipe,
             kvadratm_pipe_1.KvadratMeter,
             special_a_pipe_1.SpecialA,
+            pricekr_pipe_1.PriceKr,
             object_detailed_component_1.ObjectDetailedComponent //#ROUTING_DETAILED
             // for separate routing file
             // AppRoutingModule

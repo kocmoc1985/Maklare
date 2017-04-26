@@ -20,6 +20,7 @@ var ObjectDetailedComponent = (function () {
         this.route = route;
         this.location = location;
         this.loadedImages = {};
+        this.readMoreText = "Läs mer om mig";
     }
     ObjectDetailedComponent.prototype.showVisningar = function () {
         if (!this.oneTimeFlag) {
@@ -30,9 +31,11 @@ var ObjectDetailedComponent = (function () {
     ObjectDetailedComponent.prototype.toggleReadMore = function () {
         if (this.readMore) {
             this.readMore = false;
+            this.readMoreText = "Läs mer om mig";
         }
         else {
             this.readMore = true;
+            this.readMoreText = "Visa mig";
         }
     };
     ObjectDetailedComponent.prototype.showGoogleMap = function () {

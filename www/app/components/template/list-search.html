@@ -31,7 +31,7 @@
         <div class="col-10 col-sm-10 col-md-6 hidden-sm-down list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
             <div class="row list-entry-prim-info" >
                 <div class="col-4">
-                    <p >{{object.price}} kr</p>
+                    <p>{{object.price | pricekr}}</p>
                 </div>
                 <div class="col-4 google-map" *ngIf="object">
                     <p  (click)="showAllObjectsOnMap(selectedHoverObject == object,object,$event)">{{object.district}}</p>
@@ -44,7 +44,7 @@
 
             <div class="row list-entry-sec-info">
                 <div class="col-4">
-                    <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
+                    <p *ngIf="object.hyra != 0">{{object.hyra | pricekr}} /mån</p>
                 </div>
                 <div class="col-4" >
                     <p class="google-map-b">{{object.street}}</p>
@@ -68,7 +68,7 @@
         <div class="col-8 hidden-md-up list-entry-info-section" [class.prev-obj]="equals(localMem.selectedObject,object)">
             <div class="row list-entry-prim-info">
                 <div class="col-6">
-                    <p>{{object.price}} kr</p>
+                     <p>{{object.price | pricekr}}</p>
                 </div>
                 <div class="col-6">
                     <p>{{object.rooms}} rum</p>
@@ -77,7 +77,7 @@
 
             <div class="row list-entry-sec-info">
                 <div class="col-6">
-                    <p *ngIf="object.hyra != 0">{{object.hyra}} kr/mån</p>
+                    <p *ngIf="object.hyra != 0">{{object.hyra | pricekr}} /mån</p>
                     <p *ngIf="object.hyra == 0">-</p>
                 </div>
                 <div class="col-6">
