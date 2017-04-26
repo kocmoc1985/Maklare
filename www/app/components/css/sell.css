@@ -16,10 +16,6 @@ small{
 	background-color: white;
 }
 
-.h4-shadow {
-	text-shadow: 1px 1px 3px rgba(255, 255, 255, 1);
-}
-
 .card-margin-bottom {
     margin-bottom: 40px;
 }
@@ -67,4 +63,8 @@ button p {
         border-radius: 0px;
     }
 
+}
+
+.bg-trans {
+    padding-bottom: 30px;
 }
