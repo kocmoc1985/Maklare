@@ -27,6 +27,7 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.searchCounter = 0;
         this.onSearch = new core_1.EventEmitter();
         this.localFilters = SearchComponent_1.filters;
+        this.localSearchTerm = SearchComponent_1.previousSearchTerm || '';
         this.globalMem = this.dataExchange.global();
         this.globalMem.search = function (term, sort) {
             _this.search(term, sort, 0);
@@ -34,16 +35,16 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.initFilterData();
     }
     SearchComponent.prototype.ngOnInit = function () {
-        this.search('', '-dateAdded', 0);
+        console.log("NgOnInit");
+        this.search(SearchComponent_1.previousSearchTerm || '', SearchComponent_1.previousSearchSort || '-dateAdded', 0);
     };
     SearchComponent.prototype.ngOnDestroy = function () {
     };
     SearchComponent.prototype.search = function (term, sort, delayMs) {
         if (delayMs === void 0) { delayMs = undefined; }
         term = term.trim();
-        this.previousSearchTerm = term;
-        this.previousSearchSort = sort;
-        this.globalMem.previousSearchTerm = term;
+        SearchComponent_1.previousSearchTerm = term;
+        SearchComponent_1.previousSearchSort = sort;
         var properties = {
             $or: [
                 { district: { $regex: term, $options: "i" } },
@@ -92,14 +93,14 @@ var SearchComponent = SearchComponent_1 = (function () {
         else {
             SearchComponent_1.filters.types.splice(index, 1);
         }
-        this.search(this.previousSearchTerm, this.previousSearchSort, 0);
+        this.search(SearchComponent_1.previousSearchTerm, SearchComponent_1.previousSearchSort, 0);
     };
     SearchComponent.prototype.setFilter = function (name, value) {
         SearchComponent_1.filters[name] = value;
         if (!value) {
             delete SearchComponent_1.filters[name];
         }
-        this.search(this.previousSearchTerm, this.previousSearchSort, 0);
+        this.search(SearchComponent_1.previousSearchTerm, SearchComponent_1.previousSearchSort, 0);
     };
     SearchComponent.prototype.sendSearchRequest = function (properties, delayMs) {
         var _this = this;

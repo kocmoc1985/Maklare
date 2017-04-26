@@ -24,8 +24,9 @@ class Filters {
 
 export class SearchComponent implements OnInit, OnDestroy {
     private objects: any[];
-    private previousSearchTerm: string;
-    private previousSearchSort: string;
+    private localSearchTerm: string;
+    private static previousSearchTerm: string;
+    private static previousSearchSort: string;
     private searchCounter: number = 0;
     private timeoutKeyUp: any;
     private globalMem: any;
@@ -42,6 +43,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     ) {
 
         this.localFilters = SearchComponent.filters;
+        this.localSearchTerm = SearchComponent.previousSearchTerm || '';
         this.globalMem = this.dataExchange.global();
 
         this.globalMem.search = (term: string, sort: string) => {
@@ -53,7 +55,8 @@ export class SearchComponent implements OnInit, OnDestroy {
 
 
     ngOnInit() {
-        this.search('', '-dateAdded', 0);
+        console.log("NgOnInit");
+        this.search(SearchComponent.previousSearchTerm || '', SearchComponent.previousSearchSort || '-dateAdded', 0);
     }
 
     ngOnDestroy() {
@@ -61,9 +64,8 @@ export class SearchComponent implements OnInit, OnDestroy {
 
     search(term: string, sort: string, delayMs: any = undefined): void {
         term = term.trim();
-        this.previousSearchTerm = term;
-        this.previousSearchSort = sort;
-        this.globalMem.previousSearchTerm = term;
+        SearchComponent.previousSearchTerm = term;
+        SearchComponent.previousSearchSort = sort;
 
         let properties = {
             $or: [
@@ -120,7 +122,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         } else {
             SearchComponent.filters.types.splice(index, 1);
         }
-        this.search(this.previousSearchTerm, this.previousSearchSort, 0);
+        this.search(SearchComponent.previousSearchTerm, SearchComponent.previousSearchSort, 0);
     }
 
     private setFilter(name: string, value: number) {
@@ -128,7 +130,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         if (!value) {
             delete SearchComponent.filters[name];
         }
-        this.search(this.previousSearchTerm, this.previousSearchSort, 0);
+        this.search(SearchComponent.previousSearchTerm, SearchComponent.previousSearchSort, 0);
     }
 
     private sendSearchRequest(properties: Object, delayMs: any) {
