@@ -25,6 +25,7 @@ var SearchComponent = SearchComponent_1 = (function () {
         this.dataExchange = dataExchange;
         this.searchCounter = 0;
         this.onSearch = new core_1.EventEmitter();
+        this.localFilters = SearchComponent_1.filters;
         this.globalMem = this.dataExchange.global();
         this.globalMem.search = function (term, sort) {
             _this.search(term, sort, 0);
@@ -88,7 +89,6 @@ var SearchComponent = SearchComponent_1 = (function () {
         else {
             SearchComponent_1.filters.types.splice(index, 1);
         }
-        console.log(SearchComponent_1.filters.types);
         this.search(this.previousSearchTerm, this.previousSearchSort, 0);
     };
     SearchComponent.prototype.setFilter = function (name, value) {

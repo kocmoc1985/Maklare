@@ -13,7 +13,7 @@
             <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
-                <p>Pris: {{object.price}}</p>
+                <p>Pris: {{object.price | pricekr}}</p>
                 <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra}} kr/mån</p>
                 <p>Antal rum: {{object.rooms}}</p>
                 <p>Boarea: {{object.area}} m&#178;</p>
@@ -28,7 +28,7 @@
             <div class="panel">
                 <h2 class="object-title">{{object.street}}</h2>
                 <p>{{object.shortInfo}}</p>
-                <p>Pris: {{object.price}}</p>
+                <p>Pris: {{object.price | pricekr}}</p>
                 <p *ngIf="object.hyra > 0">Månadsavgift: {{object.hyra}} kr/mån</p>
                 <p>Antal rum: {{object.rooms}}</p>
                 <p [innerHTML]="'Boarea:' + (object.area | kvadratM)"></p>
