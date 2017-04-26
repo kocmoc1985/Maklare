@@ -17,11 +17,11 @@ app-footer {
 @media screen and (max-width: 720px) {
 
     body {
-      margin-bottom:80px;
+      margin-bottom:55px;
     }
 
     app-footer {
-      height: 80px;
+      height: 55px;
     }
 
 }

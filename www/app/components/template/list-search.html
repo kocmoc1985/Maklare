@@ -7,15 +7,15 @@
                 <!--label for="sel1">Sortera efter:</label-->
                 <select class="form-control" (change)="dropDownSortValueChanged($event)">
                     <option value="dateAdded">Datum</option>
-                    <option value="price">Pris</option>
-                    <option value="area">Yta</option>
-                    <option value="rooms">Rum</option>
-                    <option value="-price">Pris fallande</option>
-                    <option value="-area">Yta fallande</option>
-                    <option value="-rooms">Rum fallande</option>
+                    <option value="price">Billigast först</option>
+                    <option value="-price">Dyrast först</option>
+                    <option value="area">Minst först</option>
+                    <option value="-area">Störst först</option>
+                    <option value="rooms">Rum, minst först</option>
+                    <option value="-rooms">Rum, flest först</option>
                 </select>
             </div>
-           
+
         </div>
 
     </div>
