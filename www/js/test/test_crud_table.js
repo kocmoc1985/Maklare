@@ -30,8 +30,8 @@ function createCrudTables() {
             VISNING_REST,
             'Administrate Visningar',
             '#output',
-            ['Tillfälle ett', 'Tillfälle två','Tillfälle tre'],
-            ['time1', 'time2','time3'],
+            ['Fastighet','Tillfälle ett', 'Tillfälle två','Tillfälle tre'],
+            ['fastighet','time1', 'time2','time3'],
             {_fields: '', _sort: 'fastighet', _skip: 0, _limit: 5}
     );
     
