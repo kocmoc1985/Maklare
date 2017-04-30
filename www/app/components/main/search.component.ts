@@ -173,7 +173,6 @@ export class SearchComponent implements OnInit, OnDestroy {
         ];
 
         this.rooms = [
-            1,
             1.5,
             2,
             2.5,

@@ -18,16 +18,18 @@
                 <div class="row">
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['minPrice'] || 'Pris från'}}</span>
+                            <span *ngIf="localFilters['minPrice']">{{localFilters['minPrice'] | pricekr}}</span>
+                            <span *ngIf="!localFilters['minPrice']">Pris (från)</span>
                         </button>
                         <div class="dropdown-menu">
-                            <a (click)="setFilter('minPrice', 0)" class="dropdown-item"><span>0 kr</span></a>
+                            <a (click)="setFilter('minPrice', 0)" class="dropdown-item"><span>Obegränsat</span></a>
                             <a *ngFor="let price of prices" (click)="setFilter('minPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
                         </div>
                     </div>
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['maxPrice'] || 'Pris till'}}</span>
+                            <span *ngIf="localFilters['maxPrice']">{{localFilters['maxPrice'] | pricekr}}</span>
+                            <span *ngIf="!localFilters['maxPrice']">Pris (till)</span>
                         </button>
                         <div class="dropdown-menu">
                             <a *ngFor="let price of prices" (click)="setFilter('maxPrice', price)" class="dropdown-item"><span>{{price.toLocaleString('sv-SE')}} kr</span></a>
@@ -42,15 +44,18 @@
                 <div class="row">
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['minRooms'] || 'Rum min'}}</span>
+                            <span *ngIf="localFilters['minRooms']">{{localFilters['minRooms']}} rum</span>
+                            <span *ngIf="!localFilters['minRooms']">Rum (min)</span>
                         </button>
                         <div class="dropdown-menu">
+                            <a (click)="setFilter('minRooms', 0)" class="dropdown-item"><span>Obegränsat</span></a>
                             <a *ngFor="let room of rooms" (click)="setFilter('minRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
                         </div>
                     </div>
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['maxRooms'] || 'Rum max'}}</span>
+                            <span *ngIf="localFilters['maxRooms']">{{localFilters['maxRooms']}} rum</span>
+                            <span *ngIf="!localFilters['maxRooms']">Rum (max)</span>
                         </button>
                         <div class="dropdown-menu">
                             <a *ngFor="let room of rooms" (click)="setFilter('maxRooms', room)" class="dropdown-item"><span>{{room}} rum</span></a>
@@ -64,19 +69,21 @@
                 <div class="row">
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['minArea'] || 'Boyta från'}}</span>
+                            <span *ngIf="localFilters['minArea']">{{localFilters['minArea']}} m&#178;</span>
+                            <span *ngIf="!localFilters['minArea']">Boyta (från)</span>
                         </button>
                         <div class="dropdown-menu">
-                            <a (click)="setFilter('minArea', 0)" class="dropdown-item"><span>0 &#13217;</span></a>
-                            <a *ngFor="let area of areas" (click)="setFilter('minArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
+                            <a (click)="setFilter('minArea', 0)" class="dropdown-item"><span>Obegränsat</span></a>
+                            <a *ngFor="let area of areas" (click)="setFilter('minArea', area)" class="dropdown-item"><span>{{area}} m&#178;</span></a>
                         </div>
                     </div>
                     <div class="col-6 col-sm-12 dropdown dropdown-buttons">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                            <span>{{ localFilters['maxArea'] || 'Boyta till'}}</span>
+                            <span *ngIf="localFilters['maxArea']">{{localFilters['maxArea']}} m&#178;</span>
+                            <span *ngIf="!localFilters['maxArea']">Boyta (till)</span>
                         </button>
                         <div class="dropdown-menu">
-                            <a *ngFor="let area of areas" (click)="setFilter('maxArea', area)" class="dropdown-item"><span>{{area}} &#13217;</span></a>
+                            <a *ngFor="let area of areas" (click)="setFilter('maxArea', area)" class="dropdown-item"><span>{{area}} m&#178;</span></a>
                             <a (click)="setFilter('maxArea', 0)" class="dropdown-item"><span>Obegränsat</span></a>
                         </div>
                     </div>
