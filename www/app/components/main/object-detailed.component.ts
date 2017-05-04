@@ -84,9 +84,9 @@ export class ObjectDetailedComponent implements OnInit, AfterViewInit {
 
 
     registerLoadedImage(img: string) {
-    	setTimeout(() => {
-        	this.loadedImages[img] = true;
-		}, 0);
+        setTimeout(() => {
+            this.loadedImages[img] = true;
+        }, 0);
     }
 
     goBack(): void {

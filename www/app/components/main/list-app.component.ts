@@ -56,7 +56,6 @@ export class ListSearchComponent implements OnInit, OnChanges, AfterViewInit {
     ngOnInit() {
         //#JQUERY + ANGULAR
         this.$el = $(this.el.nativeElement).parent();
-
     }
 
     ngAfterViewInit() {

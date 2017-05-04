@@ -102,6 +102,11 @@ var SearchComponent = SearchComponent_1 = (function () {
         }
         this.search(SearchComponent_1.previousSearchTerm, SearchComponent_1.previousSearchSort, 0);
     };
+    SearchComponent.prototype.clearFilters = function () {
+        this.localFilters = SearchComponent_1.filters = new Filters();
+        this.localSearchTerm = SearchComponent_1.previousSearchTerm = '';
+        this.search(SearchComponent_1.previousSearchTerm, SearchComponent_1.previousSearchSort, 0);
+    };
     SearchComponent.prototype.sendSearchRequest = function (properties, delayMs) {
         var _this = this;
         var keyUpDelayMs = 300 || delayMs;
@@ -131,7 +136,6 @@ var SearchComponent = SearchComponent_1 = (function () {
             10000000
         ];
         this.rooms = [
-            1,
             1.5,
             2,
             2.5,
